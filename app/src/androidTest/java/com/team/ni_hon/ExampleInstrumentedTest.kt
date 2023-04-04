@@ -1,4 +1,4 @@
-package com.example.ni_hon
+package com.team.ni_hon
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

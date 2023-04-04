@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "781413435137",
+    "project_id": "ni-hon",
+    "storage_bucket": "ni-hon.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:781413435137:android:882105fa410a71d6cffd00",
+        "android_client_info": {
+          "package_name": "com.team.Ni_Hon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "781413435137-3hg446958rcbnlhefvvtpcp1kr14euns.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC538U2FU5-fyeuTDjq0gylm13jYm9IjBA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "781413435137-3hg446958rcbnlhefvvtpcp1kr14euns.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
