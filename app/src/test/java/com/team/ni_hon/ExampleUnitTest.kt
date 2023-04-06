@@ -1,4 +1,4 @@
-package com.example.ni_hon
+package com.team.ni_hon
 
 import org.junit.Test
 
