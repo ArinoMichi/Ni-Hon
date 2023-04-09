@@ -9,7 +9,7 @@ android {
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.test.ni_hon"
+        applicationId "com.team.ni_hon"
         minSdk 24
         targetSdk 33
         versionCode 1
