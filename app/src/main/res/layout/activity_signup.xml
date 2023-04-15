@@ -2,10 +2,11 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:theme="@style/Theme.Nihon"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/backlog3"
-    tools:context=".LoginActivity">
+    tools:context=".SignupActivity">
 
     <TextView
         android:layout_width="match_parent"
@@ -13,11 +14,11 @@
         android:background="@color/transparent_white" />
 
     <TextView
-        android:id="@+id/textWelcomeBack"
+        android:id="@+id/textWelcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
-        android:text="welcome back!"
+        android:text="welcome!"
         android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@id/guideline2"
@@ -25,32 +26,17 @@
         app:layout_constraintStart_toStartOf="@id/guideline1"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textGladToSeeYou"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="glad to see ya"
-        app:layout_constraintEnd_toEndOf="@id/guideline2"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@id/textWelcomeBack"
-        app:layout_constraintStart_toStartOf="@id/guideline1"
-        android:layout_marginTop="8dp"
-        />
-
-
-
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilUsername"
         android:layout_width="0dp"
         android:layout_height="56dp"
         android:layout_marginTop="32dp"
-        android:textColorHint="@color/blue"
+        android:textColorHint="@color/pink"
         app:boxStrokeWidth="0dp"
         app:boxStrokeWidthFocused="0dp"
         app:layout_constraintEnd_toEndOf="@id/guideline2"
         app:layout_constraintStart_toStartOf="@id/guideline1"
-        app:layout_constraintTop_toBottomOf="@id/textGladToSeeYou"
+        app:layout_constraintTop_toBottomOf="@id/textWelcome"
         app:startIconDrawable="@android:drawable/presence_online">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -64,7 +50,41 @@
             android:maxLines="1"
             android:textAlignment="textStart"
             android:textColor="@color/black"
+            android:textColorLink="@color/black" />
 
+        <!--        <EditText-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:background="@color/white"-->
+        <!--            android:hint="Usuario"-->
+        <!--            android:imeOptions="actionDone" />-->
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilEmail"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="8dp"
+        android:textColorHint="@color/pink"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
+        app:layout_constraintEnd_toEndOf="@id/guideline2"
+        app:layout_constraintStart_toStartOf="@id/guideline1"
+        app:layout_constraintTop_toBottomOf="@id/tilUsername"
+        app:startIconDrawable="@android:drawable/sym_action_email">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:gravity="start"
+            android:hint="Email address"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
             android:textColorLink="@color/black" />
 
         <!--        <EditText-->
@@ -81,12 +101,12 @@
         android:layout_width="0dp"
         android:layout_height="56dp"
         android:layout_marginTop="8dp"
-        android:textColorHint="@color/blue"
+        android:textColorHint="@color/pink"
         app:boxStrokeWidth="0dp"
         app:boxStrokeWidthFocused="0dp"
         app:layout_constraintEnd_toEndOf="@id/guideline2"
         app:layout_constraintStart_toStartOf="@id/guideline1"
-        app:layout_constraintTop_toBottomOf="@id/tilUsername"
+        app:layout_constraintTop_toBottomOf="@id/tilEmail"
         app:passwordToggleEnabled="true"
         app:startIconDrawable="@android:drawable/ic_lock_idle_lock">
 
@@ -107,39 +127,47 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <TextView
-        android:id="@+id/textForgotPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilRepeatPassword"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
         android:layout_marginTop="8dp"
-        android:gravity="center"
-        android:text="Forgotten your password?"
-        android:textColor="#333333"
+        android:textColorHint="@color/pink"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
+        app:layout_constraintEnd_toEndOf="@id/guideline2"
         app:layout_constraintStart_toStartOf="@id/guideline1"
-        app:layout_constraintTop_toBottomOf="@+id/tilPassword" />
+        app:layout_constraintTop_toBottomOf="@id/tilPassword"
+        app:passwordToggleEnabled="true"
+        app:startIconDrawable="@android:drawable/ic_lock_idle_lock">
+
+        <EditText
+            android:id="@+id/editRepeatPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:gravity="start"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textColorLink="@color/black">
+
+        </EditText>
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/buttonLogin"
+        android:id="@+id/buttonSignUp"
         android:layout_width="0dp"
         android:layout_height="56dp"
         android:layout_marginTop="16dp"
-        android:backgroundTint="@color/blue"
-        android:text="log in"
-        android:textColor="@color/white"
+        android:text="sign up"
         app:layout_constraintEnd_toEndOf="@id/guideline2"
         app:layout_constraintStart_toStartOf="@id/guideline1"
-        app:layout_constraintTop_toBottomOf="@id/textForgotPassword" />
+        app:layout_constraintTop_toBottomOf="@id/tilRepeatPassword" />
 
-    <Button
-        android:id="@+id/buttonGoogle"
-        android:layout_width="0dp"
-        android:layout_height="56dp"
-        android:backgroundTint="@color/white"
-        android:text="log in with google"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="@id/guideline2"
-        app:layout_constraintStart_toStartOf="@id/guideline1"
-        app:layout_constraintTop_toBottomOf="@id/buttonLogin" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline1"
