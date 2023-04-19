@@ -3,17 +3,17 @@ package com.team.ni_hon.model;
 import java.io.Serializable;
 
 public class Usuario implements Serializable {
-    long id;
-    String nombre;
-    String correo;
-    String contrasenia;
-    byte icono;
-    int nivel;
+
+    private String nombre;
+    private String correo;
+    private String contrasenia;
+    private int icono;
+    private int nivel;
 
     public Usuario (){}
 
-    public Usuario(long _id,String _nombre,String _correo,String _contrasenia,byte _icono,int _nivel){
-        this.id=_id;
+    public Usuario(String _nombre,String _correo,String _contrasenia,int _icono,int _nivel){
+
         this.nombre=_nombre;
         this.correo=_correo;
         this.contrasenia=_contrasenia;
@@ -21,13 +21,6 @@ public class Usuario implements Serializable {
         this.nivel=_nivel;
     }
 
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public String getNombre() {
         return nombre;
@@ -53,11 +46,11 @@ public class Usuario implements Serializable {
         this.contrasenia = contrasenia;
     }
 
-    public byte getIcono() {
+    public int getIcono() {
         return icono;
     }
 
-    public void setIcono(byte icono) {
+    public void setIcono(int icono) {
         this.icono = icono;
     }
 
