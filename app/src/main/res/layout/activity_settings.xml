@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.team.ni_hon.MainActivity"
-    android:background="@color/blue">
+    tools:context=".SettingsActivity">
 
 </androidx.constraintlayout.widget.ConstraintLayout>
