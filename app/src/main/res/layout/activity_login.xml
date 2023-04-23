@@ -53,7 +53,7 @@
         app:startIconDrawable="@android:drawable/presence_online">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editUsername"
+            android:id="@+id/editUsernameL"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/light_gray"
@@ -90,7 +90,7 @@
         app:startIconDrawable="@android:drawable/ic_lock_idle_lock">
 
         <EditText
-            android:id="@+id/editPassword"
+            android:id="@+id/editPasswordL"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/light_gray"
