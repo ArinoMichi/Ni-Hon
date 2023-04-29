@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -25,6 +26,7 @@ public class LoginActivity extends AppCompatActivity {
     private Button login;
     private Button sigup;
     private ActivityLoginBinding bind;
+    private TextView createAcc;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -38,6 +40,15 @@ public class LoginActivity extends AppCompatActivity {
         contrasenia=bind.editPasswordL;
         login=bind.buttonLogin;
         sigup=bind.buttonGoogle;
+
+        createAcc=findViewById(R.id.createAcc);
+        createAcc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this, SignupActivity.class);
+                startActivity(intent);
+            }
+        });
 
         Test();
     }
