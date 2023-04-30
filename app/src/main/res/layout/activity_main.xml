@@ -7,4 +7,10 @@
     tools:context="com.team.ni_hon.MainActivity"
     android:background="@color/blue">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

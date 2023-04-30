@@ -1,6 +1,8 @@
 package com.team.ni_hon;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,14 +10,34 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.team.ni_hon.recycler.Lesson;
+import com.team.ni_hon.recycler.LessonAdapter;
+
+import java.util.ArrayList;
+
 
 public class MainActivity extends AppCompatActivity {
+
+    private RecyclerView recyclerView;
+    private ArrayList<Lesson> lessons;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setTitle(null);
+
+        recyclerView = findViewById(R.id.recycler);
+        lessons = new ArrayList<>();
+
+        for(int i=0; i<5; i++){
+            lessons.add(new Lesson(i+1, "DEFAULT TEXT"));
+        }
+
+        LessonAdapter adapter = new LessonAdapter(lessons);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        recyclerView.setAdapter(adapter);
     }
 
     @Override
