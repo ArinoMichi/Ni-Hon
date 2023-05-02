@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.team.ni_hon.recycler.Lesson;
@@ -20,8 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private ArrayList<Lesson> lessons;
-
-
+    private LessonAdapter lessonAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         setTitle(null);
 
-        recyclerView = findViewById(R.id.recycler);
+        RecyclerView recyclerView = findViewById(R.id.recycler);
 
         // move this code to database
         lessons = new ArrayList<>();
@@ -37,10 +37,17 @@ public class MainActivity extends AppCompatActivity {
             lessons.add(new Lesson(i+1, Integer.toString(i+1)));
         }
 
-        LessonAdapter adapter = new LessonAdapter(lessons);
+        lessonAdapter = new LessonAdapter(lessons);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-        recyclerView.setAdapter(adapter);
+        recyclerView.setAdapter(lessonAdapter);
+
+        lessonAdapter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "Pulsado", Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     @Override
@@ -74,5 +81,7 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
 
 }
