@@ -21,17 +21,16 @@ public class LessonAdapter extends RecyclerView.Adapter<LessonAdapter.LessonView
     }
 
     public static class LessonViewHolder extends RecyclerView.ViewHolder {
-        private TextView textTitulo, textSubtitulo;
+        private TextView textTitle, button;
 
         public LessonViewHolder(View itemView) {
             super(itemView);
-            this.textTitulo = itemView.findViewById(R.id.titulo);
-            this.textSubtitulo = itemView.findViewById(R.id.subtitulo);
+            this.textTitle = itemView.findViewById(R.id.title);
+            this.button = itemView.findViewById(R.id.button);
         }
 
         public void bindLesson(Lesson lesson) {
-            textTitulo.setText(lesson.getTitle());
-            textSubtitulo.setText(lesson.getTitle());
+            button.setText(lesson.getTitle());
         }
     }
 

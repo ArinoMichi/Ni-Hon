@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private ArrayList<Lesson> lessons;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,10 +30,11 @@ public class MainActivity extends AppCompatActivity {
         setTitle(null);
 
         recyclerView = findViewById(R.id.recycler);
-        lessons = new ArrayList<>();
 
+        // move this code to database
+        lessons = new ArrayList<>();
         for(int i=0; i<5; i++){
-            lessons.add(new Lesson(i+1, "DEFAULT TEXT"));
+            lessons.add(new Lesson(i+1, Integer.toString(i+1)));
         }
 
         LessonAdapter adapter = new LessonAdapter(lessons);
@@ -46,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.topbar, menu);
         return true;
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
