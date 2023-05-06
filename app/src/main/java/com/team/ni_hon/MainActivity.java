@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private LessonAdapter lessonAdapter;
 
     private static RecyclerView recyclerView;
-    private static ConstraintLayout popup;
+    // private static ConstraintLayout popup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         setTitle(null);
 
         recyclerView = findViewById(R.id.recycler);
-        popup = findViewById(R.id.popup);
+        // popup = findViewById(R.id.popup);
 
         // move this code to database
         lessons = new ArrayList<>();
@@ -47,9 +47,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /*
     public static ConstraintLayout getPopup() {
         return popup;
     }
+    */
+
 
     public static RecyclerView getRecyclerView() {
         return recyclerView;

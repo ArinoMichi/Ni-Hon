@@ -9,6 +9,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.team.ni_hon.MainActivity;
@@ -33,11 +34,9 @@ public class LessonAdapter extends RecyclerView.Adapter<LessonAdapter.LessonView
         LessonViewHolder lvh = new LessonViewHolder(itemView, new MyClickListener(){
             @Override
             public void onClick(int p) {
-                MainActivity.getPopup().setVisibility(View.INVISIBLE);
+                itemView.findViewById(R.id.popup).setVisibility(View.INVISIBLE);
                 MainActivity.getRecyclerView().smoothScrollToPosition(lessons.get(p).getId());
-
-
-                MainActivity.getPopup().setVisibility(View.VISIBLE);
+                itemView.findViewById(R.id.popup).setVisibility(View.VISIBLE);
                 // Toast.makeText(parent.getContext(), "Pulsado " + lessons.get(p).getId(), Toast.LENGTH_LONG).show();
             }
         });
@@ -61,12 +60,12 @@ public class LessonAdapter extends RecyclerView.Adapter<LessonAdapter.LessonView
 
         MyClickListener listener;
         Button button;
-
-
+        ConstraintLayout popup;
 
         public LessonViewHolder(View itemView, MyClickListener listener) {
             super(itemView);
             button = itemView.findViewById(R.id.button);
+            popup = itemView.findViewById(R.id.popup);
 
             this.listener = listener;
 
