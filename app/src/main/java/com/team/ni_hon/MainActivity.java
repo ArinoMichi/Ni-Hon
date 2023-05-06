@@ -1,6 +1,7 @@
 package com.team.ni_hon;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -8,7 +9,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Toast;
 
 import com.team.ni_hon.recycler.Lesson;
@@ -19,9 +19,11 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private RecyclerView recyclerView;
     private ArrayList<Lesson> lessons;
     private LessonAdapter lessonAdapter;
+
+    private static RecyclerView recyclerView;
+    private static ConstraintLayout popup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +31,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         setTitle(null);
 
-        RecyclerView recyclerView = findViewById(R.id.recycler);
+        recyclerView = findViewById(R.id.recycler);
+        popup = findViewById(R.id.popup);
 
         // move this code to database
         lessons = new ArrayList<>();
@@ -37,17 +40,19 @@ public class MainActivity extends AppCompatActivity {
             lessons.add(new Lesson(i+1, Integer.toString(i+1)));
         }
 
-        lessonAdapter = new LessonAdapter(lessons);
+        lessonAdapter = new LessonAdapter(this, lessons);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         recyclerView.setAdapter(lessonAdapter);
 
-        lessonAdapter.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Pulsado", Toast.LENGTH_LONG).show();
-            }
-        });
+    }
+
+    public static ConstraintLayout getPopup() {
+        return popup;
+    }
+
+    public static RecyclerView getRecyclerView() {
+        return recyclerView;
     }
 
     @Override
