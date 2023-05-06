@@ -11,18 +11,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.team.ni_hon.databinding.ActivitySignupBinding;
-import com.team.ni_hon.model.Usuario;
+import com.team.ni_hon.model.User;
 
 import java.lang.reflect.Field;
 import java.util.HashMap;
@@ -79,11 +75,11 @@ public class SignupActivity extends AppCompatActivity {
         }else if (pswd.length()<6){
             Toast.makeText(this,"La contraseña debe no puede ser inferior a 6 digitos",Toast.LENGTH_LONG).show();
         }else{
-            Usuario newUser=new Usuario(name,emails,pswd,0,0);
+            User newUser=new User(name,emails,pswd,0,0);
 
             if(newUser!=null) {
                 Map<String,Object> UserToAdd=convertObjectToMap(newUser);
-                myLoginAuth.createUserWithEmailAndPassword(newUser.getCorreo(),newUser.getContrasenia()).addOnCompleteListener(task->{
+                myLoginAuth.createUserWithEmailAndPassword(newUser.getEmail(),newUser.getPassword()).addOnCompleteListener(task->{
                     if(task.isSuccessful()){
                         String userId = myLoginAuth.getCurrentUser().getUid();
                         userCollRef.document(userId)

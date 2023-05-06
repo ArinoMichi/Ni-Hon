@@ -3,4 +3,5 @@
     <string name="welcome">Glad to see you back!</string>
     <string name="welcome2">(っ◔◡◔)っ Welcome!</string>
     <string name="join_us">(っ◔◡◔)っ Join us!\n(いらっしゃいませ)</string>
+    <string name="errorLogInGoogle">Error al iniciar sesion con Google</string>
 </resources>
