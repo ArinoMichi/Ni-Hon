@@ -1,7 +1,6 @@
 package com.team.ni_hon;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -46,12 +45,6 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(lessonAdapter);
 
     }
-
-    /*
-    public static ConstraintLayout getPopup() {
-        return popup;
-    }
-    */
 
 
     public static RecyclerView getRecyclerView() {

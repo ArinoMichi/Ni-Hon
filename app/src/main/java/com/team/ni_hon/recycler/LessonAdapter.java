@@ -5,8 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -19,25 +17,28 @@ import java.util.ArrayList;
 
 public class LessonAdapter extends RecyclerView.Adapter<LessonAdapter.LessonViewHolder> {
 
-    private LayoutInflater layoutInflater;
-    private ArrayList<Lesson> lessons;
+    private final ArrayList<Lesson> lessons;
+
+    private int previousId;
+    private int currentId;
 
     public LessonAdapter(Context context, ArrayList<Lesson> lessons) {
-        layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         this.lessons = lessons;
+        this.previousId = -1;
+        this.currentId = -1;
     }
 
     @NonNull
     @Override
     public LessonViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView = layoutInflater.from(parent.getContext()).inflate(R.layout.item_component, parent, false);
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_component, parent, false);
         LessonViewHolder lvh = new LessonViewHolder(itemView, new MyClickListener(){
             @Override
             public void onClick(int p) {
-                itemView.findViewById(R.id.popup).setVisibility(View.INVISIBLE);
-                MainActivity.getRecyclerView().smoothScrollToPosition(lessons.get(p).getId());
-                itemView.findViewById(R.id.popup).setVisibility(View.VISIBLE);
-                // Toast.makeText(parent.getContext(), "Pulsado " + lessons.get(p).getId(), Toast.LENGTH_LONG).show();
+                previousId = currentId;
+                currentId = lessons.get(p).getId() - 1;
+                MainActivity.getRecyclerView().getAdapter().notifyItemChanged(previousId);
+                MainActivity.getRecyclerView().getAdapter().notifyItemChanged(currentId);
             }
         });
         return lvh;
@@ -47,7 +48,13 @@ public class LessonAdapter extends RecyclerView.Adapter<LessonAdapter.LessonView
     public void onBindViewHolder(@NonNull LessonViewHolder holder, int position) {
         Lesson lesson = lessons.get(position);
         holder.button.setText(Integer.toString(lesson.getId()));
-        // holder.bindLesson(lesson);
+        if (position == previousId){
+            holder.popup.setVisibility(View.INVISIBLE);
+        }
+        if (position == currentId){
+            // MainActivity.getRecyclerView().smoothScrollToPosition(currentId);
+            holder.popup.setVisibility(View.VISIBLE);
+        }
     }
 
     @Override
@@ -74,12 +81,8 @@ public class LessonAdapter extends RecyclerView.Adapter<LessonAdapter.LessonView
 
         @Override
         public void onClick(View v) {
-            switch (v.getId()) {
-                case R.id.button:
-                    listener.onClick(this.getLayoutPosition());
-                    break;
-                default:
-                    break;
+            if (v.getId() == R.id.button) {
+                listener.onClick(this.getLayoutPosition());
             }
         }
     }
