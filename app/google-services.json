@@ -1,33 +1,41 @@
 {
   "project_info": {
-    "project_number": "781413435137",
-    "project_id": "ni-hon",
-    "storage_bucket": "ni-hon.appspot.com"
+    "project_number": "289735160416",
+    "project_id": "ni-hon-98ba1",
+    "storage_bucket": "ni-hon-98ba1.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:781413435137:android:882105fa410a71d6cffd00",
+        "mobilesdk_app_id": "1:289735160416:android:7ddd8e349aa762a127c905",
         "android_client_info": {
           "package_name": "com.team.ni_hon"
         }
       },
       "oauth_client": [
         {
-          "client_id": "781413435137-3hg446958rcbnlhefvvtpcp1kr14euns.apps.googleusercontent.com",
+          "client_id": "289735160416-drj4vmctirip4fge3ke5g8ooeg7rhahv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.team.ni_hon",
+            "certificate_hash": "d9f5bdf26561b5d934973e87df701fbb151225d3"
+          }
+        },
+        {
+          "client_id": "289735160416-qd1uqfued49jgiceqn9o6a7ck0d02fec.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyC538U2FU5-fyeuTDjq0gylm13jYm9IjBA"
+          "current_key": "AIzaSyAPpowjFd683q7SVGmGTPSaEXutotgPuHw"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "781413435137-3hg446958rcbnlhefvvtpcp1kr14euns.apps.googleusercontent.com",
+              "client_id": "289735160416-qd1uqfued49jgiceqn9o6a7ck0d02fec.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

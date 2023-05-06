@@ -14,6 +14,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Nihon"
         tools:targetApi="31">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyC538U2FU5-fyeuTDjq0gylm13jYm9IjBA"/>
         <activity
             android:name=".Lesson"
             android:exported="false" />

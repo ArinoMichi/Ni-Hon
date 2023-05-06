@@ -4,4 +4,5 @@
     <string name="welcome2">(っ◔◡◔)っ Welcome!</string>
     <string name="join_us">(っ◔◡◔)っ Join us!\n(いらっしゃいませ)</string>
     <string name="errorLogInGoogle">Error al iniciar sesion con Google</string>
+    <string name="default_clientId">781413435137-bbbvkdh757ratt3ocbpnskhfl5b4fih3.apps.googleusercontent.com</string>
 </resources>
