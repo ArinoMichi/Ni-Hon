@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.team.ni_hon.recycler.Lesson;
 import com.team.ni_hon.recycler.LessonAdapter;
+import com.team.ni_hon.recycler.MyLinearLayoutManager;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -42,19 +43,11 @@ public class MainActivity extends AppCompatActivity {
         setTitle(null);
 
         recyclerView = findViewById(R.id.recycler);
-        // popup = findViewById(R.id.popup);
-
-        // move this code to database
-        /*lessons = new ArrayList<>();
-        for(int i=0; i<5; i++){
-            lessons.add(new Lesson(i+1, Integer.toString(i+1), "texto"));
-        }*/
 
         lessonAdapter = new LessonAdapter(this, lessons);
         recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        recyclerView.setLayoutManager(new MyLinearLayoutManager(this, MyLinearLayoutManager.HORIZONTAL, false));
         recyclerView.setAdapter(lessonAdapter);
-
     }
 
 

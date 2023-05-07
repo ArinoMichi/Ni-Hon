@@ -55,7 +55,7 @@ public class LessonAdapter extends RecyclerView.Adapter<LessonAdapter.LessonView
             holder.popup.setVisibility(View.INVISIBLE);
         }
         if (position == currentId){
-            // MainActivity.getRecyclerView().smoothScrollToPosition(currentId);
+            MainActivity.getRecyclerView().smoothScrollToPosition(currentId);
             holder.popup.setVisibility(View.VISIBLE);
         }
     }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="180dp"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
@@ -11,20 +11,19 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/popup"
-            android:layout_width="180dp"
-            android:layout_height="180dp"
-            android:layout_marginTop="160dp"
+            android:layout_width="240dp"
+            android:layout_height="240dp"
+            android:layout_marginTop="140dp"
+            android:layout_marginRight="40dp"
             android:background="@color/black"
             android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
                 android:id="@+id/lessonTitleText"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:width="180dp"
                 android:height="40dp"
                 android:elegantTextHeight="true"
                 android:padding="10dp"
@@ -37,14 +36,13 @@
 
             <TextView
                 android:id="@+id/popupText"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:width="180dp"
+                android:height="120dp"
                 android:elegantTextHeight="true"
                 android:padding="10dp"
-                android:text="Texto de ejemplo. Ahora mismo es igual para todas las lecciones"
+                android:text=""
                 android:textAlignment="center"
-                app:layout_constraintBottom_toTopOf="@id/startLessonButton"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/lessonTitleText" />
@@ -53,9 +51,9 @@
                 android:id="@+id/startLessonButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:text="START"
+                android:layout_marginBottom="8dp"
                 android:backgroundTint="@color/pink"
+                android:text="START"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -64,14 +62,13 @@
 
         <Button
             android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="300dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginBottom="160dp"
             android:text=""
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
