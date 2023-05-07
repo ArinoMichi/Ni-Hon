@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -48,6 +49,8 @@ public class LessonAdapter extends RecyclerView.Adapter<LessonAdapter.LessonView
     public void onBindViewHolder(@NonNull LessonViewHolder holder, int position) {
         Lesson lesson = lessons.get(position);
         holder.button.setText(Integer.toString(lesson.getId()));
+        holder.lessonTitleText.setText(lessons.get(position).getTitle());
+        holder.popupText.setText(lessons.get(position).getPopupText());
         if (position == previousId){
             holder.popup.setVisibility(View.INVISIBLE);
         }
@@ -68,11 +71,14 @@ public class LessonAdapter extends RecyclerView.Adapter<LessonAdapter.LessonView
         MyClickListener listener;
         Button button;
         ConstraintLayout popup;
+        TextView popupText, lessonTitleText;
 
         public LessonViewHolder(View itemView, MyClickListener listener) {
             super(itemView);
             button = itemView.findViewById(R.id.button);
             popup = itemView.findViewById(R.id.popup);
+            lessonTitleText = itemView.findViewById(R.id.lessonTitleText);
+            popupText = itemView.findViewById(R.id.popupText);
 
             this.listener = listener;
 

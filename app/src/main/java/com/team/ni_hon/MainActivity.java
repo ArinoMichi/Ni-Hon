@@ -14,11 +14,22 @@ import com.team.ni_hon.recycler.Lesson;
 import com.team.ni_hon.recycler.LessonAdapter;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
 
-    private ArrayList<Lesson> lessons;
+    public static ArrayList<Lesson> lessons = new ArrayList<Lesson>(){
+        {
+            add(new Lesson(1, "Hiragana", "Let's learn hiragana!"));
+            add(new Lesson(2, "Katakana", "Let's learn katakana!"));
+            add(new Lesson(3, "Lesson 3", "3 is bigger than 2"));
+            add(new Lesson(4, "Lesson 4", "Sample text"));
+            add(new Lesson(5, "Lesson 5", "I don't know what to write"));
+        }
+    };
+
     private LessonAdapter lessonAdapter;
 
     private static RecyclerView recyclerView;
@@ -34,10 +45,10 @@ public class MainActivity extends AppCompatActivity {
         // popup = findViewById(R.id.popup);
 
         // move this code to database
-        lessons = new ArrayList<>();
+        /*lessons = new ArrayList<>();
         for(int i=0; i<5; i++){
-            lessons.add(new Lesson(i+1, Integer.toString(i+1)));
-        }
+            lessons.add(new Lesson(i+1, Integer.toString(i+1), "texto"));
+        }*/
 
         lessonAdapter = new LessonAdapter(this, lessons);
         recyclerView.setHasFixedSize(true);
