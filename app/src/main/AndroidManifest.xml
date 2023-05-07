@@ -19,7 +19,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyC538U2FU5-fyeuTDjq0gylm13jYm9IjBA"/>
         <activity
-            android:name=".Lesson"
+            android:name=".LessonActivity"
             android:exported="false" />
         <activity
             android:name=".About"
