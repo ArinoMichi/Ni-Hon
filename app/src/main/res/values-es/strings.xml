@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ni_hon</string>
+    <string name="welcome">¡Qué bueno verte de vuelta!</string>
+    <string name="welcome2">(っ◔◡◔)っ ¡Bienvenido!</string>
+    <string name="join_us">(っ◔◡◔)っ ¡Únete a nosotros! \n(いらっしゃいませ)</string>
+    <string name="errorLogInGoogle">Error al iniciar con Google.</string>
+    <string name="es">Español</string>
+    <string name="en">Inglés</string>
+    <string name="ch">Chino (simplificado)</string>
+    <string name="language">Elige un idioma</string>
+    <string name="configTitle">Elige una opción de visualización: </string>
+    <string name="configNight">Modo Noche: </string>
+    <string name="configTitleLang">Seleccione el Lenguaje: </string>
+    <string name="configLang">Idioma: </string>
+    <string name="login_email">Correo</string>
+    <string name="login_password">Contraseña</string>
+    <string name="forgotPswd">¿Has olvidado la contraseña?</string>
+    <string name="login">iniciar sesion</string>
+    <string name="google">iniciar con google</string>
+    <string name="sign">¿Todavía no tienes una cuenta?</string>
+    <string name="sign_username">Nombre Usuario</string>
+    <string name="sign_rpswd">Repita la contraseña</string>
+    <string name="sign_up">Registrar</string>
+</resources>

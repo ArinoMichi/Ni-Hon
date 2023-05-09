@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ni_hon</string>
+    <string name="welcome2">(っ◔◡◔)っ 欢迎回来!</string>
+    <string name="join_us">(っ◔◡◔)っ 加入我们吧! \n(いらっしゃいませ)</string>
+    <string name="errorLogInGoogle">谷歌账号登录错误</string>
+    <string name="welcome">很高兴再见到你！</string>
+    <string name="es">西班牙语</string>
+    <string name="en">英语</string>
+    <string name="ch">中文 (简体)</string>
+    <string name="language">请选择一个语言</string>
+    <string name="configTitle">请选择显示模式: </string>
+    <string name="configNight">夜间模式: </string>
+    <string name="configTitleLang">请选择语言: </string>
+    <string name="configLang">语言: </string>
+    <string name="login_email">邮件</string>
+    <string name="login_password">密码</string>
+    <string name="forgotPswd">忘记密码了?</string>
+    <string name="login">登录</string>
+    <string name="google">谷歌登录</string>
+    <string name="sign">还没有账号?</string>
+    <string name="sign_username">用户名</string>
+    <string name="sign_rpswd">重复密码</string>
+    <string name="sign_up">注册</string>
+</resources>
