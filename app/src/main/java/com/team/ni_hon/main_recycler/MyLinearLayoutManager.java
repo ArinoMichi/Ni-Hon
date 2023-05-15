@@ -1,4 +1,4 @@
-package com.team.ni_hon.recycler;
+package com.team.ni_hon.main_recycler;
 
 import android.content.Context;
 import android.graphics.PointF;

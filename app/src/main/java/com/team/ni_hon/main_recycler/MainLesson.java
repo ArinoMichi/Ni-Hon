@@ -1,11 +1,11 @@
-package com.team.ni_hon.recycler;
+package com.team.ni_hon.main_recycler;
 
-public class Lesson {
+public class MainLesson {
 
     private int id;
     private String title, popupText;
 
-    public Lesson(int id, String title, String popupText) {
+    public MainLesson(int id, String title, String popupText) {
         this.id = id;
         this.title = title;
         this.popupText = popupText;

@@ -1,6 +1,4 @@
-package com.team.ni_hon.recycler;
-
-import static androidx.core.content.ContextCompat.startActivity;
+package com.team.ni_hon.main_recycler;
 
 import android.content.Context;
 import android.content.Intent;
@@ -17,20 +15,19 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.team.ni_hon.LessonActivity;
 import com.team.ni_hon.MainActivity;
 import com.team.ni_hon.R;
-import com.team.ni_hon.SettingsActivity;
 
 import java.util.ArrayList;
 
-public class LessonAdapter extends RecyclerView.Adapter<LessonAdapter.LessonViewHolder> {
+public class MainLessonAdapter extends RecyclerView.Adapter<MainLessonAdapter.LessonViewHolder> {
 
-    private final ArrayList<Lesson> lessons;
+    private final ArrayList<MainLesson> lessons;
 
     private int previousId;
     private int currentId;
     private Context context;
 
-    public LessonAdapter(Context context, ArrayList<Lesson> lessons) {
-        this.lessons = lessons;
+    public MainLessonAdapter(Context context, ArrayList<MainLesson> mainLessons) {
+        this.lessons = mainLessons;
         this.previousId = -1;
         this.currentId = -1;
         this.context = context;
@@ -57,7 +54,7 @@ public class LessonAdapter extends RecyclerView.Adapter<LessonAdapter.LessonView
 
     @Override
     public void onBindViewHolder(@NonNull LessonViewHolder holder, int position) {
-        Lesson lesson = lessons.get(position);
+        MainLesson lesson = lessons.get(position);
         holder.button.setText(Integer.toString(lesson.getId()));
         holder.lessonTitleText.setText(lessons.get(position).getTitle());
         holder.popupText.setText(lessons.get(position).getPopupText());
