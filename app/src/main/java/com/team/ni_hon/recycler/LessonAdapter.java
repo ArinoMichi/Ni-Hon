@@ -1,6 +1,9 @@
 package com.team.ni_hon.recycler;
 
+import static androidx.core.content.ContextCompat.startActivity;
+
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,8 +14,10 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.team.ni_hon.LessonActivity;
 import com.team.ni_hon.MainActivity;
 import com.team.ni_hon.R;
+import com.team.ni_hon.SettingsActivity;
 
 import java.util.ArrayList;
 
@@ -22,11 +27,13 @@ public class LessonAdapter extends RecyclerView.Adapter<LessonAdapter.LessonView
 
     private int previousId;
     private int currentId;
+    private Context context;
 
     public LessonAdapter(Context context, ArrayList<Lesson> lessons) {
         this.lessons = lessons;
         this.previousId = -1;
         this.currentId = -1;
+        this.context = context;
     }
 
     @NonNull
@@ -34,12 +41,15 @@ public class LessonAdapter extends RecyclerView.Adapter<LessonAdapter.LessonView
     public LessonViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_component, parent, false);
         LessonViewHolder lvh = new LessonViewHolder(itemView, new MyClickListener(){
-            @Override
-            public void onClick(int p) {
+            public void onLessonClick(int p) {
                 previousId = currentId;
                 currentId = lessons.get(p).getId() - 1;
                 MainActivity.getRecyclerView().getAdapter().notifyItemChanged(previousId);
                 MainActivity.getRecyclerView().getAdapter().notifyItemChanged(currentId);
+            }
+            public void onStartClick(int p) {
+                Intent intent = new Intent(context, LessonActivity.class);
+                context.startActivity(intent);
             }
         });
         return lvh;
@@ -57,6 +67,7 @@ public class LessonAdapter extends RecyclerView.Adapter<LessonAdapter.LessonView
         if (position == currentId){
             MainActivity.getRecyclerView().smoothScrollToPosition(currentId);
             holder.popup.setVisibility(View.VISIBLE);
+            holder.popupButton.setVisibility(View.VISIBLE);
         }
     }
 
@@ -69,13 +80,14 @@ public class LessonAdapter extends RecyclerView.Adapter<LessonAdapter.LessonView
     public static class LessonViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         MyClickListener listener;
-        Button button;
+        Button button, popupButton;
         ConstraintLayout popup;
         TextView popupText, lessonTitleText;
 
         public LessonViewHolder(View itemView, MyClickListener listener) {
             super(itemView);
             button = itemView.findViewById(R.id.button);
+            popupButton = itemView.findViewById(R.id.startLessonButton);
             popup = itemView.findViewById(R.id.popup);
             lessonTitleText = itemView.findViewById(R.id.lessonTitleText);
             popupText = itemView.findViewById(R.id.popupText);
@@ -83,18 +95,23 @@ public class LessonAdapter extends RecyclerView.Adapter<LessonAdapter.LessonView
             this.listener = listener;
 
             button.setOnClickListener(this);
+            popupButton.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View v) {
             if (v.getId() == R.id.button) {
-                listener.onClick(this.getLayoutPosition());
+                listener.onLessonClick(this.getLayoutPosition());
+            }
+            if (v.getId() == R.id.startLessonButton) {
+                listener.onStartClick(this.getLayoutPosition());
             }
         }
     }
 
     public interface MyClickListener {
-        void onClick(int p);
+        void onLessonClick(int p);
+        void onStartClick(int p);
     }
 
 

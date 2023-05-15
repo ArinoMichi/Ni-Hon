@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private LessonAdapter lessonAdapter;
 
     private static RecyclerView recyclerView;
+
     // private static ConstraintLayout popup;
 
     @Override
@@ -87,5 +88,6 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
 
 }
