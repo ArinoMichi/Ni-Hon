@@ -1,14 +1,17 @@
 package com.team.ni_hon.main_recycler;
 
-public class MainLesson {
+import java.io.Serializable;
 
-    private int id;
+public class Lesson implements Serializable {
+
+    private int id, pages;
     private String title, popupText;
 
-    public MainLesson(int id, String title, String popupText) {
+    public Lesson(int id, String title, String popupText, int pages) {
         this.id = id;
         this.title = title;
         this.popupText = popupText;
+        this.pages = pages;
     }
 
     public String getTitle() {
@@ -23,8 +26,7 @@ public class MainLesson {
         return id;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public int getPages() {
+        return pages;
     }
-
 }

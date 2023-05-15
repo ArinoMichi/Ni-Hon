@@ -9,7 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.team.ni_hon.main_recycler.MainLesson;
+import com.team.ni_hon.main_recycler.Lesson;
 import com.team.ni_hon.main_recycler.MainLessonAdapter;
 import com.team.ni_hon.main_recycler.MyLinearLayoutManager;
 
@@ -22,21 +22,18 @@ public class MainActivity extends AppCompatActivity {
 
     private static final int RC_SIGN_IN = 123;
 
-    public static ArrayList<MainLesson> lessons = new ArrayList<MainLesson>(){
+    public static ArrayList<Lesson> lessons = new ArrayList<Lesson>(){
         {
-            add(new MainLesson(1, "Hiragana", "Let's learn hiragana!"));
-            add(new MainLesson(2, "Katakana", "Let's learn katakana!"));
-            add(new MainLesson(3, "Lesson 3", "3 is bigger than 2"));
-            add(new MainLesson(4, "Lesson 4", "Sample text"));
-            add(new MainLesson(5, "Lesson 5", "I don't know what to write"));
+            add(new Lesson(1, "Hiragana", "Let's learn hiragana!", 3));
+            add(new Lesson(2, "Katakana", "Let's learn katakana!", 1));
+            add(new Lesson(3, "Lesson 3", "3 is bigger than 2", 1));
+            add(new Lesson(4, "Lesson 4", "Sample text", 1));
+            add(new Lesson(5, "Lesson 5", "I don't know what to write", 1));
         }
     };
 
     private MainLessonAdapter lessonAdapter;
-
     private static RecyclerView recyclerView;
-
-    // private static ConstraintLayout popup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

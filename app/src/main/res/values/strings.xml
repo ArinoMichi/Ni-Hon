@@ -7,4 +7,31 @@
     <string name="default_clientId">781413435137-bbbvkdh757ratt3ocbpnskhfl5b4fih3.apps.googleusercontent.com</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="lesson_1_1">
+        Lesson 1 page 1
+    </string>
+    <string name="lesson_1_2">
+        Lesson 1 page 2
+    </string>
+    <string name="lesson_1_3">
+        Lesson 1 page 3
+    </string>
+
+    <string name="lesson_2_1">
+        Lesson 2 page 1
+    </string>
+
+    <string name="lesson_3_1">
+        Lesson 3 page 1
+    </string>
+
+    <string name="lesson_4_1">
+        Lesson 4 page 1
+    </string>
+
+    <string name="lesson_5_1">
+        Lesson 5 page 1
+    </string>
+
 </resources>

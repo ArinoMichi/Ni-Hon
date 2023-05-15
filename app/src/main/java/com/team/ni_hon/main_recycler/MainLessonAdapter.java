@@ -20,14 +20,14 @@ import java.util.ArrayList;
 
 public class MainLessonAdapter extends RecyclerView.Adapter<MainLessonAdapter.LessonViewHolder> {
 
-    private final ArrayList<MainLesson> lessons;
+    private final ArrayList<Lesson> lessons;
 
     private int previousId;
     private int currentId;
     private Context context;
 
-    public MainLessonAdapter(Context context, ArrayList<MainLesson> mainLessons) {
-        this.lessons = mainLessons;
+    public MainLessonAdapter(Context context, ArrayList<Lesson> lessons) {
+        this.lessons = lessons;
         this.previousId = -1;
         this.currentId = -1;
         this.context = context;
@@ -46,6 +46,7 @@ public class MainLessonAdapter extends RecyclerView.Adapter<MainLessonAdapter.Le
             }
             public void onStartClick(int p) {
                 Intent intent = new Intent(context, LessonActivity.class);
+                intent.putExtra("lesson", lessons.get(p));
                 context.startActivity(intent);
             }
         });
@@ -54,7 +55,7 @@ public class MainLessonAdapter extends RecyclerView.Adapter<MainLessonAdapter.Le
 
     @Override
     public void onBindViewHolder(@NonNull LessonViewHolder holder, int position) {
-        MainLesson lesson = lessons.get(position);
+        Lesson lesson = lessons.get(position);
         holder.button.setText(Integer.toString(lesson.getId()));
         holder.lessonTitleText.setText(lessons.get(position).getTitle());
         holder.popupText.setText(lessons.get(position).getPopupText());
