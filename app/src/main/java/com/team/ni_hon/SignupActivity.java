@@ -139,4 +139,11 @@ public class SignupActivity extends NiHonActivity {
         startActivity(intent);
     }
 
+    @Override
+    public void onBackPressed(){
+        Intent intent=new Intent(SignupActivity.this,LoginActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
 }

@@ -82,6 +82,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
+                android:textColor="@color/gray"
                 android:text="@string/configNight"
                 android:textSize="20dp">
 
@@ -117,6 +118,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
+                android:textColor="@color/gray"
                 android:text="@string/configLang"
                 android:textSize="20dp" />
 
