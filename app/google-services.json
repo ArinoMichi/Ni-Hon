@@ -14,6 +14,30 @@
       },
       "oauth_client": [
         {
+          "client_id": "289735160416-178n576510bmom0rhjgo55pslvose2c6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.team.ni_hon",
+            "certificate_hash": "5b1478425ab2c1b57dd7792a3377e5b90ba817c2"
+          }
+        },
+        {
+          "client_id": "289735160416-5ur20q25mb4cg8s5s80q6jg9vntnf484.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.team.ni_hon",
+            "certificate_hash": "4411c9ac5127c053aac9cc9daab8f1c612d73669"
+          }
+        },
+        {
+          "client_id": "289735160416-bt1u970ptvgljrf9hfkno164ijartb5c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.team.ni_hon",
+            "certificate_hash": "17e0ae6d60a33fa0b049ca68d46e189136d76c85"
+          }
+        },
+        {
           "client_id": "289735160416-drj4vmctirip4fge3ke5g8ooeg7rhahv.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
@@ -22,7 +46,7 @@
           }
         },
         {
-          "client_id": "289735160416-qd1uqfued49jgiceqn9o6a7ck0d02fec.apps.googleusercontent.com",
+          "client_id": "289735160416-nbt9sig9pai0fgofmq503gfnirvljqn1.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
@@ -35,7 +59,7 @@
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "289735160416-qd1uqfued49jgiceqn9o6a7ck0d02fec.apps.googleusercontent.com",
+              "client_id": "289735160416-nbt9sig9pai0fgofmq503gfnirvljqn1.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
