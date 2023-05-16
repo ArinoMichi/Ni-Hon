@@ -22,4 +22,13 @@
     <string name="sign_username">用户名</string>
     <string name="sign_rpswd">重复密码</string>
     <string name="sign_up">注册</string>
+    <string name="appBy">作者: </string>
+    <string name="appMakers">Dani Mora \nAlexia Molina \n单威</string>
+    <string name="appResource">资源:</string>
+    <string name="resource">网络来源 (免费资源)</string>
+    <string name="appDesign">设计师: </string>
+    <string name="designer">Alexia Molina</string>
+    <string name="menuOptLogOut">退出</string>
+    <string name="menuOptAbout">关于我们</string>
+    <string name="menuOptSetting">设置</string>
 </resources>

@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatDelegate;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
@@ -61,11 +63,15 @@ public class SettingsActivity extends NiHonActivity {
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
                     recreate();
                     setNightMode(true);
+
+                    saveConfig(null,String.valueOf(true));
                 } else {
                     // Cambiar a modo normal
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
                     recreate();
                     setNightMode(false);
+
+                    saveConfig(null,String.valueOf(false));
                 }
             }
         });
@@ -76,6 +82,8 @@ public class SettingsActivity extends NiHonActivity {
         config.locale = locale;
         getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
         recreate();
+
+        saveConfig(languageCode,null);
 
         showLang();
     }
@@ -151,5 +159,23 @@ public class SettingsActivity extends NiHonActivity {
         });
 
         popupMenu.show();
+    }
+
+    public void saveConfig(String lang,String night){
+        SharedPreferences sharedPreferences = getSharedPreferences("Config", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        if(lang!=null)
+            editor.putString("language", lang);
+        if(night!=null)
+            editor.putBoolean("nightMode", Boolean.valueOf(night));
+        editor.apply();
+    }
+
+    @Override
+    public void onBackPressed(){
+        Intent intent=new Intent(SettingsActivity.this,MainActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

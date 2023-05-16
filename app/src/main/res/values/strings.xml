@@ -23,4 +23,15 @@
     <string name="sign_username">Username</string>
     <string name="sign_rpswd">Repeat Password</string>
     <string name="sign_up">sign up</string>
+    <!--ABOUT-->
+    <string name="appBy">APP BY: </string>
+    <string name="appMakers">Dani Mora \nAlexia Molina \nWei Shan</string>
+    <string name="appResource">RESOURCES:</string>
+    <string name="resource">From Internet (Freepick)</string>
+    <string name="appDesign">DESIGNER: </string>
+    <string name="designer">Alexia Molina</string>
+    <!--MENU MAIN-->
+    <string name="menuOptLogOut">Log out</string>
+    <string name="menuOptAbout">About us</string>
+    <string name="menuOptSetting">Settings</string>
 </resources>

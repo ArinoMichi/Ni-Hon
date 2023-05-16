@@ -1,5 +1,7 @@
 package com.team.ni_hon;
 
+import android.content.res.Configuration;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.lang.reflect.Field;
@@ -35,6 +37,17 @@ public class NiHonActivity extends AppCompatActivity {
         this.nightMode=activated;
     }
     public boolean getNightMode(){
+        int nightModeFlags = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+        switch (nightModeFlags) {
+            case Configuration.UI_MODE_NIGHT_YES:
+                // Modo nocturno ya activado
+                nightMode=true;
+                break;
+            case Configuration.UI_MODE_NIGHT_NO:
+                // Modo nocturno no activado.
+                nightMode=false;
+                break;
+        }
         return nightMode;
     }
 }

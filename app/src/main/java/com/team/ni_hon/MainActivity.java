@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -71,18 +72,27 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
         //noinspection SimplifiableIfStatement
         if (id == R.id.LogOut) {
+            SharedPreferences sharedPreferences = getSharedPreferences("UserSession", MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+
+            editor.remove("token");
+            editor.apply();
+
             Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
             Toast toast = Toast.makeText(this, "Cerrando sesion...", Toast.LENGTH_LONG);
             toast.show();
+            finish();
         }
         if (id == R.id.about) {
-            //Intent intent = new Intent(this, AboutActivity.class);
-            //startActivity(intent);
+            Intent intent = new Intent(this, About.class);
+            startActivity(intent);
+            finish();
         }
         if (id == R.id.Settings) {
             Intent intent = new Intent(this, SettingsActivity.class);
             startActivity(intent);
+            finish();
         }
 
         return super.onOptionsItemSelected(item);

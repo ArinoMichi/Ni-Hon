@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -50,6 +51,7 @@ public class LoginActivity extends NiHonActivity {
     private TextInputEditText email;
     private EditText password;
     private TextView welcome;
+    private TextView welcomeJp;
     private TextView forgotPswd;
     private Button login;
     private Button loginGoogle;
@@ -75,6 +77,7 @@ public class LoginActivity extends NiHonActivity {
         login=bind.buttonLogin;
         loginGoogle=bind.buttonGoogle;
         welcome=bind.welcome;
+        welcomeJp=bind.welcomejp;
         createAcc=bind.createAcc;
         forgotPswd=bind.textForgotPassword;
 
@@ -92,12 +95,21 @@ public class LoginActivity extends NiHonActivity {
 
         GetVersion();
 
+        SharedPreferences sharedPreferences = getSharedPreferences("UserSession", MODE_PRIVATE);
+        String token = sharedPreferences.getString("token", null);
+
+        if (token != null) {
+            ToMain();
+            finish();
+        }
+
         Test();
     }
 
     public void GetVersion(){
         if(getNightMode()){
             welcome.setTextColor(getResources().getColor(R.color.white));
+            welcomeJp.setTextColor(getResources().getColor(R.color.white));
             createAcc.setTextColor(getResources().getColor(R.color.white));
             forgotPswd.setTextColor(getResources().getColor(R.color.white));
         }
@@ -132,6 +144,13 @@ public class LoginActivity extends NiHonActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             ShowMensaje(true);
+
+                            SharedPreferences sharedPreferences = getSharedPreferences("UserSession", MODE_PRIVATE);
+                            SharedPreferences.Editor editor = sharedPreferences.edit();
+
+                            editor.putString("token", email.getText().toString().trim());
+                            editor.apply();
+
                             ToMain();
                         }else
                             ShowMensaje(false);
@@ -194,6 +213,12 @@ public class LoginActivity extends NiHonActivity {
                                                 });
                                     }
                                 });
+
+                                SharedPreferences sharedPreferences = getSharedPreferences("UserSession", MODE_PRIVATE);
+                                SharedPreferences.Editor editor = sharedPreferences.edit();
+
+                                editor.putString("token", account.getIdToken());
+                                editor.apply();
 
                                 ToMain();
                             }else{

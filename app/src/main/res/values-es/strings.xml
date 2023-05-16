@@ -9,7 +9,7 @@
     <string name="en">Inglés</string>
     <string name="ch">Chino (simplificado)</string>
     <string name="language">Elige un idioma</string>
-    <string name="configTitle">Elige una opción de visualización: </string>
+    <string name="configTitle">Elige opción de pantalla: </string>
     <string name="configNight">Modo Noche: </string>
     <string name="configTitleLang">Seleccione el Lenguaje: </string>
     <string name="configLang">Idioma: </string>
@@ -22,4 +22,13 @@
     <string name="sign_username">Nombre Usuario</string>
     <string name="sign_rpswd">Repita la contraseña</string>
     <string name="sign_up">Registrar</string>
+    <string name="appBy">CREADO POR: </string>
+    <string name="appMakers">Dani Mora \nAlexia Molina \nWei Shan</string>
+    <string name="appResource">RECURSOS:</string>
+    <string name="resource">De Internet (uso gratuito)</string>
+    <string name="appDesign">DISEÑADOR: </string>
+    <string name="designer">Alexia Molina</string>
+    <string name="menuOptLogOut">Cerrar Sesión</string>
+    <string name="menuOptAbout">Acerca de</string>
+    <string name="menuOptSetting">Ajustes</string>
 </resources>
