@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue"
+    android:background="@drawable/mainbg"
     tools:context="com.team.ni_hon.MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
