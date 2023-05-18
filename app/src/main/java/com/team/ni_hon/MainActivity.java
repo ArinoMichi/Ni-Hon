@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.team.ni_hon.model.UserInfoActivity;
 import com.team.ni_hon.recycler.Lesson;
 import com.team.ni_hon.recycler.LessonAdapter;
 import com.team.ni_hon.recycler.MyLinearLayoutManager;
@@ -71,29 +72,40 @@ public class MainActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         //noinspection SimplifiableIfStatement
-        if (id == R.id.LogOut) {
-            SharedPreferences sharedPreferences = getSharedPreferences("UserSession", MODE_PRIVATE);
-            SharedPreferences.Editor editor = sharedPreferences.edit();
 
-            editor.remove("token");
-            editor.apply();
+        switch(id) {
+            case R.id.LogOut:
+                //Borro la sesión del usuario guardado.
+                SharedPreferences sharedPreferences = getSharedPreferences("UserSession", MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
 
-            Intent intent = new Intent(this, LoginActivity.class);
-            startActivity(intent);
-            Toast toast = Toast.makeText(this, "Cerrando sesion...", Toast.LENGTH_LONG);
-            toast.show();
-            finish();
+                editor.remove("token");
+                editor.apply();
+
+                //Finaliza la pantalla y se vuelve al login.
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(intent);
+                Toast toast = Toast.makeText(this, R.string.logoutText, Toast.LENGTH_LONG);
+                toast.show();
+                finish();
+                break;
+            case R.id.about:
+                Intent intentAbout = new Intent(MainActivity.this, About.class);
+                startActivity(intentAbout);
+                finish();
+                break;
+            case R.id.Settings:
+                Intent intentSetting = new Intent(MainActivity.this, SettingsActivity.class);
+                startActivity(intentSetting);
+                finish();
+                break;
+            case R.id.user:
+                Intent intentUser =new Intent(MainActivity.this, UserInfoActivity.class);
+                startActivity(intentUser);
+                finish();
+                break;
         }
-        if (id == R.id.about) {
-            Intent intent = new Intent(this, About.class);
-            startActivity(intent);
-            finish();
-        }
-        if (id == R.id.Settings) {
-            Intent intent = new Intent(this, SettingsActivity.class);
-            startActivity(intent);
-            finish();
-        }
+
 
         return super.onOptionsItemSelected(item);
     }

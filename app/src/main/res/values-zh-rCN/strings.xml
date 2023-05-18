@@ -31,4 +31,10 @@
     <string name="menuOptLogOut">退出</string>
     <string name="menuOptAbout">关于我们</string>
     <string name="menuOptSetting">设置</string>
+    <string name="dialogTitle">(っ◔_◔)っ 重置密码 っ(⁎˃ᴗ˂⁎)っ</string>
+    <string name="dialogMessage">\n请输入电子邮件: </string>
+    <string name="dialogPositive">确认</string>
+    <string name="dialogNegative">取消</string>
+    <string name="logoutText">退出中。。。</string>
+    <string name="menuOptUser">用户</string>
 </resources>

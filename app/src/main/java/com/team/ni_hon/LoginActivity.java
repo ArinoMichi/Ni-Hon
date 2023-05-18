@@ -6,15 +6,19 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -90,6 +94,14 @@ public class LoginActivity extends NiHonActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(LoginActivity.this, SignupActivity.class);
                 startActivity(intent);
+                finish();
+            }
+        });
+
+        forgotPswd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDialog();
             }
         });
 
@@ -237,7 +249,28 @@ public class LoginActivity extends NiHonActivity {
         }
     }
 
-    public void ShowMensaje(Boolean positivo){
+    public void showDialog(){
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(R.string.dialogTitle);
+        builder.setMessage(R.string.dialogMessage);
+
+        final EditText resetEmail = new EditText(this);
+        resetEmail.setGravity(Gravity.CENTER);
+        builder.setView(resetEmail);
+
+        builder.setPositiveButton(R.string.dialogPositive, (dialog, which) -> {
+            String email = resetEmail.getText().toString();
+            Log.d(TAG,email);
+            dialog.dismiss();
+        });
+        builder.setNegativeButton(R.string.dialogNegative, (dialog, which) -> dialog.dismiss());
+
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+
+    public void ShowMensaje(@NonNull Boolean positivo){
         if(positivo)
             Toast.makeText(this,"usuario logeado",Toast.LENGTH_LONG).show();
         else
@@ -247,6 +280,7 @@ public class LoginActivity extends NiHonActivity {
     public void ToMain() {
         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
         startActivity(intent);
+        finish();
     }
 
 }

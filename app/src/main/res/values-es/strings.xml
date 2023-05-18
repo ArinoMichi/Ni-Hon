@@ -31,4 +31,10 @@
     <string name="menuOptLogOut">Cerrar Sesión</string>
     <string name="menuOptAbout">Acerca de</string>
     <string name="menuOptSetting">Ajustes</string>
+    <string name="dialogTitle">(っ◔_◔)っ Restablecer Contraseña</string>
+    <string name="dialogMessage">\nIntroduzca su correo: </string>
+    <string name="dialogPositive">Aceptar</string>
+    <string name="dialogNegative">Cancelar</string>
+    <string name="logoutText">Cerrando sesion…</string>
+    <string name="menuOptUser">Usuario</string>
 </resources>

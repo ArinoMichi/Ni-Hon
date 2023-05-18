@@ -34,4 +34,12 @@
     <string name="menuOptLogOut">Log out</string>
     <string name="menuOptAbout">About us</string>
     <string name="menuOptSetting">Settings</string>
+    <string name="menuOptUser">User info</string>
+    <!--DIALOG TEXT-->
+    <string name="dialogTitle">(っ◔_◔)っ Reset Password っ(⁎˃ᴗ˂⁎)っ</string>
+    <string name="dialogMessage">\nEnter your email to reset password: </string>
+    <string name="dialogPositive">Accept</string>
+    <string name="dialogNegative">Cancel</string>
+    <!--MAIN-->
+    <string name="logoutText">Signing out…</string>
 </resources>
