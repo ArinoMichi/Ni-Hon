@@ -2,7 +2,36 @@
     <string name="app_name">ni_hon</string>
     <string name="welcome">Glad to see you back!</string>
     <string name="welcome2">(っ◔◡◔)っ Welcome!</string>
-    <string name="join_us">(っ◔◡◔)っ Join us!\n(いらっしゃいませ)</string>
-    <string name="errorLogInGoogle">Error al iniciar sesion con Google</string>
-    <string name="default_clientId">781413435137-bbbvkdh757ratt3ocbpnskhfl5b4fih3.apps.googleusercontent.com</string>
+    <string name="join_us">(っ◔◡◔)っ Join us! \n(いらっしゃいませ)</string>
+    <string name="errorLogInGoogle">" Error logging in with Google."</string>
+    <!--SETTINGS-->
+    <string name="es">Spanish</string>
+    <string name="en">English</string>
+    <string name="ch">Chinese</string>
+    <string name="language">Choose Language</string>
+    <string name="configTitle">Choose Display Option: </string>
+    <string name="configNight">Darck Mode: </string>
+    <string name="configTitleLang">Choose App Language: </string>
+    <string name="configLang">Language: </string>
+    <!--LOGIN AND SIGN UP-->
+    <string name="login_email">Email address</string>
+    <string name="login_password">Password</string>
+    <string name="forgotPswd">Forgotten your password?</string>
+    <string name="login">log in</string>
+    <string name="google">log in with google</string>
+    <string name="sign">Don\'t have an account?</string>
+    <string name="sign_username">Username</string>
+    <string name="sign_rpswd">Repeat Password</string>
+    <string name="sign_up">sign up</string>
+    <!--ABOUT-->
+    <string name="appBy">APP BY: </string>
+    <string name="appMakers">Dani Mora \nAlexia Molina \nWei Shan</string>
+    <string name="appResource">RESOURCES:</string>
+    <string name="resource">From Internet (Freepick)</string>
+    <string name="appDesign">DESIGNER: </string>
+    <string name="designer">Alexia Molina</string>
+    <!--MENU MAIN-->
+    <string name="menuOptLogOut">Log out</string>
+    <string name="menuOptAbout">About us</string>
+    <string name="menuOptSetting">Settings</string>
 </resources>

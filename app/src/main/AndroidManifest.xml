@@ -35,14 +35,17 @@
             android:exported="false" />
         <activity
             android:name=".SignupActivity"
+            android:theme="@style/Theme.Nihon"
             android:exported="true" />
         <activity
             android:name=".LoginActivity"
             android:exported="true"
+            android:theme="@style/Theme.Nihon"
             android:noHistory="true" />
         <activity
             android:name=".SplashActivity"
             android:exported="true"
+            android:theme="@style/Theme.Nihon"
             android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

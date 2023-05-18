@@ -7,15 +7,15 @@
         app:showAsAction="always" >
         <menu android:background="@color/pink">
             <item android:id="@+id/about"
-                android:title="Acerca de"
+                android:title="@string/menuOptAbout"
                 android:icon="@drawable/information"
                 app:showAsAction="withText|ifRoom"/>
             <item android:id="@+id/Settings"
-                android:title="Ajustes"
+                android:title="@string/menuOptSetting"
                 android:icon="@drawable/settings"
                 app:showAsAction="withText|ifRoom"/>
             <item android:id="@+id/LogOut"
-                android:title="log out"
+                android:title="@string/menuOptLogOut"
                 android:icon="@drawable/logout"
                 app:showAsAction="withText|ifRoom"/>
 
