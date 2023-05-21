@@ -47,7 +47,7 @@ public class SettingsActivity extends NiHonActivity {
         version.setText(getAppVersion());
 
         showLang();
-        language.setOnClickListener(v -> mostrarMenu());
+        language.setOnClickListener(v -> showMenu());
 
         showIfNighModeActive();
         initComponent();
@@ -139,7 +139,7 @@ public class SettingsActivity extends NiHonActivity {
     }
 
     @SuppressLint("NonConstantResourceId")
-    public void mostrarMenu(){
+    public void showMenu(){
         PopupMenu popupMenu = new PopupMenu(this, language, Gravity.END, 0, R.style.PopupMenuStyle);
         popupMenu.inflate(R.menu.language_menu);
 

@@ -40,6 +40,21 @@
     <string name="dialogMessage">\nEnter your email to reset password: </string>
     <string name="dialogPositive">Accept</string>
     <string name="dialogNegative">Cancel</string>
+    <string name="dialogErrorTitle">An unexpected error has occurred (っ╥﹏╥)っ</string>
+    <string name="dialogErrorText">Unable to load your data. Please check if you are <b><u>connected to the internet</u></b> and have the <b><u>Google services properly updated.</u></b></string>
+    <string name="dialogNotExistTitle">Error to Login (っ╥﹏╥)っ</string>
+    <string name="dialogNotExistText">The entered account does not exist, please verify if the password or email has been entered correctly.</string>
     <!--MAIN-->
     <string name="logoutText">Signing out…</string>
+    <!--USER INFO-->
+    <string name="levelIndicator">Level: %d</string>
+    <string name="load">Loading…</string>
+    <string name="verify">Verifying…</string>
+    <string name="default_icon">DEFAULT</string>
+    <string name="moon_icon">MOON</string>
+    <string name="japan_icon">JAPAN</string>
+    <string name="yukata_icon">YUKATA</string>
+    <!--TOAST TEXT-->
+    <string name="empty_fields">Empty Fileds.</string>
+
 </resources>

@@ -91,15 +91,8 @@
             android:maxLines="1"
             android:textAlignment="textStart"
             android:textColor="@color/black"
-
             android:textColorLink="@color/black" />
 
-        <!--        <EditText-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:background="@color/white"-->
-        <!--            android:hint="Usuario"-->
-        <!--            android:imeOptions="actionDone" />-->
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -117,7 +110,7 @@
         app:passwordToggleEnabled="true"
         app:startIconDrawable="@android:drawable/ic_lock_idle_lock">
 
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editPasswordL"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -130,7 +123,7 @@
             android:textColor="@color/black"
             android:textColorLink="@color/black">
 
-        </EditText>
+        </com.google.android.material.textfield.TextInputEditText>
 
     </com.google.android.material.textfield.TextInputLayout>
 

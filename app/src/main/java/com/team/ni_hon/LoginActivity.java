@@ -53,7 +53,7 @@ public class LoginActivity extends NiHonActivity {
     private final String TAG="LoginActivity";
     private static final int RC_SIGN_IN = 123;
     private TextInputEditText email;
-    private EditText password;
+    private TextInputEditText password;
     private TextView welcome;
     private TextView welcomeJp;
     private TextView forgotPswd;
@@ -84,6 +84,8 @@ public class LoginActivity extends NiHonActivity {
         welcomeJp=bind.welcomejp;
         createAcc=bind.createAcc;
         forgotPswd=bind.textForgotPassword;
+
+
 
         userDataBase=FirebaseFirestore.getInstance();
         userCollRef=userDataBase.collection("users");
@@ -149,6 +151,8 @@ public class LoginActivity extends NiHonActivity {
         }
 
         login.setOnClickListener(v -> {
+            showProgressDialog(R.string.verify);
+
             if(!email.getText().toString().isEmpty()&&!password.getText().toString().isEmpty()){
                 FirebaseAuth.getInstance().signInWithEmailAndPassword(email.getText().toString().trim()
                         , password.getText().toString().trim()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -170,7 +174,8 @@ public class LoginActivity extends NiHonActivity {
                 });
 
             }else{
-                Toast.makeText(this,"Campos vacios",Toast.LENGTH_LONG).show();
+                cancelProgressDialog();
+                Toast.makeText(this,R.string.empty_fields,Toast.LENGTH_LONG).show();
             }
         });
 
@@ -190,6 +195,8 @@ public class LoginActivity extends NiHonActivity {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        showProgressDialog(R.string.verify);
+
         if (requestCode == RC_SIGN_IN) {
             // Obtener resultado del inicio de sesión de Google
             try {
@@ -229,7 +236,7 @@ public class LoginActivity extends NiHonActivity {
                                 SharedPreferences sharedPreferences = getSharedPreferences("UserSession", MODE_PRIVATE);
                                 SharedPreferences.Editor editor = sharedPreferences.edit();
 
-                                editor.putString("token", account.getIdToken());
+                                editor.putString("token", account.getEmail());
                                 editor.apply();
 
                                 ToMain();
@@ -271,13 +278,16 @@ public class LoginActivity extends NiHonActivity {
     }
 
     public void ShowMensaje(@NonNull Boolean positivo){
-        if(positivo)
-            Toast.makeText(this,"usuario logeado",Toast.LENGTH_LONG).show();
-        else
-            Toast.makeText(this,"Error",Toast.LENGTH_LONG).show();
+        if(positivo) {
+            Toast.makeText(this, "usuario logeado", Toast.LENGTH_LONG).show();
+        }else {
+            cancelProgressDialog();
+            showErrorMenssage(R.string.dialogNotExistText,R.string.dialogNotExistTitle);
+        }
     }
 
     public void ToMain() {
+        cancelProgressDialog();
         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
         startActivity(intent);
         finish();

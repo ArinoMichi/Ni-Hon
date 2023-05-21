@@ -37,4 +37,17 @@
     <string name="dialogNegative">Cancelar</string>
     <string name="logoutText">Cerrando sesion…</string>
     <string name="menuOptUser">Usuario</string>
+    <string name="levelIndicator">Nivel: %d</string>
+    <string name="load">Cargando…</string>
+    <string name="verify">Verificando…</string>
+    <string name="default_icon">DEFECTO</string>
+    <string name="moon_icon">LUNA</string>
+    <string name="japan_icon">JAPON</string>
+    <string name="yukata_icon">YUKATA</string>
+    <string name="dialogErrorTitle">Ha ocurrido un Error incesperado (っ╥﹏╥)っ</string>
+    <string name="dialogErrorText">No se ha podido obtener tus datos. Compruebe si está <b><u>conectado a internet</u></b> y tener los <b><u>servicios de google correctamente actualizados.</u></b></string>
+    <string name="empty_fields">Campos vacíos.</string>
+    <string name="dialogNotExistTitle">Error en Iniciar Sesión (っ╥﹏╥)っ</string>
+    <string name="dialogNotExistText">No existe la cuenta introducida, verifique si se ha introducido la contraseña o el correo correctamente.</string>
+
 </resources>

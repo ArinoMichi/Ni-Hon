@@ -37,4 +37,18 @@
     <string name="dialogNegative">取消</string>
     <string name="logoutText">退出中。。。</string>
     <string name="menuOptUser">用户</string>
+    <string name="levelIndicator">等级: %d</string>
+    <string name="load">加载中。。。</string>
+    <string name="verify">确认中。。。</string>
+    <string name="default_icon">默认</string>
+    <string name="moon_icon">月亮</string>
+    <string name="japan_icon">日本</string>
+    <string name="yukata_icon">浴服</string>
+    <string name="dialogErrorTitle">检测到意外错误 (っ╥﹏╥)っ</string>
+    <string name="dialogErrorText">无法获取您的数据。请确认您是否<b><u>连接网络</u></b>，并<b><u>更新了谷歌服务。</u></b></string>
+    <string name="empty_fields">资料中有空白</string>
+    <string name="dialogNotExistTitle">登录错误 (っ╥﹏╥)っ</string>
+    <string name="dialogNotExistText">您输入的账户不存在，请确认是否输入了正确密码或邮件。</string>
+
+
 </resources>
