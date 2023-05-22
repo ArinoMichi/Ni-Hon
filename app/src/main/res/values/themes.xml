@@ -37,5 +37,9 @@
 
     </style>
 
+    <style name="PopupMenuStyle" parent="@style/Widget.AppCompat.PopupMenu">
+        <item name="android:popupBackground">@drawable/popup_background</item>
+    </style>
+
 
 </resources>
