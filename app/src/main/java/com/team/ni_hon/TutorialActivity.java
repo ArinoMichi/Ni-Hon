@@ -3,28 +3,23 @@ package com.team.ni_hon;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
-import android.content.Intent;
 import android.os.Bundle;
 
-import com.team.ni_hon.lesson_fragments.LessonPagerAdapter;
-import com.team.ni_hon.main_recycler.Lesson;
+import com.team.ni_hon.tutorial_fragments.TutorialPagerAdapter;
 
-public class LessonActivity extends AppCompatActivity {
+public class TutorialActivity extends AppCompatActivity {
 
-    private LessonPagerAdapter pagerAdapter;
+    private TutorialPagerAdapter pagerAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson);
 
-        Intent intent = getIntent();
-        Lesson lesson = (Lesson) intent.getSerializableExtra("lesson");
 
         //fragments
-        pagerAdapter = new LessonPagerAdapter(this, getSupportFragmentManager(), lesson);
+        pagerAdapter = new TutorialPagerAdapter(this, getSupportFragmentManager());
         ViewPager viewPager = findViewById(R.id.view_pager);
         viewPager.setAdapter(pagerAdapter);
-
     }
 }

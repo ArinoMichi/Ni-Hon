@@ -10,10 +10,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.team.ni_hon.model.UserInfoActivity;
-import com.team.ni_hon.recycler.Lesson;
-import com.team.ni_hon.recycler.LessonAdapter;
-import com.team.ni_hon.recycler.MyLinearLayoutManager;
+import com.team.ni_hon.main_recycler.Lesson;
+import com.team.ni_hon.main_recycler.MainLessonAdapter;
+import com.team.ni_hon.main_recycler.MyLinearLayoutManager;
 
 import java.util.ArrayList;
 
@@ -26,18 +25,16 @@ public class MainActivity extends AppCompatActivity {
 
     public static ArrayList<Lesson> lessons = new ArrayList<Lesson>(){
         {
-            add(new Lesson(1, "Hiragana", "Let's learn hiragana!"));
-            add(new Lesson(2, "Katakana", "Let's learn katakana!"));
-            add(new Lesson(3, "Lesson 3", "3 is bigger than 2"));
-            add(new Lesson(4, "Lesson 4", "Sample text"));
-            add(new Lesson(5, "Lesson 5", "I don't know what to write"));
+            add(new Lesson(1, "Hiragana", "Let's learn hiragana!", 3));
+            add(new Lesson(2, "Katakana", "Let's learn katakana!", 1));
+            add(new Lesson(3, "Lesson 3", "3 is bigger than 2", 1));
+            add(new Lesson(4, "Lesson 4", "Sample text", 1));
+            add(new Lesson(5, "Lesson 5", "I don't know what to write", 1));
         }
     };
 
-    private LessonAdapter lessonAdapter;
-
+    private MainLessonAdapter lessonAdapter;
     private static RecyclerView recyclerView;
-    // private static ConstraintLayout popup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recycler);
 
-        lessonAdapter = new LessonAdapter(this, lessons);
+        lessonAdapter = new MainLessonAdapter(this, lessons);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new MyLinearLayoutManager(this, MyLinearLayoutManager.HORIZONTAL, false));
         recyclerView.setAdapter(lessonAdapter);
@@ -109,5 +106,6 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
 
 }
