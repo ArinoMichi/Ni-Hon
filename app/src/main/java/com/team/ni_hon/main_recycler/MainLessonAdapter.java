@@ -59,7 +59,7 @@ public class MainLessonAdapter extends RecyclerView.Adapter<MainLessonAdapter.Le
         holder.button.setText(Integer.toString(lesson.getId()));
         holder.lessonTitleText.setText(lessons.get(position).getTitle());
         holder.popupText.setText(lessons.get(position).getPopupText());
-        if (position == previousId){
+        if (position != currentId){
             holder.popup.setVisibility(View.INVISIBLE);
         }
         if (position == currentId){

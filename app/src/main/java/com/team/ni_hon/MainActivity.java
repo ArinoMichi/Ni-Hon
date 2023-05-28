@@ -50,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(lessonAdapter);
     }
 
-
     public static RecyclerView getRecyclerView() {
         return recyclerView;
     }
