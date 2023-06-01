@@ -11,8 +11,10 @@
     <color name="black">#FF000000</color>
     <color name="black2">#323131</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="transparent_white">#46FFFFFF</color>
+    <color name="transparent_white">#65FFFFFF</color>
     <color name="lilac">#CDB4DB</color>
+    <color name="green">#72A98F</color>
+    <color name="orange">#A499B3</color>
     <color name="light_gray">#EDEDED</color>
     <color name="magenta">#B56576</color>
     <color name="purple">#6D597A</color>

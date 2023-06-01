@@ -2,15 +2,9 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="wrap_content"
     android:layout_width="wrap_content">
-    <item>
+    <item android:drawable="@drawable/lock" >
         <shape android:shape="oval">
-            <solid android:color="@color/pink"/>
-            />
-            <stroke
-
-                android:width="5dp"
-                android:color="@color/light_pink"
-                />
+            <solid android:color="@color/gray"/>
         </shape>
     </item>
 </selector>
