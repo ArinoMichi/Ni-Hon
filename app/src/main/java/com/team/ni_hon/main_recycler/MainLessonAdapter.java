@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -61,8 +62,11 @@ public class MainLessonAdapter extends RecyclerView.Adapter<MainLessonAdapter.Le
         holder.popupText.setText(lessons.get(position).getPopupText());
         if (position != currentId){
             holder.popup.setVisibility(View.INVISIBLE);
+            holder.image.setVisibility(View.INVISIBLE);
+
         }
         if (position == currentId){
+            holder.image.setVisibility(View.VISIBLE);
             MainActivity.getRecyclerView().smoothScrollToPosition(currentId);
             holder.popup.setVisibility(View.VISIBLE);
             holder.popupButton.setVisibility(View.VISIBLE);
@@ -80,12 +84,14 @@ public class MainLessonAdapter extends RecyclerView.Adapter<MainLessonAdapter.Le
         MyClickListener listener;
         Button button, popupButton;
         ConstraintLayout popup;
+        ImageView image;
         TextView popupText, lessonTitleText;
 
         public LessonViewHolder(View itemView, MyClickListener listener) {
             super(itemView);
             button = itemView.findViewById(R.id.button);
             popupButton = itemView.findViewById(R.id.startLessonButton);
+            image = itemView.findViewById(R.id.tanuki);
             popup = itemView.findViewById(R.id.popup);
             lessonTitleText = itemView.findViewById(R.id.lessonTitleText);
             popupText = itemView.findViewById(R.id.popupText);

@@ -9,10 +9,13 @@
 
     <!--main colors-->
     <color name="black">#FF000000</color>
+    <color name="black2">#323131</color>
     <color name="white">#FFFFFFFF</color>
     <color name="transparent_white">#46FFFFFF</color>
     <color name="lilac">#CDB4DB</color>
     <color name="light_gray">#EDEDED</color>
+    <color name="magenta">#B56576</color>
+    <color name="purple">#6D597A</color>
     <color name="gray">#9C9C9C</color>
     <color name="light_pink">#FAC3D7</color>
     <color name="pink">#FFAFCC</color>

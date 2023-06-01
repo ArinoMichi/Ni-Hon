@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">ni_hon</string>
-    <string name="welcome">Glad to see you back!</string>
-    <string name="welcome2">(っ◔◡◔)っ Welcome!</string>
+    <string name="welcome">Glad to see you back! (っ◔◡◔)っ</string>
+    <string name="welcome2">Welcome!</string>
     <!--SETTINGS-->
     <string name="es">Spanish</string>
     <string name="en">English</string>
@@ -32,7 +32,7 @@
     <string name="menuOptLogOut">Log out</string>
     <string name="menuOptAbout">About us</string>
     <string name="menuOptSetting">Settings</string>
-    <string name="join_us">(っ◔◡◔)っ Join us!\n(いらっしゃいませ)</string>
+    <string name="join_us">Start learning!</string>
     <string name="errorLogInGoogle">Error al iniciar sesion con Google</string>
     <string name="default_clientId">781413435137-bbbvkdh757ratt3ocbpnskhfl5b4fih3.apps.googleusercontent.com</string>
 
@@ -63,5 +63,6 @@
     <string name="lesson_5_1">
         Lesson 5 page 1
     </string>
+    <string name="splash">がんばって</string>
 
 </resources>
