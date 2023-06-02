@@ -6,19 +6,22 @@
     android:padding="16dp">
 
     <TextView
-        android:id="@+id/text_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:textColor="@android:color/holo_red_light"
+        android:text="@string/dialogTitle"
+        android:textColor="@color/pink"
         android:textSize="20sp"
         android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/dialog_text"
+    <EditText
+        android:id="@+id/resetPswd_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
+        android:hint="@string/dialogMessage"
+        android:textColorHint="@color/blue"
+        android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="italic"/>
 
@@ -28,7 +31,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/button_ok"
+            android:id="@+id/button_rok"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="4dp"
@@ -36,12 +39,11 @@
             android:text="@string/dialogPositive" />
 
         <Button
-            android:id="@+id/button_no"
+            android:id="@+id/button_rno"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
             android:layout_weight="1"
-            android:visibility="gone"
             android:text="@string/dialogNegative" />
     </LinearLayout>
 

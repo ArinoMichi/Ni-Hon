@@ -15,6 +15,7 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -66,6 +67,7 @@ public class LoginActivity extends NiHonActivity {
     private FirebaseFirestore userDataBase;
     private CollectionReference userCollRef;
     private Query query;
+    private AlertDialog alertDialog;
 
 
     @SuppressLint("MissingInflatedId")
@@ -111,8 +113,16 @@ public class LoginActivity extends NiHonActivity {
 
         SharedPreferences sharedPreferences = getSharedPreferences("UserSession", MODE_PRIVATE);
         String token = sharedPreferences.getString("token", null);
+        String pswd= sharedPreferences.getString("pswd",null);
+        String google= sharedPreferences.getString("google",null);
 
         if (token != null) {
+            if(pswd==null&&google!=null) {
+                setGoogleToken(google);
+                setUserSession(token,null);
+            }else
+                setUserSession(token,pswd);
+
             ToMain();
             finish();
         }
@@ -165,6 +175,7 @@ public class LoginActivity extends NiHonActivity {
                             SharedPreferences.Editor editor = sharedPreferences.edit();
 
                             editor.putString("token", email.getText().toString().trim());
+                            editor.putString("pswd",password.getText().toString().trim());
                             editor.apply();
 
                             ToMain();
@@ -237,7 +248,11 @@ public class LoginActivity extends NiHonActivity {
                                 SharedPreferences.Editor editor = sharedPreferences.edit();
 
                                 editor.putString("token", account.getEmail());
+                                editor.putString("google",account.getIdToken());
                                 editor.apply();
+
+                                setGoogleToken(account.getIdToken());
+                                setUserSession(account.getEmail(), null);
 
                                 ToMain();
                             }else{
@@ -258,23 +273,36 @@ public class LoginActivity extends NiHonActivity {
 
     public void showDialog(){
 
+        View dialogView = LayoutInflater.from(this).inflate(R.layout.resetpswd_alertdialog, null);
+        Button accept=dialogView.findViewById(R.id.button_rok);
+        Button dismiss=dialogView.findViewById(R.id.button_rno);
+        EditText remail=dialogView.findViewById(R.id.resetPswd_email);
+
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(R.string.dialogTitle);
-        builder.setMessage(R.string.dialogMessage);
-
-        final EditText resetEmail = new EditText(this);
-        resetEmail.setGravity(Gravity.CENTER);
-        builder.setView(resetEmail);
-
-        builder.setPositiveButton(R.string.dialogPositive, (dialog, which) -> {
-            String email = resetEmail.getText().toString();
-            Log.d(TAG,email);
-            dialog.dismiss();
-        });
-        builder.setNegativeButton(R.string.dialogNegative, (dialog, which) -> dialog.dismiss());
-
-        AlertDialog alertDialog = builder.create();
+        builder.setView(dialogView);
+        alertDialog = builder.create();
+        alertDialog.setCancelable(false);
         alertDialog.show();
+        accept.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String sendEmail=remail.getText().toString().trim();
+                if(!sendEmail.isEmpty()){
+                    SendResetEmail(sendEmail);
+                }else {
+                    remail.setHintTextColor(getColor(android.R.color.holo_red_light));
+                    remail.setHint(R.string.dialogEmptEmail);
+                }
+            }
+        });
+
+        dismiss.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                alertDialog.dismiss();
+            }
+        });
+
     }
 
     public void ShowMensaje(@NonNull Boolean positivo){
@@ -284,6 +312,18 @@ public class LoginActivity extends NiHonActivity {
             cancelProgressDialog();
             showErrorMenssage(R.string.dialogNotExistText,R.string.dialogNotExistTitle);
         }
+    }
+
+    public void SendResetEmail(String email){
+        mAuth.sendPasswordResetEmail(email).addOnCompleteListener(task -> {
+            if(task.isSuccessful()){
+                alertDialog.dismiss();
+                Toast.makeText(this, "Verifique su email", Toast.LENGTH_SHORT).show();
+            }else{
+                alertDialog.dismiss();
+                Toast.makeText(this, "Error al enviar el correo", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     public void ToMain() {

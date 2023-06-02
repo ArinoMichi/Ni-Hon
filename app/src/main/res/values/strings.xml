@@ -36,14 +36,19 @@
     <string name="menuOptSetting">Settings</string>
     <string name="menuOptUser">User info</string>
     <!--DIALOG TEXT-->
-    <string name="dialogTitle">(っ◔_◔)っ Reset Password っ(⁎˃ᴗ˂⁎)っ</string>
-    <string name="dialogMessage">\nEnter your email to reset password: </string>
+    <string name="dialogTitle">(っ◔_◔)っ Reset Password (⁎˃ᴗ˂⁎)</string>
+    <string name="dialogEmptEmail">(っ╥﹏╥)っ Email empty.</string>
+    <string name="dialogSettingTitle">Restart App っ(⁎˃ᴗ˂⁎)っ</string>
+    <string name="dialogSettingText">We need to restart for the changes to take effect. (you can skip it).</string>
+    <string name="dialogMessage">\nEnter your email to reset password. </string>
     <string name="dialogPositive">Accept</string>
     <string name="dialogNegative">Cancel</string>
     <string name="dialogErrorTitle">An unexpected error has occurred (っ╥﹏╥)っ</string>
     <string name="dialogErrorText">Unable to load your data. Please check if you are <b><u>connected to the internet</u></b> and have the <b><u>Google services properly updated.</u></b></string>
     <string name="dialogNotExistTitle">Error to Login (っ╥﹏╥)っ</string>
     <string name="dialogNotExistText">The entered account does not exist, please verify if the password or email has been entered correctly.</string>
+    <string name="dialogDeleteTitle">(っ╥﹏╥)っ Delete Account. </string>
+    <string name="dialogDeleteMensage">Are you sure to delete this account?</string>
     <!--MAIN-->
     <string name="logoutText">Signing out…</string>
     <!--USER INFO-->
@@ -57,9 +62,7 @@
     <!--TOAST TEXT-->
     <string name="empty_fields">Empty Fileds.</string>
 
-    <string name="join_us">(っ◔◡◔)っ Join us!\n(いらっしゃいませ)</string>
-    <string name="errorLogInGoogle">Error al iniciar sesion con Google</string>
-    <string name="default_clientId">781413435137-bbbvkdh757ratt3ocbpnskhfl5b4fih3.apps.googleusercontent.com</string>
+    <string name="default_clientId" translatable="false">781413435137-bbbvkdh757ratt3ocbpnskhfl5b4fih3.apps.googleusercontent.com</string>
 
     <!-- lesson text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

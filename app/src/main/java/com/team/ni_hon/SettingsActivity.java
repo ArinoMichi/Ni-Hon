@@ -89,20 +89,25 @@ public class SettingsActivity extends NiHonActivity {
     }
 
     public void showLang(){
-        String ActualLang=getCurrentLanguage(this);
-        if(ActualLang!=null){
-            switch (ActualLang){
-                case "en":
-                    language.setText(R.string.en);
-                    break;
-                case "es":
-                    language.setText(R.string.es);
-                    break;
-                case "zh":
-                    language.setText(R.string.ch);
-                    break;
-            }
+        SharedPreferences pref=getSharedPreferences("Config", MODE_PRIVATE);
+
+        String ActualLang=pref.getString("language",null);
+
+        if(ActualLang==null) {
+           ActualLang = getCurrentLanguage(this);
         }
+        switch (ActualLang) {
+            case "en":
+                language.setText(R.string.en);
+                break;
+            case "es":
+                language.setText(R.string.es);
+                break;
+            case "zh":
+                language.setText(R.string.ch);
+                break;
+        }
+
     }
 
     public void showIfNighModeActive() {
@@ -174,8 +179,6 @@ public class SettingsActivity extends NiHonActivity {
 
     @Override
     public void onBackPressed(){
-        Intent intent=new Intent(SettingsActivity.this,MainActivity.class);
-        startActivity(intent);
-        finish();
+        showErrorMenssage(R.string.dialogSettingText,R.string.dialogSettingTitle);
     }
 }

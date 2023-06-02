@@ -52,36 +52,36 @@
             android:layout_height="match_parent"
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="1.0" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@id/guideRight"
+        app:layout_constraintStart_toStartOf="@id/guideLeft"
+        app:layout_constraintTop_toTopOf="@id/guideTopIMG">
+
+        <ImageView
+            android:id="@+id/UserIcon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="left"
+            android:background="@drawable/background_transparent" />
+
+
+        <TextView
+            android:id="@+id/UserName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="40dp" />
+
+    </LinearLayout>
+
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="@id/guideTopIMG"
-            android:orientation="horizontal"
-            app:layout_constraintStart_toStartOf="@id/guideLeft"
-            app:layout_constraintEnd_toEndOf="@id/guideRight"
-
-            >
-
-            <ImageView
-                android:background="@drawable/background_transparent"
-                android:id="@+id/UserIcon"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_gravity="left"/>
-
-
-            <TextView
-                android:id="@+id/UserName"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:textSize="40dp"
-                android:textColor="@color/black"
-                android:gravity="center"
-                />
-
-        </LinearLayout>
-
-        <LinearLayout
+            android:id="@+id/content"
             android:layout_width="0px"
             android:layout_height="0px"
             android:background="@drawable/background_transparent"
@@ -90,39 +90,84 @@
             app:layout_constraintStart_toStartOf="@id/guideLeft"
             android:orientation="vertical"
             app:layout_constraintTop_toTopOf="@id/guideTop"
-
             app:layout_constraintBottom_toTopOf="@id/guideBot"
             android:textAlignment="center">
 
             <TextView
-                android:layout_marginTop="40dp"
-                android:id="@+id/level"
+                android:id="@+id/score"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
-                android:textAlignment="center"
-                android:textColor="@color/gray"
-                android:textSize="40dp" />
-
+                android:textAlignment="textStart"
+                android:layout_margin="16dp"
+                android:text="Best Score: "
+                android:textColor="@color/black"
+                android:textSize="30sp"/>
 
             <TextView
-                android:id="@+id/pointsLeft"
-
+                android:id="@+id/tanuki"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:gravity="center"
-                android:textColor="@color/blue"
-                android:textSize="50dp"/>
+                android:textAlignment="textStart"
+                android:layout_margin="16dp"
+                android:text="Tanuki status: "
+                android:textColor="@color/black"
+                android:textSize="30sp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="50dp"
+                android:layout_marginBottom="8dp"
+                android:gravity="center">
+
+                <com.mikhaellopez.circularprogressbar.CircularProgressBar
+                    android:id="@+id/progressBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cpb_progress_max="50"
+                    app:cpb_progress="0"
+                    app:cpb_background_progressbar_color="@color/light_pink"
+                    app:cpb_background_progressbar_width="20dp"
+                    app:cpb_progress_direction="to_right"
+                    app:cpb_progressbar_color="@color/light_blue"
+                    app:cpb_progressbar_width="25dp"
+                    app:cpb_round_border="false" />
+
+                <TextView
+                    android:id="@+id/level"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:background="#00000000"
+                    android:text="Nivel: "
+                    android:textStyle="bold"
+                    android:textSize="34sp"
+                    android:gravity="center"
+                    android:layout_alignStart="@id/progressBar"
+                    android:layout_alignTop="@id/progressBar"
+                    android:layout_alignEnd="@id/progressBar"
+                    android:layout_alignBottom="@id/progressBar" />
+
+            </RelativeLayout>
 
         </LinearLayout>
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guideRight"
+        app:layout_constraintTop_toTopOf="@id/content"
+        app:layout_constraintVertical_bias="0.9">
 
         <ImageView
-            android:layout_width="304dp"
-            android:layout_height="294dp"
-
-            app:layout_constraintBottom_toBottomOf="@id/guidebotIMG"
-            app:layout_constraintStart_toStartOf="@id/guideleftIMG"
-            />
+            android:id="@+id/deleteCount"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:background="@drawable/circular_shape"
+            android:padding="8dp"
+            android:src="@drawable/delete_icon" />
+ 
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

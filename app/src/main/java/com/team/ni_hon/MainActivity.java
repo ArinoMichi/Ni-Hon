@@ -10,9 +10,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.team.ni_hon.databinding.ActivityMainBinding;
 import com.team.ni_hon.main_recycler.Lesson;
 import com.team.ni_hon.main_recycler.MainLessonAdapter;
 import com.team.ni_hon.main_recycler.MyLinearLayoutManager;
+import com.team.ni_hon.model.UserInfoActivity;
 
 import java.util.ArrayList;
 
@@ -39,10 +41,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        ActivityMainBinding bind=ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(bind.getRoot());
         setTitle(null);
 
-        recyclerView = findViewById(R.id.recycler);
+        recyclerView = bind.recycler;
 
         lessonAdapter = new MainLessonAdapter(this, lessons);
         recyclerView.setHasFixedSize(true);
@@ -77,6 +80,8 @@ public class MainActivity extends AppCompatActivity {
                 SharedPreferences.Editor editor = sharedPreferences.edit();
 
                 editor.remove("token");
+                editor.remove("pswd");
+                editor.remove("google");
                 editor.apply();
 
                 //Finaliza la pantalla y se vuelve al login.

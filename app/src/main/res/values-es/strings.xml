@@ -49,5 +49,8 @@
     <string name="empty_fields">Campos vacíos.</string>
     <string name="dialogNotExistTitle">Error en Iniciar Sesión (っ╥﹏╥)っ</string>
     <string name="dialogNotExistText">No existe la cuenta introducida, verifique si se ha introducido la contraseña o el correo correctamente.</string>
+    <string name="dialogSettingTitle">Reiniciar App っ(⁎˃ᴗ˂⁎)っ</string>
+    <string name="dialogSettingText">Necesitamos reiniciar para efectuar los ajustes hechos. (puedes omitirlo).</string>
+    <string name="dialogEmptEmail">(っ╥﹏╥)っ Correo vacío.</string>
 
 </resources>
