@@ -30,9 +30,9 @@
 
     <style name="Theme.appbar" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <item name="colorPrimary">@android:color/transparent</item>
-        <item name="colorOnSecondary">@color/pink</item>
+        <item name="colorOnSecondary">@color/magenta</item>
         <item name="windowActionBarOverlay">true</item>
-        <item name="popupMenuBackground">@color/pink</item>
+        <item name="popupMenuBackground">@color/magenta</item>
         <item name="android:textColor">@color/white</item>
 
     </style>

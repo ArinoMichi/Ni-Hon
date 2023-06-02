@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">ni_hon</string>
-    <string name="welcome">Glad to see you back!</string>
-    <string name="welcome2">(っ◔◡◔)っ Welcome!</string>
-    <string name="join_us">(っ◔◡◔)っ Join us! \n(いらっしゃいませ)</string>
     <string name="welcomejp">(ようこそ)</string>
+    <string name="join_us">Start learning!</string>
     <string name="errorLogInGoogle">" Error logging in with Google."</string>
+    <string name="welcome">Glad to see you back! (っ◔◡◔)っ</string>
+    <string name="welcome2">Welcome!</string>
     <!--SETTINGS-->
     <string name="es">Spanish</string>
     <string name="en">English</string>
@@ -72,6 +72,8 @@
     <string name="empty_fields">Empty Fileds.</string>
 
     <string name="default_clientId" translatable="false">781413435137-bbbvkdh757ratt3ocbpnskhfl5b4fih3.apps.googleusercontent.com</string>
+
+
 
     <!-- lesson text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
