@@ -1,7 +1,10 @@
 package com.team.ni_hon.model;
 
+import static java.security.AccessController.getContext;
+
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.view.menu.MenuBuilder;
+import androidx.appcompat.view.menu.MenuPopupHelper;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -9,15 +12,15 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.ColorStateList;
-import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.text.Html;
 import android.text.Spanned;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
@@ -30,7 +33,6 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -41,7 +43,6 @@ import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.mikhaellopez.circularprogressbar.CircularProgressBar;
-import com.team.ni_hon.LoginActivity;
 import com.team.ni_hon.MainActivity;
 import com.team.ni_hon.NiHonActivity;
 import com.team.ni_hon.R;
@@ -50,7 +51,7 @@ import com.team.ni_hon.databinding.ActivityUserInfoBinding;
 public class UserInfoActivity extends NiHonActivity {
 
     private final String TAG = "UserInfoActivity";
-    private TextView userName, userLevel, tanukiStatus,userScore;
+    private TextView userName, userLevel, tanukiStatus, userScore;
     private String email;
     private ImageView Icon, delete;
     private CircularProgressBar progressBar;
@@ -71,7 +72,7 @@ public class UserInfoActivity extends NiHonActivity {
         delete = bind.deleteCount;
         progressBar = bind.progressBar;
         tanukiStatus = bind.tanuki;
-        userScore=bind.score;
+        userScore = bind.score;
 
 
         SharedPreferences sharedPreferences = getSharedPreferences("UserSession", MODE_PRIVATE);
@@ -91,53 +92,44 @@ public class UserInfoActivity extends NiHonActivity {
 
         buttonEffects();
 
-        delete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showErrorMenssage(R.string.dialogDeleteMensage, R.string.dialogDeleteTitle);
-            }
-        });
+        loadUserData();
 
+        delete.setOnClickListener(v -> showErrorMenssage(R.string.dialogDeleteMensage, R.string.dialogDeleteTitle));
 
+        Icon.setOnClickListener(v -> showIconMenu());
+    }
+
+    public void loadUserData() {
         Query query = usersRef.whereEqualTo("email", email);
-        query.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                if (task.isSuccessful()) {
-                    QuerySnapshot querySnapshot = task.getResult();
-                    if (querySnapshot != null && !querySnapshot.isEmpty()) {
-                        DocumentSnapshot document = querySnapshot.getDocuments().get(0);
 
-                        String userName = document.getString("name");
-                        String GoogleUserName = document.getString("nombre");
-                        int icon = document.getLong("icon").intValue();
-                        int level = document.getLong("level").intValue();
+        query.get().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                QuerySnapshot querySnapshot = task.getResult();
+                if (querySnapshot != null && !querySnapshot.isEmpty()) {
+                    DocumentSnapshot document = querySnapshot.getDocuments().get(0);
 
-                        showUserData(userName, GoogleUserName, icon, level);
-                    } else {
-                        cancelProgressDialog();
-                        Exception exception = task.getException();
-                        if (exception != null) {
-                            Log.e("Firestore", "Error: " + exception.getMessage());
-                        }
-                        showErrorMenssage(R.string.dialogErrorText
-                                , R.string.dialogErrorTitle);
-                    }
+                    String userName = document.getString("name");
+                    String GoogleUserName = document.getString("nombre");
+                    int icon = document.getLong("icon").intValue();
+                    int level = document.getLong("level").intValue();
+
+                    showUserData(userName, GoogleUserName, icon, level);
                 } else {
                     cancelProgressDialog();
                     Exception exception = task.getException();
                     if (exception != null) {
                         Log.e("Firestore", "Error: " + exception.getMessage());
                     }
-                    showErrorMenssage(R.string.dialogErrorText, R.string.dialogErrorTitle);
+                    showErrorMenssage(R.string.dialogErrorText
+                            , R.string.dialogErrorTitle);
                 }
-            }
-        });
-
-        Icon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showMenu();
+            } else {
+                cancelProgressDialog();
+                Exception exception = task.getException();
+                if (exception != null) {
+                    Log.e("Firestore", "Error: " + exception.getMessage());
+                }
+                showErrorMenssage(R.string.dialogErrorText, R.string.dialogErrorTitle);
             }
         });
     }
@@ -153,17 +145,17 @@ public class UserInfoActivity extends NiHonActivity {
         progressBar.setProgress(level * 10);
 
         //donde está el 0 será el valor de la racha de aciertos más alta. (por defecto siempre es 0)
-        int points=(level+(0))*69;
-        if(points>2000){
-            String htmlText = "<font color='#F6B300'>"+points+"</font>"; //Golden
+        int points = (level + (0)) * 69;
+        if (points > 2000) {
+            String htmlText = "<font color='#F6B300'>" + points + "</font>"; //Golden
             Spanned resultScore = Html.fromHtml(htmlText);
             userScore.append(resultScore);
-        }else if(points<2000 &&points>1000){
-            String htmlText = "<font color='#12F000'>"+points+"</font>"; //Verde
+        } else if (points < 2000 && points > 1000) {
+            String htmlText = "<font color='#12F000'>" + points + "</font>"; //Verde
             Spanned resultScore = Html.fromHtml(htmlText);
             userScore.append(resultScore);
-        }else{
-            String htmlText = "<font color='#B4B4AF'>"+points+"</font>"; //Gris
+        } else {
+            String htmlText = "<font color='#B4B4AF'>" + points + "</font>"; //Gris
             Spanned resultScore = Html.fromHtml(htmlText);
             userScore.append(resultScore);
         }
@@ -171,27 +163,27 @@ public class UserInfoActivity extends NiHonActivity {
         String htmlText;
         Spanned spannedText;
 
-        switch(level){
+        switch (level) {
             case 0:
-                htmlText = "<font color='#B4B4AF'>Egg</font>"; //Gris
+                htmlText = "<font color='#B4B4AF'>"+getString(R.string.egg)+"</font>"; //Gris
                 spannedText = Html.fromHtml(htmlText);
                 break;
             case 1:
             case 2:
-                htmlText = "<font color='#FF0000'>Bad</font>"; //Rojo
+                htmlText = "<font color='#FF0000'>"+getString(R.string.bad)+"</font>"; //Rojo
                 spannedText = Html.fromHtml(htmlText);
                 break;
             case 3:
             case 4:
-                htmlText = "<font color='#12F000'>Normal</font>"; //Verde
+                htmlText = "<font color='#12F000'>"+getString(R.string.medium)+"</font>"; //Verde
                 spannedText = Html.fromHtml(htmlText);
                 break;
             case 5:
-                htmlText = "<font color='#F6B300'>Normal</font>"; //Golden
+                htmlText = "<font color='#F6B300'>"+getString(R.string.great)+"</font>"; //Golden
                 spannedText = Html.fromHtml(htmlText);
                 break;
             default:
-                htmlText = "<font color='#B054F8'>MISSING</font>"; //Violet
+                htmlText = "<font color='#B054F8'>"+getString(R.string.missing)+"</font>"; //Violet
                 spannedText = Html.fromHtml(htmlText);
                 break;
         }
@@ -213,7 +205,8 @@ public class UserInfoActivity extends NiHonActivity {
         }
     }
 
-    public void showMenu() {
+    @SuppressLint("RestrictedApi")
+    public void showIconMenu() {
         PopupMenu popupMenu = new PopupMenu(this, Icon, Gravity.END, 0, R.style.PopupMenuStyle);
         popupMenu.inflate(R.menu.icon_menu);
 

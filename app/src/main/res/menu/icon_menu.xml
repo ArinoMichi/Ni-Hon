@@ -5,20 +5,20 @@
         android:id="@+id/icon_default"
         android:title="@string/default_icon"
         android:icon="@drawable/user_icon_default"
-        app:showAsAction="always"/>
+        app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/icon_moon"
         android:title="@string/moon_icon"
         android:icon="@drawable/moon_icon"
-        app:showAsAction="always"/>
+        app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/icon_japan"
         android:title="@string/japan_icon"
         android:icon="@drawable/japan_icon"
-        app:showAsAction="always"/>
+        app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/icon_yukata"
         android:title="@string/yukata_icon"
         android:icon="@drawable/yukata_icon"
-        app:showAsAction="always"/>
+        app:showAsAction="ifRoom"/>
 </menu>

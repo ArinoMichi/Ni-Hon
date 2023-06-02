@@ -3,6 +3,7 @@
     <string name="app_name">ni_hon</string>
     <string name="welcome2">(っ◔◡◔)っ 欢迎回来!</string>
     <string name="join_us">(っ◔◡◔)っ 加入我们吧! \n(いらっしゃいませ)</string>
+    <string name="welcomejp">(ようこそ)</string>
     <string name="errorLogInGoogle">谷歌账号登录错误</string>
     <string name="welcome">很高兴再见到你！</string>
     <string name="es">西班牙语</string>
@@ -37,7 +38,7 @@
     <string name="dialogNegative">取消</string>
     <string name="logoutText">退出中。。。</string>
     <string name="menuOptUser">用户</string>
-    <string name="levelIndicator">等级: %d</string>
+    <string name="levelIndicator">等级: </string>
     <string name="load">加载中。。。</string>
     <string name="verify">确认中。。。</string>
     <string name="default_icon">默认</string>
@@ -50,7 +51,16 @@
     <string name="dialogNotExistTitle">登录错误 (っ╥﹏╥)っ</string>
     <string name="dialogNotExistText">您输入的账户不存在，请确认是否输入了正确密码或邮件。</string>
     <string name="dialogSettingTitle">重启应用 っ(⁎˃ᴗ˂⁎)っ</string>
-    <string name="dialogSettingText">我们需要重启以应用所做的设置（你可以跳过)。</string>
+    <string name="dialogSettingText">在某些情况下，更改可能在某些移动设备上无法正确应用。您想要重新启动吗？如果在重新启动后仍然遇到问题，请联系我们！</string>
     <string name="dialogEmptEmail">(っ╥﹏╥)っ 电子邮件空白着呢.</string>
+    <string name="dialogDeleteTitle">(っ╥﹏╥)っ 删除账号! </string>
+    <string name="dialogDeleteMensage">您确定要删除此账号吗?</string>
+    <string name="tanukiStatus">Tanuki 状态: \n</string>
+    <string name="egg">未孵化</string>
+    <string name="bad">危险</string>
+    <string name="medium">正常</string>
+    <string name="great">很精神</string>
+    <string name="missing">丢失中</string>
+    <string name="score">最高分数: \n</string>
 
 </resources>

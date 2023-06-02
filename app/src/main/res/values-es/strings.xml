@@ -4,6 +4,7 @@
     <string name="welcome">¡Qué bueno verte de vuelta!</string>
     <string name="welcome2">(っ◔◡◔)っ ¡Bienvenido!</string>
     <string name="join_us">(っ◔◡◔)っ ¡Únete a nosotros! \n(いらっしゃいませ)</string>
+    <string name="welcomejp">(ようこそ)</string>
     <string name="errorLogInGoogle">Error al iniciar con Google.</string>
     <string name="es">Español</string>
     <string name="en">Inglés</string>
@@ -37,7 +38,7 @@
     <string name="dialogNegative">Cancelar</string>
     <string name="logoutText">Cerrando sesion…</string>
     <string name="menuOptUser">Usuario</string>
-    <string name="levelIndicator">Nivel: %d</string>
+    <string name="levelIndicator">Nivel: </string>
     <string name="load">Cargando…</string>
     <string name="verify">Verificando…</string>
     <string name="default_icon">DEFECTO</string>
@@ -50,7 +51,17 @@
     <string name="dialogNotExistTitle">Error en Iniciar Sesión (っ╥﹏╥)っ</string>
     <string name="dialogNotExistText">No existe la cuenta introducida, verifique si se ha introducido la contraseña o el correo correctamente.</string>
     <string name="dialogSettingTitle">Reiniciar App っ(⁎˃ᴗ˂⁎)っ</string>
-    <string name="dialogSettingText">Necesitamos reiniciar para efectuar los ajustes hechos. (puedes omitirlo).</string>
+    <string name="dialogSettingText">En algunos casos, los cambios pueden no aplicarse correctamente en ciertos dispositivos móviles.
+        ¿Deseas reiniciar? Si sigues experimentando problemas después de reiniciar, ¡por favor contáctanos!</string>
     <string name="dialogEmptEmail">(っ╥﹏╥)っ Correo vacío.</string>
+    <string name="dialogDeleteTitle">(っ╥﹏╥)っ Eliminar Cuenta! </string>
+    <string name="dialogDeleteMensage">¿Estás seguro de querer eliminar esta cuenta?</string>
+    <string name="tanukiStatus">Estado de Tanuki: \n</string>
+    <string name="egg">Huevo</string>
+    <string name="bad">En peligro</string>
+    <string name="medium">Normal</string>
+    <string name="great">Excelete</string>
+    <string name="missing">Perdido</string>
+    <string name="score">Máxima puntuación: \n</string>
 
 </resources>

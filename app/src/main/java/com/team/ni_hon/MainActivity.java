@@ -15,11 +15,12 @@ import com.team.ni_hon.main_recycler.Lesson;
 import com.team.ni_hon.main_recycler.MainLessonAdapter;
 import com.team.ni_hon.main_recycler.MyLinearLayoutManager;
 import com.team.ni_hon.model.UserInfoActivity;
+import com.team.ni_hon.utils.LanguageHelper;
 
 import java.util.ArrayList;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends NiHonActivity {
 
     private final String TAG="MainActivity";
 
@@ -45,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(bind.getRoot());
         setTitle(null);
 
+        LanguageHelper.setLocale(this, LanguageHelper.getLanguage(this));
+
         recyclerView = bind.recycler;
 
         lessonAdapter = new MainLessonAdapter(this, lessons);
@@ -52,7 +55,6 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new MyLinearLayoutManager(this, MyLinearLayoutManager.HORIZONTAL, false));
         recyclerView.setAdapter(lessonAdapter);
     }
-
 
     public static RecyclerView getRecyclerView() {
         return recyclerView;

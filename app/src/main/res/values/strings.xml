@@ -3,6 +3,7 @@
     <string name="welcome">Glad to see you back!</string>
     <string name="welcome2">(っ◔◡◔)っ Welcome!</string>
     <string name="join_us">(っ◔◡◔)っ Join us! \n(いらっしゃいませ)</string>
+    <string name="welcomejp">(ようこそ)</string>
     <string name="errorLogInGoogle">" Error logging in with Google."</string>
     <!--SETTINGS-->
     <string name="es">Spanish</string>
@@ -39,7 +40,8 @@
     <string name="dialogTitle">(っ◔_◔)っ Reset Password (⁎˃ᴗ˂⁎)</string>
     <string name="dialogEmptEmail">(っ╥﹏╥)っ Email empty.</string>
     <string name="dialogSettingTitle">Restart App っ(⁎˃ᴗ˂⁎)っ</string>
-    <string name="dialogSettingText">We need to restart for the changes to take effect. (you can skip it).</string>
+    <string name="dialogSettingText">In some cases, the changes may not be applied correctly on certain devices. Would you like to restart?
+        If you continue to experience issues after restarting, please contact us!</string>
     <string name="dialogMessage">\nEnter your email to reset password. </string>
     <string name="dialogPositive">Accept</string>
     <string name="dialogNegative">Cancel</string>
@@ -52,7 +54,14 @@
     <!--MAIN-->
     <string name="logoutText">Signing out…</string>
     <!--USER INFO-->
-    <string name="levelIndicator">Level: %d</string>
+    <string name="levelIndicator">Level: </string>
+    <string name="tanukiStatus">Tanuki status: \n</string>
+    <string name="egg">Egg</string>
+    <string name="bad">In Danger</string>
+    <string name="medium">Better</string>
+    <string name="great">Fantastic</string>
+    <string name="missing">Missing</string>
+    <string name="score">Best score: \n</string>
     <string name="load">Loading…</string>
     <string name="verify">Verifying…</string>
     <string name="default_icon">DEFAULT</string>

@@ -19,6 +19,7 @@ import com.team.ni_hon.model.UserInfoActivity;
 
 import java.lang.reflect.Field;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 public class NiHonActivity extends AppCompatActivity {
@@ -131,50 +132,34 @@ public class NiHonActivity extends AppCompatActivity {
         switch(title){
             case R.string.dialogSettingTitle:
                 dismiss.setVisibility(dialogView.VISIBLE);
-                cancel.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        alertDialog.dismiss();
-                        restartApp();
-                    }
+                alertDialog.setCancelable(true);
+                cancel.setOnClickListener(v -> {
+                    alertDialog.dismiss();
+                    restartApp();
                 });
 
-                dismiss.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        alertDialog.dismiss();
-                        Intent intent=new Intent(NiHonActivity.this,MainActivity.class);
-                        startActivity(intent);
-                        finish();
-                    }
+                dismiss.setOnClickListener(v -> {
+                    alertDialog.dismiss();
+                    Intent intent=new Intent(NiHonActivity.this,MainActivity.class);
+                    startActivity(intent);
+                    finish();
                 });
                 break;
             case R.string.dialogDeleteTitle:
                 dismiss.setVisibility(View.VISIBLE);
-                cancel.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        alertDialog.dismiss();
-                        UserInfoActivity.DeleteUser();
-                    }
+                cancel.setOnClickListener(v -> {
+                    alertDialog.dismiss();
+                    UserInfoActivity.DeleteUser();
                 });
 
-                dismiss.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        alertDialog.dismiss();
-                    }
-                });
+                dismiss.setOnClickListener(v -> alertDialog.dismiss());
                 break;
             default:
-                cancel.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Log.d(TAG, "He entrado");
-                        alertDialog.dismiss();
-                        if (title == R.string.dialogErrorTitle)
-                            onBackPressed();
-                    }
+                cancel.setOnClickListener(v -> {
+                    Log.d(TAG, "He entrado");
+                    alertDialog.dismiss();
+                    if (title == R.string.dialogErrorTitle)
+                        onBackPressed();
                 });
                 break;
         }

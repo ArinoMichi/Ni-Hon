@@ -93,30 +93,11 @@
             app:layout_constraintBottom_toTopOf="@id/guideBot"
             android:textAlignment="center">
 
-            <TextView
-                android:id="@+id/score"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="textStart"
-                android:layout_margin="16dp"
-                android:text="Best Score: "
-                android:textColor="@color/black"
-                android:textSize="30sp"/>
-
-            <TextView
-                android:id="@+id/tanuki"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="textStart"
-                android:layout_margin="16dp"
-                android:text="Tanuki status: "
-                android:textColor="@color/black"
-                android:textSize="30sp"/>
-
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="50dp"
+                android:layout_height="0dp"
+                android:layout_weight="8"
+                android:padding="10dp"
                 android:layout_marginBottom="8dp"
                 android:gravity="center">
 
@@ -138,9 +119,10 @@
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
                     android:background="#00000000"
-                    android:text="Nivel: "
+                    android:text="@string/levelIndicator"
                     android:textStyle="bold"
                     android:textSize="34sp"
+                    android:textColor="@color/black"
                     android:gravity="center"
                     android:layout_alignStart="@id/progressBar"
                     android:layout_alignTop="@id/progressBar"
@@ -148,6 +130,39 @@
                     android:layout_alignBottom="@id/progressBar" />
 
             </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:paddingTop="8dp"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/score"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="6dp"
+                    android:paddingTop="6dp"
+                    android:text="@string/score"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/tanuki"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="6dp"
+                    android:text="@string/tanukiStatus"
+                    android:textColor="@color/black"
+                    android:textAlignment="center"
+                    android:textSize="24sp" />
+
+            </LinearLayout>
 
         </LinearLayout>
     <FrameLayout

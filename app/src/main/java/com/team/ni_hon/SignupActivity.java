@@ -23,6 +23,7 @@ import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.team.ni_hon.databinding.ActivitySignupBinding;
 import com.team.ni_hon.model.User;
+import com.team.ni_hon.utils.LanguageHelper;
 
 import java.lang.reflect.Field;
 import java.util.HashMap;
@@ -55,14 +56,18 @@ public class SignupActivity extends NiHonActivity {
         confirmPassword=bind.editRepeatPassword;
         save=bind.buttonSignUp;
 
-        save.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                try {
-                    saveNewUser();
-                } catch (IllegalAccessException e) {
-                    throw new RuntimeException(e);
-                }
+        LanguageHelper.setLocale(this, LanguageHelper.getLanguage(this));
+
+        initComponent();
+    }
+
+    public void initComponent(){
+        //OPCION: GUARDAR USUARIO
+        save.setOnClickListener(v -> {
+            try {
+                saveNewUser();
+            } catch (IllegalAccessException e) {
+                throw new RuntimeException(e);
             }
         });
     }
