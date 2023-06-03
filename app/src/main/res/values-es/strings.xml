@@ -66,5 +66,6 @@
     <string name="missing">Perdido</string>
     <string name="score">Máxima puntuación: \n</string>
     <string name="dialogErrorMenssage">No hemos podido obtener sus datos.</string>
+    <string name="button_Start">Empezar</string>
 
 </resources>

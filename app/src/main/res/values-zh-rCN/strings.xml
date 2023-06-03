@@ -65,6 +65,6 @@
     <string name="missing">丢失中</string>
     <string name="score">最高分数: \n</string>
     <string name="dialogErrorMenssage">我们无法获取您的数据。</string>
-
+    <string name="button_Start">开始练习</string>
 
 </resources>

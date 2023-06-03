@@ -1,10 +1,6 @@
-package com.team.ni_hon.model;
-
-import static java.security.AccessController.getContext;
+package com.team.ni_hon;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.view.menu.MenuBuilder;
-import androidx.appcompat.view.menu.MenuPopupHelper;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -12,21 +8,19 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.Build;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.Spanned;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -43,9 +37,6 @@ import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.mikhaellopez.circularprogressbar.CircularProgressBar;
-import com.team.ni_hon.MainActivity;
-import com.team.ni_hon.NiHonActivity;
-import com.team.ni_hon.R;
 import com.team.ni_hon.databinding.ActivityUserInfoBinding;
 
 public class UserInfoActivity extends NiHonActivity {
@@ -190,13 +181,13 @@ public class UserInfoActivity extends NiHonActivity {
         tanukiStatus.append(spannedText);
 
         switch (icon) {
-            case R.drawable.moon_icon:
+            case 1:
                 Icon.setImageResource(R.drawable.moon_icon);
                 break;
-            case R.drawable.japan_icon:
+            case 2:
                 Icon.setImageResource(R.drawable.japan_icon);
                 break;
-            case R.drawable.yukata_icon:
+            case 3:
                 Icon.setImageResource(R.drawable.yukata_icon);
                 break;
             default:
@@ -214,21 +205,46 @@ public class UserInfoActivity extends NiHonActivity {
             switch (item.getItemId()) {
                 case R.id.icon_default:
                     Icon.setImageResource(R.drawable.user_icon_default);
+                    saveIcon(0);
                     break;
                 case R.id.icon_moon:
                     Icon.setImageResource(R.drawable.moon_icon);
+                    saveIcon(1);
                     break;
                 case R.id.icon_japan:
                     Icon.setImageResource(R.drawable.japan_icon);
+                    saveIcon(2);
                     break;
                 case R.id.icon_yukata:
                     Icon.setImageResource(R.drawable.yukata_icon);
+                    saveIcon(3);
                     break;
             }
             return false;
         });
 
         popupMenu.show();
+    }
+
+    public void saveIcon(int icon){
+        Query query = usersRef.whereEqualTo("email", getUserEmail());
+        query.get().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                for (QueryDocumentSnapshot document : task.getResult()) {
+                    String documentId = document.getId();
+                    usersRef.document(documentId).update("icon", icon)
+                            .addOnSuccessListener(aVoid -> {
+                                Toast.makeText(context, "Se ha guardo el Icono", Toast.LENGTH_SHORT).show();
+                                recreate();
+                            })
+                            .addOnFailureListener(e -> {
+                                Toast.makeText(context, "No se ha podido guardar el Icono", Toast.LENGTH_SHORT).show();
+                            });
+                }
+            } else {
+                Toast.makeText(context, "No se ha podido guardar el Icono", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @SuppressLint("ClickableViewAccessibility")

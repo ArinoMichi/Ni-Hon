@@ -73,6 +73,8 @@
     <string name="yukata_icon">YUKATA</string>
     <!--TOAST TEXT-->
     <string name="empty_fields">Empty Fileds.</string>
+    <!--FRAGMENT LESSION-->
+    <string name="button_Start">Start Practice</string>
 
     <string name="default_clientId" translatable="false">781413435137-bbbvkdh757ratt3ocbpnskhfl5b4fih3.apps.googleusercontent.com</string>
 

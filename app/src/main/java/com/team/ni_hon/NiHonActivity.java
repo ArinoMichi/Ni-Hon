@@ -5,7 +5,6 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.PorterDuff;
-import android.os.Build;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,11 +14,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.team.ni_hon.model.UserInfoActivity;
-
 import java.lang.reflect.Field;
 import java.util.HashMap;
-import java.util.Locale;
 import java.util.Map;
 
 public class NiHonActivity extends AppCompatActivity {
