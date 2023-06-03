@@ -142,7 +142,7 @@ public class UserInfoActivity extends NiHonActivity {
             userName.setText(name);
 
         userLevel.append(String.valueOf(level));
-        progressBar.setProgress(level * 10);
+        progressBar.setProgress((level-1) * 10);
 
         //donde está el 0 será el valor de la racha de aciertos más alta. (por defecto siempre es 0)
         int points = (level + (0)) * 69;
@@ -238,11 +238,11 @@ public class UserInfoActivity extends NiHonActivity {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    delete.setBackground(getDrawable(R.drawable.circular_shape_pressed));
-                    delete.setScaleX(0.8f);
-                    delete.setScaleY(0.8f);
-                } else {
                     delete.setBackground(getDrawable(R.drawable.circular_shape));
+                    delete.setScaleX(0.9f);
+                    delete.setScaleY(0.9f);
+                } else {
+                    delete.setBackground(getDrawable(R.drawable.button));
                     delete.setScaleX(1.0f);
                     delete.setScaleY(1.0f);
                 }

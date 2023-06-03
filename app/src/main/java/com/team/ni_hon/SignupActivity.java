@@ -85,7 +85,7 @@ public class SignupActivity extends NiHonActivity {
         }else if (pswd.length()<6){
             Toast.makeText(this,"La contraseña debe no puede ser inferior a 6 digitos",Toast.LENGTH_LONG).show();
         }else{
-            User newUser=new User(name,emails,pswd,0,0);
+            User newUser=new User(name,emails,pswd,0,1);
 
             if(newUser!=null) {
                 Map<String,Object> UserToAdd=convertObjectToMap(newUser);

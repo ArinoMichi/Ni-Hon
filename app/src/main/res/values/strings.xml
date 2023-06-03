@@ -5,6 +5,7 @@
     <string name="errorLogInGoogle">" Error logging in with Google."</string>
     <string name="welcome">Glad to see you back! (っ◔◡◔)っ</string>
     <string name="welcome2">Welcome!</string>
+    <string name="splash">がんばって</string>
     <!--SETTINGS-->
     <string name="es">Spanish</string>
     <string name="en">English</string>
@@ -24,6 +25,7 @@
     <string name="sign_username">Username</string>
     <string name="sign_rpswd">Repeat Password</string>
     <string name="sign_up">sign up</string>
+    <string name="start_learn_jp">(いらっしゃいませ)</string>
     <!--ABOUT-->
     <string name="appBy">APP BY: </string>
     <string name="appMakers">Dani Mora \nAlexia Molina \nWei Shan</string>
@@ -48,6 +50,7 @@
     <string name="dialogErrorTitle">An unexpected error has occurred (っ╥﹏╥)っ</string>
     <string name="dialogErrorText">Unable to load your data. Please check if you are <b><u>connected to the internet</u></b> and have the <b><u>Google services properly updated.</u></b></string>
     <string name="dialogNotExistTitle">Error to Login (っ╥﹏╥)っ</string>
+    <string name="dialogErrorMenssage">We could not retrieve your data.</string>
     <string name="dialogNotExistText">The entered account does not exist, please verify if the password or email has been entered correctly.</string>
     <string name="dialogDeleteTitle">(っ╥﹏╥)っ Delete Account. </string>
     <string name="dialogDeleteMensage">Are you sure to delete this account?</string>
@@ -102,5 +105,6 @@
     <string name="lesson_5_1">
         Lesson 5 page 1
     </string>
+
 
 </resources>

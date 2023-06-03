@@ -2,12 +2,12 @@
 <set xmlns:android="http://schemas.android.com/apk/res/android">
     <translate
         android:fromYDelta="0"
-        android:toYDelta="-50"
+        android:toYDelta="-70"
         android:duration="400"
         android:interpolator="@android:anim/accelerate_interpolator" />
     <translate
         android:startOffset="400"
-        android:fromYDelta="-50"
+        android:fromYDelta="-70"
         android:toYDelta="0"
         android:duration="200"
         android:interpolator="@android:anim/decelerate_interpolator" />

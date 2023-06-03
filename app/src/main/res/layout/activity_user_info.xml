@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondolog2"
+    android:background="@drawable/backlog2"
     tools:context=".model.UserInfoActivity">
 
         <androidx.constraintlayout.widget.Guideline
@@ -105,7 +105,7 @@
                     android:id="@+id/progressBar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:cpb_progress_max="50"
+                    app:cpb_progress_max="40"
                     app:cpb_progress="0"
                     app:cpb_background_progressbar_color="@color/light_pink"
                     app:cpb_background_progressbar_width="20dp"
@@ -179,7 +179,7 @@
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_gravity="center"
-            android:background="@drawable/circular_shape"
+            android:background="@drawable/button"
             android:padding="8dp"
             android:src="@drawable/delete_icon" />
  

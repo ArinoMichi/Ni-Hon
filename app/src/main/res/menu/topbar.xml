@@ -6,10 +6,6 @@
         android:title="menu"
         app:showAsAction="always" >
         <menu android:background="@color/pink">
-            <item android:id="@+id/user"
-                android:title="@string/menuOptUser"
-                android:icon="@drawable/user_info"
-                app:showAsAction="withText|ifRoom"/>
             <item android:id="@+id/Settings"
                 android:title="@string/menuOptSetting"
                 android:icon="@drawable/settings"

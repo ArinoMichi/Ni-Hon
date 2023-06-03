@@ -232,7 +232,7 @@ public class LoginActivity extends NiHonActivity {
                                 String usernameGoogle = account.getDisplayName();
                                 String passwordG = "*";
                                 String GoogleUserId = mAuth.getCurrentUser().getUid();
-                                User GoogleUser = new User(usernameGoogle, emailGoogle, passwordG, 0, 0);
+                                User GoogleUser = new User(usernameGoogle, emailGoogle, passwordG, 0, 1);
 
                                 query = userCollRef.whereEqualTo("email", emailGoogle);
                                 query.get().addOnCompleteListener(task1 -> {

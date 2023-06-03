@@ -4,6 +4,8 @@
     <string name="welcome2">(っ◔◡◔)っ 欢迎回来!</string>
     <string name="join_us">(っ◔◡◔)っ 加入我们吧! \n(いらっしゃいませ)</string>
     <string name="welcomejp">(ようこそ)</string>
+    <string name="splash">がんばって</string>
+    <string name="start_learn_jp">(いらっしゃいませ)</string>
     <string name="errorLogInGoogle">谷歌账号登录错误</string>
     <string name="welcome">很高兴再见到你！</string>
     <string name="es">西班牙语</string>
@@ -62,5 +64,7 @@
     <string name="great">很精神</string>
     <string name="missing">丢失中</string>
     <string name="score">最高分数: \n</string>
+    <string name="dialogErrorMenssage">我们无法获取您的数据。</string>
+
 
 </resources>

@@ -1,36 +1,70 @@
 {
-  "questions":[
+  "questions": [
     {
-      "level":1,
-      "question":"........?",
-      "tries":0,
-      "done":false,
-      "options":[
+      "level": 1,
+      "questionES": "Selecciona el hiragana correcto para 'a': ",
+      "quiestionEN": "Select the correct hiragana for 'a': ",
+      "quiestionCH": "选择正确的平假名来表示 'a': ",
+      "opctions": [
         {
-          "option":"ssss",
-          "correct":false
+          "option": "あ",
+          "right": true
         },
         {
-          "option":"sdss",
-          "correct":true
+          "option": "い",
+          "right": false
+        },
+        {
+          "option": "う",
+          "right": false
         }
-      ]
+      ],
+      "correct": false,
+      "retries": 0
     },
     {
-      "level":2,
-      "question":"........?",
-      "tries":0,
-      "done":true,
-      "options":[
+      "level": 3,
+      "question": "¿Cuál es la traducción de 'gato' en japonés?",
+      "quiestionEN": "What is the translation of 'cat' in Japanese? ",
+      "quiestionCH": "'猫' 在日语中的翻译是什么？ ",
+      "opctions": [
         {
-          "option":"ssss",
-          "correct":false
+          "option": "いぬ",
+          "right": false
         },
         {
-          "option":"sdss",
-          "correct":true
+          "option": "ねこ",
+          "right": true
+        },
+        {
+          "option": "さかな",
+          "right": false
         }
-      ]
+      ],
+      "correct": false,
+      "retries": 0
+    },
+    {
+      "level": 2,
+      "question": "Selecciona el kanji correcto para 'agua':",
+      "quiestionEN": "Select the correct kanji for 'water': ",
+      "quiestionCH": "选择正确的字来表示 '水'： ",
+      "opctions": [
+        {
+          "option": "木",
+          "right": false
+        },
+        {
+          "option": "火",
+          "right": false
+        },
+        {
+          "option": "水",
+          "right": true
+        }
+      ],
+      "correct": false,
+      "retries": 0
     }
   ]
 }
