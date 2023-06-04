@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/mainbgday"
+    android:background="@drawable/bg"
     tools:context="com.team.ni_hon.MainActivity">
 
 
@@ -28,7 +28,8 @@
         android:id="@+id/user"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="50dp"
         android:background="@drawable/roundborder"
