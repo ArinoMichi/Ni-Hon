@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/blue"
     tools:context=".SettingsActivity">
 
     <androidx.constraintlayout.widget.Guideline
@@ -25,28 +26,26 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.15" />
+        app:layout_constraintGuide_percent="0.30" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideTopIMG"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.10" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideBotIMG"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.77" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideBot"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.90" />
+        app:layout_constraintGuide_percent="0.80" />
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginLeft="-13dp"
+        android:src="@drawable/hanami"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guideTop"
+        >
+
+    </ImageView>
 
     <LinearLayout
         android:layout_width="0px"
@@ -60,12 +59,13 @@
         app:layout_constraintTop_toTopOf="@id/guideTop">
 
         <TextView
+            android:id="@+id/text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
             android:layout_marginTop="80dp"
             android:text="@string/configTitle"
-            android:textColor="@color/black"
+            android:textColor="@color/magenta"
             android:textSize="20dp"
             android:textStyle="bold" />
 
@@ -102,7 +102,7 @@
             android:layout_marginLeft="40dp"
             android:layout_marginTop="40dp"
             android:text="@string/configTitleLang"
-            android:textColor="@color/black"
+            android:textColor="@color/magenta"
             android:textSize="20dp"
             android:textStyle="bold" />
 
@@ -127,31 +127,12 @@
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
                 android:text="@string/language"
-                android:textColor="@color/black"/>
+                android:textColor="@color/purple"/>
         </LinearLayout>
 
 
     </LinearLayout>
 
-    <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/sakuraback"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </ImageView>
-
-    <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginLeft="-13dp"
-        android:src="@drawable/sakuraback2"
-        app:layout_constraintStart_toStartOf="@id/guideLeft"
-        app:layout_constraintTop_toTopOf="@id/guideBotIMG">
-
-    </ImageView>
 
     <TextView
         android:id="@+id/versionApp"
