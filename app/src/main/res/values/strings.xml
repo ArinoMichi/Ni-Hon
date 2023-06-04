@@ -86,18 +86,47 @@
 
 
     <!-- lesson text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment">.</string>
     <string name="lesson_1_1">
-        Lesson 1 page 1
+        This is the first (and most important!) column in hiragana.\n\nIt sets the pronunciation of every other column coming after it, because every other column is basically just the a-i-u-e-o column with consonants attached to them.\n\nThe same basic sound repeats over and over and over, with a consonant plus these five vowel sounds, so make sure you have the right pronunciation for these five right from the start.
     </string>
     <string name="lesson_1_2">
-        Lesson 1 page 2
+        <b>あ</b> is pronounced like "ah!" like when you come to a realization. It also sounds like the a in "car."\n\n
+        To remember this kana, find the capital <b>A</b> inside of it. This "A" will tell you that this kana is also "a" aka あ. There is another similar kana, お, but that one doesn\'t have an "A" in it, which is how you can differentiate them.
     </string>
     <string name="lesson_1_3">
-        Lesson 1 page 3
+        <b>い</b> is pronounced like the ee in "eel."\n\n
+        To remember this kana, just think of a couple of <b>ee</b>ls hanging out.\n\nThey\'re upright because they\'re trying to mimic the letter "i" which also stands upright and also happens to be the way you spell out this character in romaji.
+    </string>
+    <string name="lesson_1_4">
+        <b>う</b> is pronounced like the oo in "ooh… ahhh!" when you\'re watching fireworks. In other words, it sounds like u in "UNO," the card game, or the number one in Spanish.\n\n
+        To remember this kana, notice the <b>U</b> shape right in it! It\'s sideways but it\'s there, telling you what this kana is. Be careful, there\'s another similar hiragana, つ, but that one isn\'t wearing a hat like <b>U</b> (you) are. Ooh, ahh, what a nifty hat!
+    </string>
+    <string name="lesson_1_5">
+        <b>え</b> is pronounced like the e in "egg."\n\n
+        To remember this kana, think of it like an <b>e</b>xotic bird. The feathery thing on its head gives it away that it\'s exotic and not normal. It also lays <b>e</b>xotic <b>e</b>ggs, because it\'s an exotic bird, after all.
+    </string>
+    <string name="lesson_1_6">
+        <b>お</b> is pronounced like you\'re saying "oh." It also sounds like the o in "origami."\n\n
+        Can you see the letter <b>o</b> in here, two times? This one looks similar to あ, except for its one key difference: there are two letter "o" symbols visible in there. Make sure you use this to differentiate this kana (お) and that similar kana (あ). This is one area of hiragana where a lot of people trip up, but by using this mnemonic you will be able to figure them out every time.
     </string>
 
     <string name="lesson_2_1">
+        Lesson 2 page 1
+    </string>
+    <string name="lesson_2_2">
+        Lesson 2 page 1
+    </string>
+    <string name="lesson_2_3">
+        Lesson 2 page 1
+    </string>
+    <string name="lesson_2_4">
+        Lesson 2 page 1
+    </string>
+    <string name="lesson_2_5">
+        Lesson 2 page 1
+    </string>
+    <string name="lesson_2_6">
         Lesson 2 page 1
     </string>
 

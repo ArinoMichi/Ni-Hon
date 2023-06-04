@@ -61,11 +61,11 @@ public class MainActivity extends NiHonActivity {
 
     public static ArrayList<Lesson> lessons = new ArrayList<Lesson>() {
         {
-            add(new Lesson(1, "Hiragana", "Let's learn hiragana!", 3));
-            add(new Lesson(2, "Katakana", "Let's learn katakana!", 1));
-            add(new Lesson(3, "Lesson 3", "3 is bigger than 2", 1));
-            add(new Lesson(4, "Lesson 4", "Sample text", 1));
-            add(new Lesson(5, "Lesson 5", "I don't know what to write", 1));
+            add(new Lesson(1, "Hiragana 1", "あ い う え お", 6));
+            add(new Lesson(2, "Hiragana 2", "か き く け こ", 6));
+            add(new Lesson(3, "Hiragana 3", "さ し す せ そ", 1));
+            add(new Lesson(4, "Hiragana 4", "た ち つ て と", 1));
+            add(new Lesson(5, "Hiragana 5", "な に ぬ ね の", 1));
         }
     };
 
