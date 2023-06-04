@@ -5,18 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/mainbgday"
-    android:backgroundTintMode="src_in"
     tools:context="com.team.ni_hon.MainActivity">
 
-    <ImageView
-        android:id="@+id/scrollImage"
-        android:layout_width="2100dp"
-        android:layout_height="match_parent"
-        android:src="@drawable/prueba"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
 
     <View
         android:layout_width="match_parent"

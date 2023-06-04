@@ -86,7 +86,6 @@ public class MainActivity extends NiHonActivity {
         recyclerView = bind.recycler;
         icon = bind.userImg;
         userEmail = bind.email;
-        backgroundImage = bind.scrollImage;
 
         userDataBase = FirebaseFirestore.getInstance();
         userCollRef = userDataBase.collection("users");
