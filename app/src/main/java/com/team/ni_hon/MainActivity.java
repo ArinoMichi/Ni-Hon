@@ -3,6 +3,7 @@ package com.team.ni_hon;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.DownloadManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.AssetManager;
@@ -51,7 +52,7 @@ public class MainActivity extends NiHonActivity {
     private String LoginEmail;
     private LocalUser localUser;
     private ImageView icon;
-    private TextView userEmail;
+    private TextView userName;
     ImageView backgroundImage;
     private FirebaseAuth mAuth;
     private FirebaseFirestore userDataBase;
@@ -85,7 +86,7 @@ public class MainActivity extends NiHonActivity {
 
         recyclerView = bind.recycler;
         icon = bind.userImg;
-        userEmail = bind.email;
+        userName = bind.email;
         backgroundImage = bind.scrollImage;
 
         userDataBase = FirebaseFirestore.getInstance();
@@ -254,7 +255,6 @@ public class MainActivity extends NiHonActivity {
 
     public void loadUserBasicData() {
         if (LoginEmail != null) {
-            userEmail.setText(LoginEmail);
 
             Query query = userCollRef.whereEqualTo("email", LoginEmail);
             query.get().addOnCompleteListener(task -> {
@@ -263,7 +263,12 @@ public class MainActivity extends NiHonActivity {
                     if (querySnapshot != null && !querySnapshot.isEmpty()) {
                         DocumentSnapshot document = querySnapshot.getDocuments().get(0);
                         int icon = document.getLong("icon").intValue();
+                        String name = document.getString("name");
+                        if(name==null){
+                            name=document.getString("nombre");
+                        }
                         setIcon(icon);
+                        userName.setText(name);
                     }
                 }
             });
