@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.team.ni_hon.databinding.ActivityAboutBinding;
+import com.team.ni_hon.utils.LanguageHelper;
 
 public class About extends NiHonActivity {
 
@@ -21,6 +22,8 @@ public class About extends NiHonActivity {
         version=bind.version;
 
         version.setText(getAppVersion());
+
+        LanguageHelper.setLocale(About.this,LanguageHelper.getLanguage(About.this));
     }
 
     @Override

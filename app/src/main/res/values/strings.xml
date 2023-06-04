@@ -1,7 +1,11 @@
 <resources>
     <string name="app_name">ni_hon</string>
+    <string name="welcomejp">(ようこそ)</string>
+    <string name="join_us">Start learning!</string>
+    <string name="errorLogInGoogle">" Error logging in with Google."</string>
     <string name="welcome">Glad to see you back! (っ◔◡◔)っ</string>
     <string name="welcome2">Welcome!</string>
+    <string name="splash">がんばって</string>
     <!--SETTINGS-->
     <string name="es">Spanish</string>
     <string name="en">English</string>
@@ -21,6 +25,7 @@
     <string name="sign_username">Username</string>
     <string name="sign_rpswd">Repeat Password</string>
     <string name="sign_up">sign up</string>
+    <string name="start_learn_jp">(いらっしゃいませ)</string>
     <!--ABOUT-->
     <string name="appBy">APP BY: </string>
     <string name="appMakers">Dani Mora \nAlexia Molina \nWei Shan</string>
@@ -32,23 +37,100 @@
     <string name="menuOptLogOut">Log out</string>
     <string name="menuOptAbout">About us</string>
     <string name="menuOptSetting">Settings</string>
-    <string name="join_us">Start learning!</string>
-    <string name="errorLogInGoogle">Error al iniciar sesion con Google</string>
-    <string name="default_clientId">781413435137-bbbvkdh757ratt3ocbpnskhfl5b4fih3.apps.googleusercontent.com</string>
+    <string name="menuOptUser">User info</string>
+    <!--DIALOG TEXT-->
+    <string name="dialogTitle">(っ◔_◔)っ Reset Password (⁎˃ᴗ˂⁎)</string>
+    <string name="dialogEmptEmail">(っ╥﹏╥)っ Email empty.</string>
+    <string name="dialogSettingTitle">Restart App っ(⁎˃ᴗ˂⁎)っ</string>
+    <string name="dialogSettingText">In some cases, the changes may not be applied correctly on certain devices. Would you like to restart?
+        If you continue to experience issues after restarting, please contact us!</string>
+    <string name="dialogMessage">\nEnter your email to reset password. </string>
+    <string name="dialogPositive">Accept</string>
+    <string name="dialogNegative">Cancel</string>
+    <string name="dialogErrorTitle">An unexpected error has occurred (っ╥﹏╥)っ</string>
+    <string name="dialogErrorText">Unable to load your data. Please check if you are <b><u>connected to the internet</u></b> and have the <b><u>Google services properly updated.</u></b></string>
+    <string name="dialogNotExistTitle">Error to Login (っ╥﹏╥)っ</string>
+    <string name="dialogErrorMenssage">We could not retrieve your data.</string>
+    <string name="dialogNotExistText">The entered account does not exist, please verify if the password or email has been entered correctly.</string>
+    <string name="dialogDeleteTitle">(っ╥﹏╥)っ Delete Account. </string>
+    <string name="dialogDeleteMensage">Are you sure to delete this account?</string>
+    <!--MAIN-->
+    <string name="logoutText">Signing out…</string>
+    <!--USER INFO-->
+    <string name="levelIndicator">Level: </string>
+    <string name="tanukiStatus">Tanuki status: \n</string>
+    <string name="egg">Egg</string>
+    <string name="bad">In Danger</string>
+    <string name="medium">Better</string>
+    <string name="great">Fantastic</string>
+    <string name="missing">Missing</string>
+    <string name="score">Best score: \n</string>
+    <string name="load">Loading…</string>
+    <string name="verify">Verifying…</string>
+    <string name="default_icon">DEFAULT</string>
+    <string name="moon_icon">MOON</string>
+    <string name="japan_icon">JAPAN</string>
+    <string name="yukata_icon">YUKATA</string>
+    <string name="bye_message">We hope to see you again!</string>
+    <string name="bye_title">Goodbye for now!</string>
+    <string name="error_delete_user">The user could not be deleted! You want retry?</string>
+    <string name="error_sesion_expired">To perform this option, it is necessary to restart the session.</string>
+    <!--TOAST TEXT-->
+    <string name="empty_fields">Empty Fileds.</string>
+    <!--FRAGMENT LESSION-->
+    <string name="button_Start">Start Practice</string>
+    <!--PRACTICE 01-->
+    <string name="dialog_complete_mes">(っ◔◡◔)っ You have completed this lesson! With: %d errors</string>
+    <string name="dialog_complete_titl">Congratulations!!</string>
+    <string name="dialog_AlreadyComplete">Already Done!</string>
+    <string name="dialog_retries">You have already completed this lesson.</string>
+
+    <string name="default_clientId" translatable="false">781413435137-bbbvkdh757ratt3ocbpnskhfl5b4fih3.apps.googleusercontent.com</string>
+
+
 
     <!-- lesson text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment">.</string>
     <string name="lesson_1_1">
-        Lesson 1 page 1
+        This is the first (and most important!) column in hiragana.\n\nIt sets the pronunciation of every other column coming after it, because every other column is basically just the a-i-u-e-o column with consonants attached to them.\n\nThe same basic sound repeats over and over and over, with a consonant plus these five vowel sounds, so make sure you have the right pronunciation for these five right from the start.
     </string>
     <string name="lesson_1_2">
-        Lesson 1 page 2
+        <b>あ</b> is pronounced like "ah!" like when you come to a realization. It also sounds like the a in "car."\n\n
+        To remember this kana, find the capital <b>A</b> inside of it. This "A" will tell you that this kana is also "a" aka あ. There is another similar kana, お, but that one doesn\'t have an "A" in it, which is how you can differentiate them.
     </string>
     <string name="lesson_1_3">
-        Lesson 1 page 3
+        <b>い</b> is pronounced like the ee in "eel."\n\n
+        To remember this kana, just think of a couple of <b>ee</b>ls hanging out.\n\nThey\'re upright because they\'re trying to mimic the letter "i" which also stands upright and also happens to be the way you spell out this character in romaji.
+    </string>
+    <string name="lesson_1_4">
+        <b>う</b> is pronounced like the oo in "ooh… ahhh!" when you\'re watching fireworks. In other words, it sounds like u in "UNO," the card game, or the number one in Spanish.\n\n
+        To remember this kana, notice the <b>U</b> shape right in it! It\'s sideways but it\'s there, telling you what this kana is. Be careful, there\'s another similar hiragana, つ, but that one isn\'t wearing a hat like <b>U</b> (you) are. Ooh, ahh, what a nifty hat!
+    </string>
+    <string name="lesson_1_5">
+        <b>え</b> is pronounced like the e in "egg."\n\n
+        To remember this kana, think of it like an <b>e</b>xotic bird. The feathery thing on its head gives it away that it\'s exotic and not normal. It also lays <b>e</b>xotic <b>e</b>ggs, because it\'s an exotic bird, after all.
+    </string>
+    <string name="lesson_1_6">
+        <b>お</b> is pronounced like you\'re saying "oh." It also sounds like the o in "origami."\n\n
+        Can you see the letter <b>o</b> in here, two times? This one looks similar to あ, except for its one key difference: there are two letter "o" symbols visible in there. Make sure you use this to differentiate this kana (お) and that similar kana (あ). This is one area of hiragana where a lot of people trip up, but by using this mnemonic you will be able to figure them out every time.
     </string>
 
     <string name="lesson_2_1">
+        Lesson 2 page 1
+    </string>
+    <string name="lesson_2_2">
+        Lesson 2 page 1
+    </string>
+    <string name="lesson_2_3">
+        Lesson 2 page 1
+    </string>
+    <string name="lesson_2_4">
+        Lesson 2 page 1
+    </string>
+    <string name="lesson_2_5">
+        Lesson 2 page 1
+    </string>
+    <string name="lesson_2_6">
         Lesson 2 page 1
     </string>
 
@@ -63,6 +145,6 @@
     <string name="lesson_5_1">
         Lesson 5 page 1
     </string>
-    <string name="splash">がんばって</string>
+
 
 </resources>

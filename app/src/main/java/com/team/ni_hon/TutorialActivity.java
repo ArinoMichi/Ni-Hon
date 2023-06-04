@@ -6,6 +6,7 @@ import androidx.viewpager.widget.ViewPager;
 import android.os.Bundle;
 
 import com.team.ni_hon.tutorial_fragments.TutorialPagerAdapter;
+import com.team.ni_hon.utils.LanguageHelper;
 
 public class TutorialActivity extends AppCompatActivity {
 
@@ -16,6 +17,7 @@ public class TutorialActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson);
 
+        LanguageHelper.setLocale(this, LanguageHelper.getLanguage(this));
 
         //fragments
         pagerAdapter = new TutorialPagerAdapter(this, getSupportFragmentManager());

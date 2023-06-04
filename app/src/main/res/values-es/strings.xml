@@ -4,6 +4,9 @@
     <string name="welcome">¡Qué bueno verte de vuelta!</string>
     <string name="welcome2">(っ◔◡◔)っ ¡Bienvenido!</string>
     <string name="join_us">(っ◔◡◔)っ ¡Únete a nosotros! \n(いらっしゃいませ)</string>
+    <string name="start_learn_jp">(いらっしゃいませ)</string>
+    <string name="splash">がんばって</string>
+    <string name="welcomejp">(ようこそ)</string>
     <string name="errorLogInGoogle">Error al iniciar con Google.</string>
     <string name="es">Español</string>
     <string name="en">Inglés</string>
@@ -31,4 +34,115 @@
     <string name="menuOptLogOut">Cerrar Sesión</string>
     <string name="menuOptAbout">Acerca de</string>
     <string name="menuOptSetting">Ajustes</string>
+    <string name="dialogTitle">(っ◔_◔)っ Restablecer Contraseña</string>
+    <string name="dialogMessage">\nIntroduzca su correo: </string>
+    <string name="dialogPositive">Aceptar</string>
+    <string name="dialogNegative">Cancelar</string>
+    <string name="logoutText">Cerrando sesion…</string>
+    <string name="menuOptUser">Usuario</string>
+    <string name="levelIndicator">Nivel: </string>
+    <string name="load">Cargando…</string>
+    <string name="verify">Verificando…</string>
+    <string name="default_icon">DEFECTO</string>
+    <string name="moon_icon">LUNA</string>
+    <string name="japan_icon">JAPON</string>
+    <string name="yukata_icon">YUKATA</string>
+    <string name="dialogErrorTitle">Ha ocurrido un Error incesperado (っ╥﹏╥)っ</string>
+    <string name="dialogErrorText">No se ha podido obtener tus datos. Compruebe si está <b><u>conectado a internet</u></b> y tener los <b><u>servicios de google correctamente actualizados.</u></b></string>
+    <string name="empty_fields">Campos vacíos.</string>
+    <string name="dialogNotExistTitle">Error en Iniciar Sesión (っ╥﹏╥)っ</string>
+    <string name="dialogNotExistText">No existe la cuenta introducida, verifique si se ha introducido la contraseña o el correo correctamente.</string>
+    <string name="dialogSettingTitle">Reiniciar App っ(⁎˃ᴗ˂⁎)っ</string>
+    <string name="dialogSettingText">En algunos casos, los cambios pueden no aplicarse correctamente en ciertos dispositivos móviles.
+        ¿Deseas reiniciar? Si sigues experimentando problemas después de reiniciar, ¡por favor contáctanos!</string>
+    <string name="dialogEmptEmail">(っ╥﹏╥)っ Correo vacío.</string>
+    <string name="dialogDeleteTitle">(っ╥﹏╥)っ Eliminar Cuenta! </string>
+    <string name="dialogDeleteMensage">¿Estás seguro de querer eliminar esta cuenta?</string>
+    <string name="tanukiStatus">Estado de Tanuki: \n</string>
+    <string name="egg">Huevo</string>
+    <string name="bad">En peligro</string>
+    <string name="medium">Normal</string>
+    <string name="great">Excelete</string>
+    <string name="missing">Perdido</string>
+    <string name="score">Máxima puntuación: \n</string>
+    <string name="dialogErrorMenssage">No hemos podido obtener sus datos.</string>
+    <string name="button_Start">Empezar</string>
+    <string name="dialog_complete_mes">(っ◔◡◔)っ ¡Has completado esta lección! Con: %d errores</string>
+    <string name="dialog_complete_titl">Felicitaciones!!</string>
+    <string name="dialog_AlreadyComplete">¡Lección finalizada!</string>
+    <string name="dialog_retries">Ya has completado esta lección.</string>
+    <string name="bye_message">Esperamos verte de nuevo!</string>
+    <string name="bye_title">¡Hasta pronto!</string>
+    <string name="error_delete_user">¡No se ha podido borrar el usuario! ¿Quere reintentar?</string>
+    <string name="error_sesion_expired">Para realizar esta opción es necesario reiniciar sesión</string>
+
+
+    <string name="hello_blank_fragment">.</string>
+
+    <string name="lesson_1_1">
+        Esta es la primera (¡y más importante!) columna en hiragana.\n\nEstablece la pronunciación de todas las demás columnas que vienen después, porque todas las demás columnas básicamente son solo la columna a-i-u-e-o con consonantes adjuntas a ellas.\n\nEl mismo sonido básico se repite una y otra vez, con una consonante más estos cinco sonidos de vocales, así que asegúrate de tener la pronunciación correcta para estos cinco desde el principio.
+    </string>
+
+    <string name="lesson_1_2">
+        <b>あ</b> se pronuncia como "ah!" como cuando te das cuenta de algo. También suena como la "a" en "carro".\n\n
+        Para recordar este kana, encuentra la letra capital <b>A</b> dentro de él. Esta "A" te dirá que este kana también es "a", es decir, あ. Hay otro kana similar, お, pero ese no tiene una "A" en él, lo que te permite diferenciarlos.
+    </string>
+
+    <string name="lesson_1_3">
+        <b>い</b> se pronuncia como el sonido "ee" en "eel".\n\n
+        Para recordar este kana, simplemente piensa en un par de <b>ee</b>ls pasando el rato.\n\nEstán en posición vertical porque están tratando de imitar la letra "i" que también está en posición vertical y también es la forma en que se escribe este carácter en romaji.
+    </string>
+
+    <string name="lesson_1_4">
+        <b>う</b> se pronuncia como el sonido "oo" en "ooh... ahhh!" cuando estás viendo fuegos artificiales. En otras palabras, suena como la "u" en "UNO", el juego de cartas, o el número uno en español.\n\n
+        Para recordar este kana, observa la forma de <b>U</b> justo en él. Está de lado, pero está ahí, indicándote qué kana es. Ten cuidado, hay otro hiragana similar, つ, pero ese no lleva un sombrero como <b>U</b> (tú). ¡Oh, ah, qué sombrero tan genial!
+    </string>
+
+    <string name="lesson_1_5">
+        <b>え</b> se pronuncia como la "e" en "huevo".\n\n
+        Para recordar este kana, piensa en él como un ave <b>e</b>xótica. Lo que sobresale en su cabeza revela que es exótica y no normal. También pone <b>huevo</b>s <b>e</b>xóticos, porque al fin y al cabo es un ave exótica.
+    </string>
+
+    <string name="lesson_1_6">
+        <b>お</b> se pronuncia como si dijeras "oh". También suena como la "o" en "origami".\n\n
+        ¿Puedes ver la letra <b>o</b> aquí, dos veces? Este se parece a あ, excepto por su diferencia clave: hay dos símbolos de la letra "o" visibles aquí. Asegúrate de usar esto para diferenciar este kana (お) y ese kana similar (あ). Esta es un área de hiragana donde mucha gente se confunde, pero al usar este mnemónico podrás distinguirlos cada vez.
+    </string>
+
+    <string name="lesson_2_1">
+        Lección 2 página 1
+    </string>
+
+    <string name="lesson_2_2">
+        Lección 2 página 1
+    </string>
+
+    <string name="lesson_2_3">
+        Lección 2 página 1
+    </string>
+
+    <string name="lesson_2_4">
+        Lección 2 página 1
+    </string>
+
+    <string name="lesson_2_5">
+        Lección 2 página 1
+    </string>
+
+    <string name="lesson_2_6">
+        Lección 2 página 1
+    </string>
+
+    <string name="lesson_3_1">
+        Lección 3 página 1
+    </string>
+
+    <string name="lesson_4_1">
+        Lección 4 página 1
+    </string>
+
+    <string name="lesson_5_1">
+        Lección 5 página 1
+    </string>
+
+
 </resources>

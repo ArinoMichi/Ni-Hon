@@ -139,7 +139,7 @@
         android:layout_marginTop="10dp"
         android:src="@drawable/sakuraback"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/guideTopIMG">
+        app:layout_constraintTop_toTopOf="parent">
 
     </ImageView>
 

@@ -1,10 +1,14 @@
 package com.team.ni_hon.main_recycler;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -22,16 +26,17 @@ import java.util.ArrayList;
 public class MainLessonAdapter extends RecyclerView.Adapter<MainLessonAdapter.LessonViewHolder> {
 
     private final ArrayList<Lesson> lessons;
-
+    private int userLevel;
     private int previousId;
     private int currentId;
     private Context context;
 
-    public MainLessonAdapter(Context context, ArrayList<Lesson> lessons) {
+    public MainLessonAdapter(Context context, ArrayList<Lesson> lessons,int level) {
         this.lessons = lessons;
         this.previousId = -1;
         this.currentId = -1;
         this.context = context;
+        this.userLevel=level;
     }
 
     @NonNull
@@ -54,22 +59,42 @@ public class MainLessonAdapter extends RecyclerView.Adapter<MainLessonAdapter.Le
         return lvh;
     }
 
+    @SuppressLint({"UseCompatLoadingForDrawables", "SetTextI18n"})
     @Override
     public void onBindViewHolder(@NonNull LessonViewHolder holder, int position) {
         Lesson lesson = lessons.get(position);
         holder.button.setText(Integer.toString(lesson.getId()));
         holder.lessonTitleText.setText(lessons.get(position).getTitle());
         holder.popupText.setText(lessons.get(position).getPopupText());
+
+
+        if(position+1>userLevel){
+            holder.button.setBackground(holder.button.getResources().getDrawable(R.drawable.lock));
+            holder.button.setEnabled(false);
+            holder.button.setText(null);
+        }else{
+            holder.button.setBackground(holder.button.getResources().getDrawable(R.drawable.button));
+            holder.button.setEnabled(true);
+        }
+
         if (position != currentId){
             holder.popup.setVisibility(View.INVISIBLE);
             holder.image.setVisibility(View.INVISIBLE);
-
         }
         if (position == currentId){
             holder.image.setVisibility(View.VISIBLE);
             MainActivity.getRecyclerView().smoothScrollToPosition(currentId);
             holder.popup.setVisibility(View.VISIBLE);
             holder.popupButton.setVisibility(View.VISIBLE);
+
+            Animation animation = AnimationUtils.loadAnimation(context, R.anim.jump);
+            holder.image.startAnimation(animation);
+
+            holder.image.setOnClickListener(v->{
+                Log.d("TAG","He detectado un toque");
+                Animation animations = AnimationUtils.loadAnimation(context, R.anim.rotate);
+                holder.image.startAnimation(animations);
+            });
         }
     }
 
