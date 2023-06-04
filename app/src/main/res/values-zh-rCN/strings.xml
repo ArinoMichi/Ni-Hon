@@ -66,5 +66,9 @@
     <string name="score">最高分数: \n</string>
     <string name="dialogErrorMenssage">我们无法获取您的数据。</string>
     <string name="button_Start">开始练习</string>
+    <string name="dialog_complete_mes">(っ◔◡◔)っ 你已完成此课程！有：%d 个错误</string>
+    <string name="dialog_complete_titl">恭喜您!!</string>
+    <string name="dialog_AlreadyComplete">已完成!</string>
+    <string name="dialog_retries">您已经完成了此课程。</string>
 
 </resources>

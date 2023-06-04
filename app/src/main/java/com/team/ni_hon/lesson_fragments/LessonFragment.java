@@ -1,6 +1,9 @@
 package com.team.ni_hon.lesson_fragments;
 
+import static android.content.Context.MODE_PRIVATE;
+
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -69,7 +72,13 @@ public class LessonFragment extends Fragment {
         }
 
         startPractice.setOnClickListener(v->{
-            Intent intent1=new Intent(getContext(), Practice1.class);
+            SharedPreferences pref=getActivity().getSharedPreferences("PRACTICE",MODE_PRIVATE);
+            SharedPreferences.Editor editor = pref.edit();
+            editor.putInt("cnt",0);
+            editor.putInt("accessLevel",lesson);
+            editor.apply();
+
+            Intent intent1=new Intent(getActivity(), Practice1.class);
             startActivity(intent1);
             getActivity().finish();
         });

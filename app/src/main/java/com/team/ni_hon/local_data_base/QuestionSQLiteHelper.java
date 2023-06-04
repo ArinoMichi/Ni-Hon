@@ -75,6 +75,29 @@ public class QuestionSQLiteHelper extends SQLiteOpenHelper {
         db.close();
     }
 
+    public void updateRetriesById(String idQuestion, int retries) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        values.put(COLUMN_RETRIES, retries);
+
+        db.update(TABLE_NAME, values, COLUMN_ID_QUESTION + "=?", new String[]{String.valueOf(idQuestion)});
+        db.close();
+    }
+
+    public void updateCompleteStatus(String idQuestion, boolean completeStatus) {
+        SQLiteDatabase db = getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_COMPLETE, completeStatus ? 1 : 0); //1-> true | 0-> false
+
+        String whereClause = COLUMN_ID_QUESTION + " = ?";
+        String[] whereArgs = {idQuestion};
+
+        db.update(TABLE_NAME, values, whereClause, whereArgs);
+        db.close();
+    }
+
+
     @SuppressLint("Range")
     public List<Question> getQuestionsByLevelAndEmail(int level, String email) {
         List<Question> questions = new ArrayList<>();

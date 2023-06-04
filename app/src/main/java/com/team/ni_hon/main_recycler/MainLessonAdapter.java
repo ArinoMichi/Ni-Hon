@@ -71,6 +71,7 @@ public class MainLessonAdapter extends RecyclerView.Adapter<MainLessonAdapter.Le
         if(position+1>userLevel){
             holder.button.setBackground(holder.button.getResources().getDrawable(R.drawable.lock));
             holder.button.setEnabled(false);
+            holder.button.setText(null);
         }else{
             holder.button.setBackground(holder.button.getResources().getDrawable(R.drawable.button));
             holder.button.setEnabled(true);

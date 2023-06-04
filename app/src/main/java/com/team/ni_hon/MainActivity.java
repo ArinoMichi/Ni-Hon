@@ -95,13 +95,16 @@ public class MainActivity extends NiHonActivity {
 
         getUserLevel(level -> {
             if (level != -1) {
+
                 saveLevel(level);
+
                 lessonAdapter = new MainLessonAdapter(this, lessons, level);
                 recyclerView.setHasFixedSize(true);
                 recyclerView.setLayoutManager(new MyLinearLayoutManager(this, MyLinearLayoutManager.HORIZONTAL, false));
                 recyclerView.setAdapter(lessonAdapter);
+                recyclerView.scrollToPosition(level-1);
             } else {
-                showErrorMenssage(R.string.dialogErrorMenssage, 0);
+                Toast.makeText(this, R.string.dialogErrorTitle, Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -117,7 +120,6 @@ public class MainActivity extends NiHonActivity {
 
         initComponent();
     }
-
     public void initComponent() {
         loadUserBasicData();
 

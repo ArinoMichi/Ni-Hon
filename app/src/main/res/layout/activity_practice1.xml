@@ -43,11 +43,12 @@
                 android:layout_width="wrap_content"
                 android:layout_weight="1"
                 android:layout_height="200dp"
+                android:gravity="center"
                 android:layout_marginRight="5dp"
                 android:background="@drawable/round_ans"
                 android:padding="18dip"
                 android:textColor="#000"
-                android:textSize="18dp"
+                android:textSize="50sp"
                 android:textAlignment="center"/>
 
             <!-- second element of the row that is shown in the screenshot-->
@@ -56,12 +57,12 @@
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="200dp"
-                android:layout_gravity="center"
+                android:gravity="center"
                 android:layout_marginLeft="5dp"
                 android:background="@drawable/round_ans"
                 android:padding="18dip"
                 android:textColor="#000"
-                android:textSize="18dp"
+                android:textSize="50sp"
                 android:textAlignment="center"/>
         </TableRow>
         <TableRow
@@ -77,12 +78,12 @@
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="200dp"
-                android:layout_gravity="center"
+                android:gravity="center"
                 android:background="@drawable/round_ans"
                 android:layout_marginRight="5dp"
                 android:padding="18dip"
                 android:textColor="#000"
-                android:textSize="18dp"
+                android:textSize="50sp"
                 android:textAlignment="center"/>
 
             <!-- second element of the row that is shown in the screenshot-->
@@ -91,14 +92,27 @@
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="200dp"
-                android:layout_gravity="center"
+                android:gravity="center"
                 android:layout_marginLeft="5dp"
                 android:background="@drawable/round_ans"
                 android:padding="18dip"
                 android:textColor="#000"
-                android:textSize="18dp"
+                android:textSize="50sp"
                 android:textAlignment="center"/>
         </TableRow>
     </TableLayout>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        app:lottie_url="https://assets2.lottiefiles.com/packages/lf20_rtxcgnqq.json"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
