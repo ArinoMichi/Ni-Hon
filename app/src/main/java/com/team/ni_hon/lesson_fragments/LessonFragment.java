@@ -6,15 +6,15 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
-
 
 import com.bumptech.glide.Glide;
 import com.team.ni_hon.Practice1;
@@ -28,9 +28,7 @@ public class LessonFragment extends Fragment {
     private int lesson;
     private int page;
 
-    public LessonFragment() {
-
-    }
+    public LessonFragment() { }
 
     public static LessonFragment newInstance(int position) {
         LessonFragment fragment = new LessonFragment();
@@ -64,6 +62,9 @@ public class LessonFragment extends Fragment {
         String imageId = "lesson_" + lesson + "_" + page;
         int imageResId = getResources().getIdentifier(imageId, "drawable", getActivity().getPackageName());
         Glide.with(this).load(imageResId).into(image);
+
+        ImageView imageArrow = view.findViewById(R.id.imageArrow);
+
         Button startPractice= view.findViewById(R.id.start_button);
 
         Intent intent = getActivity().getIntent();
@@ -72,6 +73,7 @@ public class LessonFragment extends Fragment {
             Lesson lesson = (Lesson) intent.getSerializableExtra("lesson");
             if (getArguments().getInt(PAGE) ==lesson.getPages()) {
                 startPractice.setVisibility(View.VISIBLE);
+                imageArrow.setVisibility(View.INVISIBLE);
             }
         }
 
