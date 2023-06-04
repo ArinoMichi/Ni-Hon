@@ -38,6 +38,11 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.mikhaellopez.circularprogressbar.CircularProgressBar;
 import com.team.ni_hon.databinding.ActivityUserInfoBinding;
+import com.team.ni_hon.local_data_base.OptionsSQLiteHelper;
+import com.team.ni_hon.local_data_base.QuestionSQLiteHelper;
+import com.team.ni_hon.local_data_base.UserSQLiteHelper;
+
+import java.util.List;
 
 public class UserInfoActivity extends NiHonActivity {
 
@@ -49,6 +54,9 @@ public class UserInfoActivity extends NiHonActivity {
     private static FirebaseFirestore myDB;
     private static CollectionReference usersRef;
     private static Context context;
+    private static UserSQLiteHelper userSQLiteHelper;
+    private static QuestionSQLiteHelper questionSQLiteHelper;
+    private static OptionsSQLiteHelper optionsSQLiteHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +79,10 @@ public class UserInfoActivity extends NiHonActivity {
 
         myDB = FirebaseFirestore.getInstance();
         usersRef = myDB.collection("users");
+
+        userSQLiteHelper = new UserSQLiteHelper(this);
+        questionSQLiteHelper = new QuestionSQLiteHelper(this);
+        optionsSQLiteHelper = new OptionsSQLiteHelper(this);
 
         if (email != null) {
             initComponent();
@@ -133,7 +145,7 @@ public class UserInfoActivity extends NiHonActivity {
             userName.setText(name);
 
         userLevel.append(String.valueOf(level));
-        progressBar.setProgress((level-1) * 10);
+        progressBar.setProgress((level - 1) * 10);
 
         //donde está el 0 será el valor de la racha de aciertos más alta. (por defecto siempre es 0)
         int points = (level + (0)) * 69;
@@ -156,25 +168,25 @@ public class UserInfoActivity extends NiHonActivity {
 
         switch (level) {
             case 0:
-                htmlText = "<font color='#B4B4AF'>"+getString(R.string.egg)+"</font>"; //Gris
+                htmlText = "<font color='#B4B4AF'>" + getString(R.string.egg) + "</font>"; //Gris
                 spannedText = Html.fromHtml(htmlText);
                 break;
             case 1:
             case 2:
-                htmlText = "<font color='#FF0000'>"+getString(R.string.bad)+"</font>"; //Rojo
+                htmlText = "<font color='#FF0000'>" + getString(R.string.bad) + "</font>"; //Rojo
                 spannedText = Html.fromHtml(htmlText);
                 break;
             case 3:
             case 4:
-                htmlText = "<font color='#12F000'>"+getString(R.string.medium)+"</font>"; //Verde
+                htmlText = "<font color='#12F000'>" + getString(R.string.medium) + "</font>"; //Verde
                 spannedText = Html.fromHtml(htmlText);
                 break;
             case 5:
-                htmlText = "<font color='#F6B300'>"+getString(R.string.great)+"</font>"; //Golden
+                htmlText = "<font color='#F6B300'>" + getString(R.string.great) + "</font>"; //Golden
                 spannedText = Html.fromHtml(htmlText);
                 break;
             default:
-                htmlText = "<font color='#B054F8'>"+getString(R.string.missing)+"</font>"; //Violet
+                htmlText = "<font color='#B054F8'>" + getString(R.string.missing) + "</font>"; //Violet
                 spannedText = Html.fromHtml(htmlText);
                 break;
         }
@@ -226,7 +238,7 @@ public class UserInfoActivity extends NiHonActivity {
         popupMenu.show();
     }
 
-    public void saveIcon(int icon){
+    public void saveIcon(int icon) {
         Query query = usersRef.whereEqualTo("email", getUserEmail());
         query.get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
@@ -272,6 +284,18 @@ public class UserInfoActivity extends NiHonActivity {
             DeleteEmailUser();
         else
             DeleteGoogleUser();
+
+        DeleteLocalData();
+    }
+
+    private static void DeleteLocalData() {
+        //Elimino todas las preguntas asociadas a esta cuenta. (en local).
+        userSQLiteHelper.deleteByEmail(getUserEmail());
+
+        questionSQLiteHelper.deleteByEmail(getUserEmail());
+
+        optionsSQLiteHelper.deleteOptionsByIdQuestions(
+                questionSQLiteHelper.getIdQuestionsByEmail(getUserEmail()));
     }
 
     private static void DeleteGoogleUser() {
@@ -360,6 +384,7 @@ public class UserInfoActivity extends NiHonActivity {
         editor.remove("token");
         editor.remove("pswd");
         editor.remove("google");
+        editor.remove("level");
         editor.apply();
 
         View dialogView = LayoutInflater.from(context).inflate(R.layout.custom_alertdialog, null);
@@ -367,8 +392,8 @@ public class UserInfoActivity extends NiHonActivity {
         TextView text = dialogView.findViewById(R.id.dialog_text);
         TextView titleD = dialogView.findViewById(R.id.text_title);
 
-        text.setText("Esperamos verte de nuevo!");
-        titleD.setText("¡Hasta pronto!");
+        text.setText(R.string.bye_message);
+        titleD.setText(R.string.bye_title);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setView(dialogView);

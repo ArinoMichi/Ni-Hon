@@ -71,5 +71,76 @@
     <string name="dialog_complete_titl">Felicitaciones!!</string>
     <string name="dialog_AlreadyComplete">¡Lección finalizada!</string>
     <string name="dialog_retries">Ya has completado esta lección.</string>
+    <string name="bye_message">Esperamos verte de nuevo!</string>
+    <string name="bye_title">¡Hasta pronto!</string>
+
+
+    <string name="hello_blank_fragment">.</string>
+
+    <string name="lesson_1_1">
+        Esta es la primera (¡y más importante!) columna en hiragana.\n\nEstablece la pronunciación de todas las demás columnas que vienen después, porque todas las demás columnas básicamente son solo la columna a-i-u-e-o con consonantes adjuntas a ellas.\n\nEl mismo sonido básico se repite una y otra vez, con una consonante más estos cinco sonidos de vocales, así que asegúrate de tener la pronunciación correcta para estos cinco desde el principio.
+    </string>
+
+    <string name="lesson_1_2">
+        <b>あ</b> se pronuncia como "ah!" como cuando te das cuenta de algo. También suena como la "a" en "carro".\n\n
+        Para recordar este kana, encuentra la letra capital <b>A</b> dentro de él. Esta "A" te dirá que este kana también es "a", es decir, あ. Hay otro kana similar, お, pero ese no tiene una "A" en él, lo que te permite diferenciarlos.
+    </string>
+
+    <string name="lesson_1_3">
+        <b>い</b> se pronuncia como el sonido "ee" en "eel".\n\n
+        Para recordar este kana, simplemente piensa en un par de <b>ee</b>ls pasando el rato.\n\nEstán en posición vertical porque están tratando de imitar la letra "i" que también está en posición vertical y también es la forma en que se escribe este carácter en romaji.
+    </string>
+
+    <string name="lesson_1_4">
+        <b>う</b> se pronuncia como el sonido "oo" en "ooh... ahhh!" cuando estás viendo fuegos artificiales. En otras palabras, suena como la "u" en "UNO", el juego de cartas, o el número uno en español.\n\n
+        Para recordar este kana, observa la forma de <b>U</b> justo en él. Está de lado, pero está ahí, indicándote qué kana es. Ten cuidado, hay otro hiragana similar, つ, pero ese no lleva un sombrero como <b>U</b> (tú). ¡Oh, ah, qué sombrero tan genial!
+    </string>
+
+    <string name="lesson_1_5">
+        <b>え</b> se pronuncia como la "e" en "huevo".\n\n
+        Para recordar este kana, piensa en él como un ave <b>e</b>xótica. Lo que sobresale en su cabeza revela que es exótica y no normal. También pone <b>huevo</b>s <b>e</b>xóticos, porque al fin y al cabo es un ave exótica.
+    </string>
+
+    <string name="lesson_1_6">
+        <b>お</b> se pronuncia como si dijeras "oh". También suena como la "o" en "origami".\n\n
+        ¿Puedes ver la letra <b>o</b> aquí, dos veces? Este se parece a あ, excepto por su diferencia clave: hay dos símbolos de la letra "o" visibles aquí. Asegúrate de usar esto para diferenciar este kana (お) y ese kana similar (あ). Esta es un área de hiragana donde mucha gente se confunde, pero al usar este mnemónico podrás distinguirlos cada vez.
+    </string>
+
+    <string name="lesson_2_1">
+        Lección 2 página 1
+    </string>
+
+    <string name="lesson_2_2">
+        Lección 2 página 1
+    </string>
+
+    <string name="lesson_2_3">
+        Lección 2 página 1
+    </string>
+
+    <string name="lesson_2_4">
+        Lección 2 página 1
+    </string>
+
+    <string name="lesson_2_5">
+        Lección 2 página 1
+    </string>
+
+    <string name="lesson_2_6">
+        Lección 2 página 1
+    </string>
+
+    <string name="lesson_3_1">
+        Lección 3 página 1
+    </string>
+
+    <string name="lesson_4_1">
+        Lección 4 página 1
+    </string>
+
+    <string name="lesson_5_1">
+        Lección 5 página 1
+    </string>
+
 
 </resources>

@@ -70,5 +70,77 @@
     <string name="dialog_complete_titl">恭喜您!!</string>
     <string name="dialog_AlreadyComplete">已完成!</string>
     <string name="dialog_retries">您已经完成了此课程。</string>
+    <string name="bye_message">希望再次见到你！</string>
+    <string name="bye_title">再见！</string>
+
+
+
+    <string name="hello_blank_fragment">.</string>
+
+    <string name="lesson_1_1">
+        这是平假名中的第一列（也是最重要的一列）。它为之后的每一列设置了发音，因为其他每一列基本上都是带有辅音的 a-i-u-e-o 列。\n\n同样的基本音重复出现，每次都是一个辅音加上这五个元音音素，所以从一开始就要确保这五个元音的发音是正确的。
+    </string>
+
+    <string name="lesson_1_2">
+        <b>あ</b> 的发音像是当你有所领悟时发出的 "啊！" 的声音。它也听起来像英语中 "car" 中的 "a" 音。\n\n
+        要记住这个假名，找到它内部的大写字母 <b>A</b>。这个 "A" 告诉你这个假名也是 "a"，也就是 あ。还有一个类似的假名 お，但它内部没有 "A"，这样你就可以区分它们。
+    </string>
+
+    <string name="lesson_1_3">
+        <b>い</b> 的发音像是英语中 "eel" 中的 "ee" 音。\n\n
+        要记住这个假名，只需想象一对 <b>ee</b>ls 在一起。它们是笔直的，因为它们试图模仿字母 "i"，这个字母也是笔直的，也恰好是你用罗马字母拼写这个字符的方式。
+    </string>
+
+    <string name="lesson_1_4">
+        <b>う</b> 的发音像是当你看烟花时发出的 "oo"，类似于 "ooh… ahhh!" 的声音。换句话说，它听起来像西班牙语中 "UNO"（纸牌游戏）或 "一" 的 "u" 音。\n\n
+        要记住这个假名，注意其中的 <b>U</b> 形状！它是侧着的，但它在那里，告诉你这个假名是什么。要小心，还有一个类似的平假名 つ，但那个没有像 <b>U</b>（你）一样戴帽子。哦，啊，多么漂亮的帽子！
+    </string>
+
+    <string name="lesson_1_5">
+        <b>え</b> 的发音像是英语中 "egg" 中的 "e" 音。\n\n
+        要记住这个假名，将它想象成一只 <b>e</b> 型奇特鸟。它头部的羽毛装饰让人们知道它是奇特的，而不是普通的。它也会下 <b>e</b> 型的奇特蛋，因为毕竟它是一只奇特的鸟。
+    </string>
+
+    <string name="lesson_1_6">
+        <b>お</b> 的发音像你说 "哦" 的声音。它也听起来像英语中 "origami" 中的 "o" 音。\n\n
+        你能看到这里的字母 <b>o</b> 吗，两次出现？这个假名看起来与 あ 相似，除了一个关键的区别：其中有两个字母 "o" 的符号可见。确保使用这个区分这个假名 (お) 和那个类似的假名 (あ)。这是平假名中许多人容易出错的地方，但通过使用这个记忆法，你每次都能弄清楚它们。
+    </string>
+
+    <string name="lesson_2_1">
+        第2课 第1页
+    </string>
+
+    <string name="lesson_2_2">
+        第2课 第1页
+    </string>
+
+    <string name="lesson_2_3">
+        第2课 第1页
+    </string>
+
+    <string name="lesson_2_4">
+        第2课 第1页
+    </string>
+
+    <string name="lesson_2_5">
+        第2课 第1页
+    </string>
+
+    <string name="lesson_2_6">
+        第2课 第1页
+    </string>
+
+    <string name="lesson_3_1">
+        第3课 第1页
+    </string>
+
+    <string name="lesson_4_1">
+        第4课 第1页
+    </string>
+
+    <string name="lesson_5_1">
+        第5课 第1页
+    </string>
+
 
 </resources>

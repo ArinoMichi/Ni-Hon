@@ -75,6 +75,13 @@ public class QuestionSQLiteHelper extends SQLiteOpenHelper {
         db.close();
     }
 
+    public void deleteByEmail(String email) {
+        SQLiteDatabase db = getWritableDatabase();
+
+        db.delete(TABLE_NAME, COLUMN_EMAIL + "=?", new String[]{email});
+        db.close();
+    }
+
     public void updateRetriesById(String idQuestion, int retries) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -135,5 +142,27 @@ public class QuestionSQLiteHelper extends SQLiteOpenHelper {
         }
 
         return questions;
+    }
+
+    @SuppressLint("Range")
+    public List<String> getIdQuestionsByEmail(String email) {
+        List<String> idQuestions = new ArrayList<>();
+        SQLiteDatabase db = getReadableDatabase();
+
+        String[] columns = {COLUMN_ID_QUESTION};
+        String selection = COLUMN_EMAIL + "=?";
+        String[] selectionArgs = {email};
+
+        Cursor cursor = db.query(TABLE_NAME, columns, selection, selectionArgs, null, null, null);
+        if (cursor != null && cursor.moveToFirst()) {
+            do {
+                String idQuestion = cursor.getString(cursor.getColumnIndex(COLUMN_ID_QUESTION));
+                idQuestions.add(idQuestion);
+            } while (cursor.moveToNext());
+            cursor.close();
+        }
+
+        db.close();
+        return idQuestions;
     }
 }

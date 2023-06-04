@@ -58,6 +58,18 @@ public class OptionsSQLiteHelper extends SQLiteOpenHelper {
         db.close();
     }
 
+    public void deleteOptionsByIdQuestions(List<String> idQuestions) {
+        SQLiteDatabase db = getWritableDatabase();
+        String whereClause = COLUMN_ID_QUESTION + "=?";
+
+        for (String idQuestion : idQuestions) {
+            String[] whereArgs = {idQuestion};
+            db.delete(TABLE_NAME, whereClause, whereArgs);
+        }
+
+        db.close();
+    }
+
     @SuppressLint("Range")
     public List<Option> getOptionsByQuestionId(String idQuestion) {
         List<Option> options = new ArrayList<>();

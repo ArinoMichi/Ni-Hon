@@ -108,7 +108,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         app:lottie_url="https://assets2.lottiefiles.com/packages/lf20_rtxcgnqq.json"
-        app:lottie_autoPlay="true"
+        app:lottie_autoPlay="false"
         app:lottie_loop="true"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

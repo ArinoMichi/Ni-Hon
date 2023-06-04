@@ -43,15 +43,26 @@ public class UserSQLiteHelper extends SQLiteOpenHelper {
 
     public void addUser(String email) {
         SQLiteDatabase db = this.getWritableDatabase();
+
         ContentValues values = new ContentValues();
         values.put(COLUMN_EMAIL, email);
+
         db.insert(TABLE_NAME, null, values);
+        db.close();
+    }
+
+    public void deleteByEmail(String email) {
+        SQLiteDatabase db = getWritableDatabase();
+
+        db.delete(TABLE_NAME, COLUMN_EMAIL + "=?", new String[]{email});
         db.close();
     }
 
     public Cursor getUserByEmail(String email) {
         SQLiteDatabase db = this.getReadableDatabase();
+
         String query = "SELECT * FROM " + TABLE_NAME + " WHERE " + COLUMN_EMAIL + "=?";
+
         return db.rawQuery(query, new String[]{email});
     }
 

@@ -71,6 +71,8 @@
     <string name="moon_icon">MOON</string>
     <string name="japan_icon">JAPAN</string>
     <string name="yukata_icon">YUKATA</string>
+    <string name="bye_message">We hope to see you again!</string>
+    <string name="bye_title">Goodbye for now!</string>
     <!--TOAST TEXT-->
     <string name="empty_fields">Empty Fileds.</string>
     <!--FRAGMENT LESSION-->
