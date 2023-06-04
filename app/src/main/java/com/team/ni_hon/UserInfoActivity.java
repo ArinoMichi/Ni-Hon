@@ -23,13 +23,16 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -284,8 +287,6 @@ public class UserInfoActivity extends NiHonActivity {
             DeleteEmailUser();
         else
             DeleteGoogleUser();
-
-        DeleteLocalData();
     }
 
     private static void DeleteLocalData() {
@@ -298,6 +299,19 @@ public class UserInfoActivity extends NiHonActivity {
                 questionSQLiteHelper.getIdQuestionsByEmail(getUserEmail()));
     }
 
+    private static void DeleteUserSesion(){
+        //Borro la sesión del usuario guardado.
+        SharedPreferences sharedPreferences = context.getSharedPreferences("UserSession", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        editor.remove("token");
+        editor.remove("pswd");
+        editor.remove("google");
+        editor.remove("level");
+        editor.apply();
+    }
+
+
     private static void DeleteGoogleUser() {
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(context.getString(R.string.default_web_client_id))
@@ -306,57 +320,39 @@ public class UserInfoActivity extends NiHonActivity {
         GoogleSignInClient googleSignInClient = GoogleSignIn.getClient(context, gso);
 
         googleSignInClient.signOut()
-                .addOnCompleteListener((Activity) context, new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        // El usuario se ha deslogueado exitosamente de Google
-                        // Ahora puedes eliminar el usuario de Firebase Authentication
-                        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                        if (user != null) {
-                            user.delete()
-                                    .addOnCompleteListener(new OnCompleteListener<Void>() {
-                                        @Override
-                                        public void onComplete(@NonNull Task<Void> task) {
-                                            if (task.isSuccessful()) {
-                                                // El usuario se eliminó exitosamente de Firebase Authentication
-                                                DeleteUserFromDataBase(getUserEmail());
-                                            } else {
-                                                // Error al eliminar el usuario de Firebase Authentication
-                                                ErrorMensage();
-                                            }
-                                        }
-                                    });
-                        }
+                .addOnCompleteListener((Activity) context, task -> {
+
+                    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                    if (user != null) {
+                        user.delete()
+                                .addOnCompleteListener(task1 -> {
+                                    if (task1.isSuccessful()) {
+                                        DeleteUserFromDataBase(getUserEmail());
+                                    } else {
+                                        ErrorMensage(1);
+                                    }
+                                });
                     }
                 });
     }
 
     private static void DeleteEmailUser() {
         FirebaseAuth.getInstance().signInWithEmailAndPassword(getUserEmail(), getUserPassword())
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                            if (user != null) {
-                                user.delete()
-                                        .addOnCompleteListener(new OnCompleteListener<Void>() {
-                                            @Override
-                                            public void onComplete(@NonNull Task<Void> task) {
-                                                if (task.isSuccessful()) {
-                                                    // El usuario se eliminó exitosamente de Firebase Authentication
-                                                    // Ahora puedes eliminarlo de la base de datos (Cloud Firestore)
-                                                    DeleteUserFromDataBase(getUserEmail());
-                                                } else {
-                                                    // Error al eliminar el usuario de Firebase Authentication
-                                                    ErrorMensage();
-                                                }
-                                            }
-                                        });
-                            }
-                        } else {
-                            // Error al autenticar al usuario
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                        if (user != null) {
+                            user.delete()
+                                    .addOnCompleteListener(task1 -> {
+                                        if (task1.isSuccessful()) {
+                                            DeleteUserFromDataBase(getUserEmail());
+                                        } else {
+                                            ErrorMensage(0);
+                                        }
+                                    });
                         }
+                    } else {
+                        Log.e("ERROR", String.valueOf(task.getException()));
                     }
                 });
     }
@@ -369,9 +365,11 @@ public class UserInfoActivity extends NiHonActivity {
                         for (QueryDocumentSnapshot document : task.getResult()) {
                             document.getReference().delete();
                         }
+                        DeleteLocalData();
+                        DeleteUserSesion();
                         sayGoodbye();
                     } else {
-                        ErrorMensage();
+                        ErrorMensage(0);
                     }
                 });
     }
@@ -409,14 +407,20 @@ public class UserInfoActivity extends NiHonActivity {
         });
     }
 
-    public static void ErrorMensage() {
+    public static void ErrorMensage(int type) {
         View dialogView = LayoutInflater.from(context).inflate(R.layout.custom_alertdialog, null);
-        Button cancel = dialogView.findViewById(R.id.button_ok);
+        Button retrie = dialogView.findViewById(R.id.button_ok);
+        Button cancel = dialogView.findViewById(R.id.button_no);
         TextView text = dialogView.findViewById(R.id.dialog_text);
         TextView titleD = dialogView.findViewById(R.id.text_title);
 
-        text.setText("Error inesperado");
-        titleD.setText("No se ha podido borrar el usuario");
+        if (type == 0) {
+            text.setText(R.string.dialogErrorTitle);
+            titleD.setText(R.string.error_delete_user);
+        }else{
+            text.setText(R.string.error_sesion_expired);
+            titleD.setText(R.string.dialogErrorTitle);
+        }
 
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setView(dialogView);
@@ -424,9 +428,35 @@ public class UserInfoActivity extends NiHonActivity {
         alertDialog.setCancelable(false);
         alertDialog.show();
 
-        cancel.setOnClickListener(v -> {
-            alertDialog.dismiss();
-        });
+        if (type == 0){
+            cancel.setVisibility(View.VISIBLE);
+
+            cancel.setOnClickListener(v -> {
+                alertDialog.dismiss();
+            });
+
+            retrie.setOnClickListener(v->{
+                alertDialog.dismiss();
+                DeleteUser();
+            });
+        }else{
+            cancel.setVisibility(View.VISIBLE);
+
+            cancel.setOnClickListener(v -> {
+                alertDialog.dismiss();
+            });
+
+            retrie.setOnClickListener(v->{
+                alertDialog.dismiss();
+
+                DeleteUserSesion();
+                Intent intent=new Intent(context,LoginActivity.class);
+                context.startActivity(intent);
+                ((Activity)context).finish();
+            });
+        }
+
+
     }
 
     @Override

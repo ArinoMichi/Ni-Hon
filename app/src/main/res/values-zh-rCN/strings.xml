@@ -72,7 +72,8 @@
     <string name="dialog_retries">您已经完成了此课程。</string>
     <string name="bye_message">希望再次见到你！</string>
     <string name="bye_title">再见！</string>
-
+    <string name="error_delete_user">无法删除用户！要重试吗?</string>
+    <string name="error_sesion_expired">要执行此选项，需要重新登录。</string>
 
 
     <string name="hello_blank_fragment">.</string>

@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.AssetManager;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
@@ -47,6 +48,7 @@ public class MainActivity extends NiHonActivity {
 
     private static final int RC_SIGN_IN = 123;
     private static final String FILE = "preguntas.json";
+    private String LoginEmail;
     private LocalUser localUser;
     private ImageView icon;
     private TextView userEmail;
@@ -81,9 +83,6 @@ public class MainActivity extends NiHonActivity {
 
         LanguageHelper.setLocale(this, LanguageHelper.getLanguage(this));
 
-        //Se usa para borrar la base de datos.
-        //getApplicationContext().deleteDatabase(UserSQLiteHelper.DATABASE_NAME);
-
         recyclerView = bind.recycler;
         icon = bind.userImg;
         userEmail = bind.email;
@@ -93,20 +92,8 @@ public class MainActivity extends NiHonActivity {
         userCollRef = userDataBase.collection("users");
         mAuth = FirebaseAuth.getInstance();
 
-        getUserLevel(level -> {
-            if (level != -1) {
-
-                saveLevel(level);
-
-                lessonAdapter = new MainLessonAdapter(this, lessons, level);
-                recyclerView.setHasFixedSize(true);
-                recyclerView.setLayoutManager(new MyLinearLayoutManager(this, MyLinearLayoutManager.HORIZONTAL, false));
-                recyclerView.setAdapter(lessonAdapter);
-                recyclerView.scrollToPosition(level-1);
-            } else {
-                Toast.makeText(this, R.string.dialogErrorTitle, Toast.LENGTH_SHORT).show();
-            }
-        });
+        SharedPreferences pref = getSharedPreferences("UserSession", MODE_PRIVATE);
+        LoginEmail=pref.getString("token",null);
 
         assetManager = getAssets();
         localUser = new LocalUser();
@@ -115,12 +102,20 @@ public class MainActivity extends NiHonActivity {
         questionSQLiteHelper = new QuestionSQLiteHelper(this);
         optionsSQLiteHelper = new OptionsSQLiteHelper(this);
 
+        //Se usa para borrar la base de datos.
+        //getApplicationContext().deleteDatabase(UserSQLiteHelper.DATABASE_NAME);
+
+        //Crear las tablas si no existen:
+        createLocalTable();
 
         setScrollableImage();
 
         initComponent();
     }
+
     public void initComponent() {
+        showProgressDialog(R.string.load);
+
         loadUserBasicData();
 
         setUserQuestions();
@@ -130,13 +125,42 @@ public class MainActivity extends NiHonActivity {
             startActivity(intent);
             finish();
         });
+
+        getUserLevel();
     }
 
-    public void saveLevel(int level){
-        SharedPreferences pref=getSharedPreferences("UserSession",MODE_PRIVATE);
+    public void getUserLevel() {
+        Query query = userCollRef.whereEqualTo("email", LoginEmail);
+        query.get().addOnCompleteListener(task1 -> {
+            if (task1.isSuccessful() && !task1.getResult().isEmpty()) {
+                for (QueryDocumentSnapshot document : task1.getResult()) {
+                    int level = document.getLong("level").intValue();
+                    saveLevel(level);
+
+                    lessonAdapter = new MainLessonAdapter(this, lessons, level);
+                    recyclerView.setHasFixedSize(true);
+                    recyclerView.setLayoutManager(new MyLinearLayoutManager(this, MyLinearLayoutManager.HORIZONTAL, false));
+                    recyclerView.setAdapter(lessonAdapter);
+                    recyclerView.scrollToPosition(level - 1);
+
+                    cancelProgressDialog();
+                    return;
+                }
+
+            }else{
+                cancelProgressDialog();
+                deleteUserSesion();
+                Toast.makeText(this, R.string.dialogSettingTitle, Toast.LENGTH_SHORT).show();
+                restartApp();
+            }
+        });
+    }
+
+    public void saveLevel(int level) {
+        SharedPreferences pref = getSharedPreferences("UserSession", MODE_PRIVATE);
         SharedPreferences.Editor editor = pref.edit();
 
-        editor.putInt("level",level);
+        editor.putInt("level", level);
         editor.apply();
     }
 
@@ -160,29 +184,58 @@ public class MainActivity extends NiHonActivity {
         if (questionsData != null && !questionsData.isEmpty())
             localUser = MyJsonParser.parseJsonToObjects(questionsData);
 
-        if (localUser != null) {
-            localUser.setEmail(getUserEmail());
+        try {
+            localUser.setEmail(LoginEmail);
 
-            if (userSQLiteHelper.VerifyIfEmailExist(getUserEmail())) {
+            if (userSQLiteHelper.VerifyIfEmailExist(LoginEmail)) {
                 Log.d(TAG, "El usuario ya tiene las preguntas");
-            }else {
+            } else {
                 //Cargo las preguntas para el usuario.
-                SQLiteDatabase db=userSQLiteHelper.getWritableDatabase();
-                questionSQLiteHelper.onCreate(db);
-                optionsSQLiteHelper.onCreate(db);
+                userSQLiteHelper.addUser(LoginEmail);
 
-                userSQLiteHelper.addUser(getUserEmail());
+                for (Question q : localUser.getQuestions()) {
+                    if (q != null) {
+                        q.setEmail(LoginEmail);
+                        questionSQLiteHelper.addQuestion(q);
 
-                for(Question q:localUser.getQuestions()){
-                    q.setEmail(getUserEmail());
-                    questionSQLiteHelper.addQuestion(q);
-                    for(Option o:q.getOptions()){
-                        optionsSQLiteHelper.addOption(o);
+                        if (q.getOptions() != null) {
+                            for (Option o : q.getOptions()) {
+                                if (o != null) {
+                                    optionsSQLiteHelper.addOption(o);
+                                }
+                            }
+                        }
                     }
                 }
-                db.close();
             }
+        } catch (NullPointerException e) {
         }
+    }
+
+    public void createLocalTable() {
+        SQLiteDatabase db = userSQLiteHelper.getWritableDatabase();
+        if (!isTableExists(db, UserSQLiteHelper.TABLE_NAME)) {
+            userSQLiteHelper.onCreate(db);
+        }
+
+        if (!isTableExists(db, QuestionSQLiteHelper.TABLE_NAME)) {
+            questionSQLiteHelper.onCreate(db);
+        }
+
+        if (!isTableExists(db, OptionsSQLiteHelper.TABLE_NAME)) {
+            optionsSQLiteHelper.onCreate(db);
+        }
+        db.close();
+    }
+
+    private boolean isTableExists(SQLiteDatabase db, String tableName) {
+        String query = "SELECT DISTINCT tbl_name FROM sqlite_master WHERE tbl_name = ?";
+        Cursor cursor = db.rawQuery(query, new String[]{tableName});
+        boolean tableExists = (cursor != null && cursor.getCount() > 0);
+        if (cursor != null) {
+            cursor.close();
+        }
+        return tableExists;
     }
 
     private String loadMyJsonFromAsset(@NonNull AssetManager assetManager, String fileName) {
@@ -199,43 +252,22 @@ public class MainActivity extends NiHonActivity {
         return null;
     }
 
-    public interface OnUserLevelListener {
-        void onUserLevelObtained(int level);
-    }
-
-    public void getUserLevel(OnUserLevelListener listener) {
-        Query query = userCollRef.whereEqualTo("email", getUserEmail());
-        query.get().addOnCompleteListener(task1 -> {
-            if (task1.isSuccessful() && !task1.getResult().isEmpty()) {
-                for (QueryDocumentSnapshot document : task1.getResult()) {
-                    int level = document.getLong("level").intValue();
-                    listener.onUserLevelObtained(level);
-                    return;
-                }
-            }
-            listener.onUserLevelObtained(-1);
-        });
-    }
-
     public void loadUserBasicData() {
-        if (getUserEmail() != null)
-            userEmail.setText(getUserEmail());
+        if (LoginEmail != null) {
+            userEmail.setText(LoginEmail);
 
-        Query query = userCollRef.whereEqualTo("email", getUserEmail());
-        query.get().addOnCompleteListener(task -> {
-            if (task.isSuccessful()) {
-                QuerySnapshot querySnapshot = task.getResult();
-                if (querySnapshot != null && !querySnapshot.isEmpty()) {
-                    DocumentSnapshot document = querySnapshot.getDocuments().get(0);
-                    int icon = document.getLong("icon").intValue();
-                    setIcon(icon);
-                } else {
-                    Toast.makeText(this, "No se ha obtenido el Icono.", Toast.LENGTH_SHORT).show();
+            Query query = userCollRef.whereEqualTo("email", LoginEmail);
+            query.get().addOnCompleteListener(task -> {
+                if (task.isSuccessful()) {
+                    QuerySnapshot querySnapshot = task.getResult();
+                    if (querySnapshot != null && !querySnapshot.isEmpty()) {
+                        DocumentSnapshot document = querySnapshot.getDocuments().get(0);
+                        int icon = document.getLong("icon").intValue();
+                        setIcon(icon);
+                    }
                 }
-            } else {
-                Toast.makeText(this, "No se ha obtenido el Icono.", Toast.LENGTH_SHORT).show();
-            }
-        });
+            });
+        }
     }
 
     public void setIcon(int icon) {
@@ -280,11 +312,9 @@ public class MainActivity extends NiHonActivity {
                 deleteUserSesion();
 
                 //Finaliza la pantalla y se vuelve al login.
-                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-                startActivity(intent);
                 Toast toast = Toast.makeText(this, R.string.logoutText, Toast.LENGTH_LONG);
                 toast.show();
-                finish();
+                remove();
                 break;
             case R.id.about:
                 Intent intentAbout = new Intent(MainActivity.this, About.class);
@@ -302,7 +332,7 @@ public class MainActivity extends NiHonActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void deleteUserSesion(){
+    public void deleteUserSesion() {
         //Borro la sesión del usuario guardado.
         SharedPreferences sharedPreferences = getSharedPreferences("UserSession", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -312,5 +342,11 @@ public class MainActivity extends NiHonActivity {
         editor.remove("google");
         editor.remove("level");
         editor.apply();
+    }
+
+    public void remove(){
+        Intent intent=new Intent(this,LoginActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

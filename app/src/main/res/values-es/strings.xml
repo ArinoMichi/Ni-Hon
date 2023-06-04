@@ -73,6 +73,8 @@
     <string name="dialog_retries">Ya has completado esta lección.</string>
     <string name="bye_message">Esperamos verte de nuevo!</string>
     <string name="bye_title">¡Hasta pronto!</string>
+    <string name="error_delete_user">¡No se ha podido borrar el usuario! ¿Quere reintentar?</string>
+    <string name="error_sesion_expired">Para realizar esta opción es necesario reiniciar sesión</string>
 
 
     <string name="hello_blank_fragment">.</string>

@@ -73,6 +73,8 @@
     <string name="yukata_icon">YUKATA</string>
     <string name="bye_message">We hope to see you again!</string>
     <string name="bye_title">Goodbye for now!</string>
+    <string name="error_delete_user">The user could not be deleted! You want retry?</string>
+    <string name="error_sesion_expired">To perform this option, it is necessary to restart the session.</string>
     <!--TOAST TEXT-->
     <string name="empty_fields">Empty Fileds.</string>
     <!--FRAGMENT LESSION-->

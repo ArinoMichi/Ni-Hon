@@ -51,8 +51,8 @@ dependencies {
     implementation 'com.google.firebase:firebase-core:21.1.1'
     implementation 'com.google.firebase:firebase-analytics'
     implementation 'com.google.firebase:firebase-auth:22.0.0'
-    implementation 'com.google.firebase:firebase-firestore:24.6.0'
-    implementation 'com.google.firebase:firebase-database:20.2.1'
+    implementation 'com.google.firebase:firebase-firestore:24.6.1'
+    implementation 'com.google.firebase:firebase-database:20.2.2'
     implementation 'com.google.android.gms:play-services-auth:20.5.0'
     implementation 'com.firebaseui:firebase-ui-auth:8.0.0'
 
