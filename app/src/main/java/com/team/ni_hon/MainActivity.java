@@ -87,7 +87,6 @@ public class MainActivity extends NiHonActivity {
         recyclerView = bind.recycler;
         icon = bind.userImg;
         userName = bind.email;
-        backgroundImage = bind.scrollImage;
 
         userDataBase = FirebaseFirestore.getInstance();
         userCollRef = userDataBase.collection("users");
@@ -108,8 +107,6 @@ public class MainActivity extends NiHonActivity {
 
         //Crear las tablas si no existen:
         createLocalTable();
-
-        setScrollableImage();
 
         initComponent();
     }
@@ -163,21 +160,6 @@ public class MainActivity extends NiHonActivity {
 
         editor.putInt("level", level);
         editor.apply();
-    }
-
-    public void setScrollableImage() {
-        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
-            @Override
-            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
-                super.onScrolled(recyclerView, dx, dy);
-
-                // Obtener el desplazamiento horizontal actual del RecyclerView
-                int horizontalScrollOffset = recyclerView.computeHorizontalScrollOffset();
-
-                // Actualizar el desplazamiento de la imagen
-                backgroundImage.setTranslationX(-horizontalScrollOffset);
-            }
-        });
     }
 
     public void setUserQuestions() {
@@ -278,16 +260,16 @@ public class MainActivity extends NiHonActivity {
     public void setIcon(int icon) {
         switch (icon) {
             case 1:
-                this.icon.setImageResource(R.drawable.moon_icon);
+                this.icon.setImageResource(R.drawable.user_icon2);
                 break;
             case 2:
-                this.icon.setImageResource(R.drawable.japan_icon);
+                this.icon.setImageResource(R.drawable.user_icon3);
                 break;
             case 3:
-                this.icon.setImageResource(R.drawable.yukata_icon);
+                this.icon.setImageResource(R.drawable.user_icon4);
                 break;
             default:
-                this.icon.setImageResource(R.drawable.user_icon_default);
+                this.icon.setImageResource(R.drawable.user_icon1);
                 break;
         }
     }

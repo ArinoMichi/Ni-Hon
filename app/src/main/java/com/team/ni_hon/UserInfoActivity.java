@@ -197,16 +197,16 @@ public class UserInfoActivity extends NiHonActivity {
 
         switch (icon) {
             case 1:
-                Icon.setImageResource(R.drawable.moon_icon);
+                Icon.setImageResource(R.drawable.user_icon2);
                 break;
             case 2:
-                Icon.setImageResource(R.drawable.japan_icon);
+                Icon.setImageResource(R.drawable.user_icon3);
                 break;
             case 3:
-                Icon.setImageResource(R.drawable.yukata_icon);
+                Icon.setImageResource(R.drawable.user_icon4);
                 break;
             default:
-                Icon.setImageResource(R.drawable.user_icon_default);
+                Icon.setImageResource(R.drawable.user_icon1);
                 break;
         }
     }
@@ -218,20 +218,20 @@ public class UserInfoActivity extends NiHonActivity {
 
         popupMenu.setOnMenuItemClickListener(item -> {
             switch (item.getItemId()) {
-                case R.id.icon_default:
-                    Icon.setImageResource(R.drawable.user_icon_default);
+                case R.id.girl:
+                    Icon.setImageResource(R.drawable.user_icon1);
                     saveIcon(0);
                     break;
-                case R.id.icon_moon:
-                    Icon.setImageResource(R.drawable.moon_icon);
+                case R.id.boy:
+                    Icon.setImageResource(R.drawable.user_icon2);
                     saveIcon(1);
                     break;
-                case R.id.icon_japan:
-                    Icon.setImageResource(R.drawable.japan_icon);
+                case R.id.ninja:
+                    Icon.setImageResource(R.drawable.user_icon3);
                     saveIcon(2);
                     break;
-                case R.id.icon_yukata:
-                    Icon.setImageResource(R.drawable.yukata_icon);
+                case R.id.grandpa:
+                    Icon.setImageResource(R.drawable.user_icon4);
                     saveIcon(3);
                     break;
             }
@@ -269,7 +269,7 @@ public class UserInfoActivity extends NiHonActivity {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    delete.setBackground(getDrawable(R.drawable.circular_shape));
+                    delete.setBackground(getDrawable(R.drawable.round_ans));
                     delete.setScaleX(0.9f);
                     delete.setScaleY(0.9f);
                 } else {

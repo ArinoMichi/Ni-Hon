@@ -16,9 +16,11 @@
     <color name="green">#72A98F</color>
     <color name="orange">#A499B3</color>
     <color name="light_gray">#EDEDED</color>
-    <color name="magenta">#B56576</color>
+    <color name="magenta">#CF7488</color>
+    <color name="lightmagenta">#EC859A</color>
     <color name="purple">#6D597A</color>
     <color name="gray">#9C9C9C</color>
+    <color name="gray2">#515151</color>
     <color name="light_pink">#FAC3D7</color>
     <color name="pink">#FFAFCC</color>
     <color name="light_blue">#BDE0FE</color>

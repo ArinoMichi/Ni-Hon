@@ -70,7 +70,7 @@ public class MainLessonAdapter extends RecyclerView.Adapter<MainLessonAdapter.Le
         setTanukiByLevel(holder.image);
 
         if(position+1>userLevel){
-            holder.button.setBackground(holder.button.getResources().getDrawable(R.drawable.lock));
+            holder.button.setBackground(holder.button.getResources().getDrawable(R.mipmap.img_locked));
             holder.button.setEnabled(false);
             holder.button.setText(null);
         }else{
@@ -102,7 +102,7 @@ public class MainLessonAdapter extends RecyclerView.Adapter<MainLessonAdapter.Le
     private void setTanukiByLevel(ImageView tanuki) {
         switch(userLevel){
             case 1:
-                tanuki.setImageResource(R.drawable.lock);
+                tanuki.setImageResource(R.mipmap.img_locked);
                 break;
             case 2:
                 tanuki.setImageResource(R.drawable.moon_icon);
@@ -114,10 +114,10 @@ public class MainLessonAdapter extends RecyclerView.Adapter<MainLessonAdapter.Le
                 tanuki.setImageResource(R.drawable.user_icon_default);
                 break;
             case 5:
-                tanuki.setImageResource(R.drawable.user);
+                tanuki.setImageResource(R.drawable.user_icon3);
                 break;
             default:
-                tanuki.setImageResource(R.drawable.japan_icon);
+                tanuki.setImageResource(R.drawable.tanuki);
                 break;
 
         }
