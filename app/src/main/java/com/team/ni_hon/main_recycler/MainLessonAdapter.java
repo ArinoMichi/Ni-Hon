@@ -102,13 +102,13 @@ public class MainLessonAdapter extends RecyclerView.Adapter<MainLessonAdapter.Le
     private void setTanukiByLevel(ImageView tanuki) {
         switch(userLevel){
             case 1:
-                tanuki.setImageResource(R.mipmap.img_locked);
+                tanuki.setImageResource(R.drawable.tanukibaby);
                 break;
             case 2:
-                tanuki.setImageResource(R.drawable.moon_icon);
+                tanuki.setImageResource(R.drawable.tanukiteen);
                 break;
             case 3:
-                tanuki.setImageResource(R.drawable.tanuki);
+                tanuki.setImageResource(R.drawable.tanukiadult);
                 break;
             case 4:
                 tanuki.setImageResource(R.drawable.user_icon_default);
@@ -117,7 +117,7 @@ public class MainLessonAdapter extends RecyclerView.Adapter<MainLessonAdapter.Le
                 tanuki.setImageResource(R.drawable.user_icon3);
                 break;
             default:
-                tanuki.setImageResource(R.drawable.tanuki);
+                tanuki.setImageResource(R.drawable.tanukiteen);
                 break;
 
         }
