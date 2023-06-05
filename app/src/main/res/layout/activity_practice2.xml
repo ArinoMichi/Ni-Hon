@@ -6,4 +6,55 @@
     android:layout_height="match_parent"
     tools:context=".Practice2">
 
+
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/question"
+        android:background="@drawable/round_question"
+        android:layout_height="wrap_content"
+        android:layout_margin="40dp"
+        android:layout_gravity="center"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        android:padding="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/kana"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="a"
+        android:textAlignment="center"
+        android:textSize="150dp"
+        app:layout_constraintTop_toBottomOf="@+id/question"
+        android:layout_marginTop="100dp"/>
+
+    <EditText
+        android:id="@+id/answer"
+        android:layout_width="200dp"
+        android:hint="    (Here)"
+        android:layout_height="40dp"
+        app:layout_constraintTop_toBottomOf="@+id/kana"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/checkAns"
+        app:layout_constraintEnd_toEndOf="parent" />
+    <Button
+        android:id="@+id/checkAns"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="@color/orange"
+        android:text="CHECK"
+        app:layout_constraintTop_toBottomOf="@id/answer"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
