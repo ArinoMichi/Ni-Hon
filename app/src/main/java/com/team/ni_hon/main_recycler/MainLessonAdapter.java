@@ -67,6 +67,7 @@ public class MainLessonAdapter extends RecyclerView.Adapter<MainLessonAdapter.Le
         holder.lessonTitleText.setText(lessons.get(position).getTitle());
         holder.popupText.setText(lessons.get(position).getPopupText());
 
+        setTanukiByLevel(holder.image);
 
         if(position+1>userLevel){
             holder.button.setBackground(holder.button.getResources().getDrawable(R.drawable.lock));
@@ -95,6 +96,30 @@ public class MainLessonAdapter extends RecyclerView.Adapter<MainLessonAdapter.Le
                 Animation animations = AnimationUtils.loadAnimation(context, R.anim.rotate);
                 holder.image.startAnimation(animations);
             });
+        }
+    }
+
+    private void setTanukiByLevel(ImageView tanuki) {
+        switch(userLevel){
+            case 1:
+                tanuki.setImageResource(R.drawable.lock);
+                break;
+            case 2:
+                tanuki.setImageResource(R.drawable.moon_icon);
+                break;
+            case 3:
+                tanuki.setImageResource(R.drawable.tanuki);
+                break;
+            case 4:
+                tanuki.setImageResource(R.drawable.user_icon_default);
+                break;
+            case 5:
+                tanuki.setImageResource(R.drawable.user);
+                break;
+            default:
+                tanuki.setImageResource(R.drawable.japan_icon);
+                break;
+
         }
     }
 
