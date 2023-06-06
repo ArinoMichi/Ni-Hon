@@ -226,6 +226,8 @@ public class Practice1 extends NiHonActivity {
             finish();
         });
 
+        cancel.setVisibility(View.VISIBLE);
+
         cancel.setOnClickListener(v -> {
             alertDialog.dismiss();
             remove();
