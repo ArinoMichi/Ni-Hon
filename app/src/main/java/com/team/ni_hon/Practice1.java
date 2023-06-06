@@ -198,7 +198,8 @@ public class Practice1 extends NiHonActivity {
 
     private void showLevelUpMessage() {
         View dialogView = LayoutInflater.from(this).inflate(R.layout.custom_alertdialog, null);
-        Button cancel = dialogView.findViewById(R.id.button_ok);
+        Button accept = dialogView.findViewById(R.id.button_ok);
+        Button cancel = dialogView.findViewById(R.id.button_no);
         TextView text = dialogView.findViewById(R.id.dialog_text);
         TextView titleD = dialogView.findViewById(R.id.text_title);
 
@@ -217,6 +218,13 @@ public class Practice1 extends NiHonActivity {
         AlertDialog alertDialog = builder.create();
         alertDialog.setCancelable(false);
         alertDialog.show();
+
+        accept.setOnClickListener(v->{
+            alertDialog.dismiss();
+            Intent intent=new Intent(this,Practice2.class);
+            startActivity(intent);
+            finish();
+        });
 
         cancel.setOnClickListener(v -> {
             alertDialog.dismiss();

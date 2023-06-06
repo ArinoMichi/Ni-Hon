@@ -67,7 +67,7 @@
     <string name="score">Máxima puntuación: \n</string>
     <string name="dialogErrorMenssage">No hemos podido obtener sus datos.</string>
     <string name="button_Start">Empezar</string>
-    <string name="dialog_complete_mes">(っ◔◡◔)っ ¡Has completado esta lección! Con: %d errores</string>
+    <string name="dialog_complete_mes">(っ◔◡◔)っ ¡Has completado esta lección! Con: %d errores \nUsted ya ha finalizado con éxito la lección, ¿Pero desea desafiarse con esta última pregunta? (Difícil). </string>
     <string name="dialog_complete_titl">Felicitaciones!!</string>
     <string name="dialog_AlreadyComplete">¡Lección finalizada!</string>
     <string name="dialog_retries">Ya has completado esta lección.</string>

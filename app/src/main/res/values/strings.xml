@@ -80,7 +80,7 @@
     <!--FRAGMENT LESSION-->
     <string name="button_Start">Start Practice</string>
     <!--PRACTICE 01-->
-    <string name="dialog_complete_mes">(っ◔◡◔)っ You have completed this lesson! With: %d errors</string>
+    <string name="dialog_complete_mes">(っ◔◡◔)っ You have completed this lesson! With: %d errors \nHave you successfully completed the lesson, but do you want to challenge yourself with this final question? (Difficult). </string>
     <string name="dialog_complete_titl">Congratulations!!</string>
     <string name="dialog_AlreadyComplete">Already Done!</string>
     <string name="dialog_retries">You have already completed this lesson.</string>
