@@ -116,26 +116,62 @@
     </string>
 
     <string name="lesson_2_1">
-        Lesson 2 page 1
+        The next set of hiragana is from the "k-column."\n\n
+        This is just the K sound plus the vowel sounds you learned above, making it ka-ki-ku-ke-ko.\n\n
+        There are no weird exceptions in this column either, so enjoy it while you can.
     </string>
     <string name="lesson_2_2">
-        Lesson 2 page 1
+        か is just the K sound plus あ, making a <b>ka</b> sound. It\'s pronounced like ka in "karma."\n\n
+        See how this kana looks like a <b>mosquito</b>? What a convenient coincidence. Mosquitos happen to be called <b>か (ka)</b> in Japanese. You also say "<b>c</b>ut it out, darn mosquito!" when they try to suck your blood, so that should be easy to remember.
     </string>
     <string name="lesson_2_3">
-        Lesson 2 page 1
+        き is just the K sound plus い, making a <b>ki</b> sound.\n\n
+        In fact, it sounds just like the word "key" which is the mnemonic we end up using.\n\n
+        To remember this, notice how much it resembles a <b>key</b>.\n\n
+        Note: In some fonts, the bottom part is detached from the main part. The pronunciation is still "ki" though!
     </string>
     <string name="lesson_2_4">
-        Lesson 2 page 1
+        く is just the K sound plus う, making a <b>ku</b> sound. It\'s pronounced "coo," like both syllables of the word "cuckoo" (or just the first syllable, depending on your variety of English).\n\n
+        To remember this, think of this kana being the mouth of a <b>coo-coo / cuckoo</b> bird popping out saying "ku ku, ku ku!"
     </string>
     <string name="lesson_2_5">
-        Lesson 2 page 1
+        け is just the K sound plus え, making a <b>ke</b> sound. It\'s pronounced like ke in "kelp."\n\n
+        See how this kana resembles some wiggly <b>kelp</b>?
     </string>
     <string name="lesson_2_6">
-        Lesson 2 page 1
+        こ is just the K sound plus お, making a ko sound. It\'s pronounced like co in "cohabitating." In British English, it is more like co in "coin."\n\n
+        こ is a couple of <b>co-habitation</b> worms. They\'re so happy together, co-habitating the same area!\n\n
+        Alternatively, you could imagine a couple of short <b>cords</b> laying on the ground next to each other.
     </string>
 
     <string name="lesson_3_1">
-        Lesson 3 page 1
+        Now that you have the "K-column" under your belt it\'s time for the "S-column."\n\n
+        There is one weird exception in this column, and that\'s for "si" aka "shi."\n\n
+        It\'s pronounced just like the word "she" in English, and doesn\'t quite follow the pattern you\'ve seen up until now. You\'ll want to use "sa-shi-su-se-so" for this column.
+    </string>
+    <string name="lesson_3_2">
+        さ is just the S sound plus あ, making a sa sound. It\'s pronounced like sa in "salsa."\n\n
+        Notice how this kana looks like two hands stirring a bowl of salsa. This salsa is so chunky and thick, you need two hands just to stir it!\n\n
+        Note: Like き, the bottom part of さ is detached from the main part in some fonts.
+    </string>
+    <string name="lesson_3_3">
+        し is just the SH sound plus い, making a shi sound. It\'s pronounced like shee in "sheep."\n\n
+        Take note that this is the first "exception" kana where it doesn\'t follow the patterns that show up everywhere else.\n\n
+        Instead of being "si" it\'s "shi" (though you will see it written both ways when dealing with romaji. One more reason why you ought to just learn hiragana already).\n\n
+        This kana looks like a giant shepherd\'s crook used to herd sheep. Baaaa… get in that corral, sheep!
+    </string>
+    <string name="lesson_3_4">
+        す is just the S sound plus う, making a su sound. It\'s pronounced like the word "sue," or su in "suit."\n\n
+        See the swing doing a loop-dee-loop throwing that poor kid off of it?\n\n
+        Imagine him screaming "I\'M GONNA SUE SOMEBODY FOR THIIIIIiiiissss" as he flies off into the distance.
+    </string>
+    <string name="lesson_3_5">
+        せ is just the S sound plus え, making a se sound. It\'s pronounced like se in "sell."\n\n
+        This kana looks like a mouth with a big vampire fang in it. Someone\'s trying to sell you a set of vampire teeth because they are just so sexy! Oh Dracula, always trying to make a quick buck.
+    </string>
+    <string name="lesson_3_6">
+        そ is just the S sound plus お, making a so sound. It\'s pronounced like so in "soda." In British English, it\'s more like so in "song."
+        See how this kana looks like a mouth slurping soda?
     </string>
 
     <string name="lesson_4_1">
