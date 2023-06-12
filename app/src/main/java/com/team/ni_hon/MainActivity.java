@@ -67,8 +67,8 @@ public class MainActivity extends NiHonActivity {
             add(new Lesson(1, "Hiragana 1", "あ い う え お", 6));
             add(new Lesson(2, "Hiragana 2", "か き く け こ", 6));
             add(new Lesson(3, "Hiragana 3", "さ し す せ そ", 6));
-            add(new Lesson(4, "Hiragana 4", "た ち つ て と", 1));
-            add(new Lesson(5, "Hiragana 5", "な に ぬ ね の", 1));
+            add(new Lesson(4, "Hiragana 4", "た ち つ て と", 6));
+            add(new Lesson(5, "Hiragana 5", "な に ぬ ね の", 6));
         }
     };
 

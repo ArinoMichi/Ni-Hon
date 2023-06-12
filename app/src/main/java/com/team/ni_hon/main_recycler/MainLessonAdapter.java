@@ -64,6 +64,7 @@ public class MainLessonAdapter extends RecyclerView.Adapter<MainLessonAdapter.Le
     public void onBindViewHolder(@NonNull LessonViewHolder holder, int position) {
         Lesson lesson = lessons.get(position);
         holder.button.setText(Integer.toString(lesson.getId()));
+        holder.popupButton.setText(R.string.Start);
         holder.lessonTitleText.setText(lessons.get(position).getTitle());
         holder.popupText.setText(lessons.get(position).getPopupText());
 
@@ -102,22 +103,19 @@ public class MainLessonAdapter extends RecyclerView.Adapter<MainLessonAdapter.Le
     private void setTanukiByLevel(ImageView tanuki) {
         switch(userLevel){
             case 1:
+            case 2:
                 tanuki.setImageResource(R.drawable.tanukibaby);
                 break;
-            case 2:
-                tanuki.setImageResource(R.drawable.tanukiteen);
-                break;
             case 3:
-                tanuki.setImageResource(R.drawable.tanukiadult);
-                break;
             case 4:
-                tanuki.setImageResource(R.drawable.user_icon_default);
+                tanuki.setImageResource(R.drawable.tanukiteen);
                 break;
             case 5:
-                tanuki.setImageResource(R.drawable.user_icon3);
+            case 6:
+                tanuki.setImageResource(R.drawable.tanukiadult);
                 break;
             default:
-                tanuki.setImageResource(R.drawable.tanukiteen);
+                tanuki.setImageResource(R.drawable.tanuki);
                 break;
 
         }

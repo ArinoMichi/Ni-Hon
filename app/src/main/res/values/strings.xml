@@ -76,7 +76,7 @@
     <string name="error_delete_user">The user could not be deleted! You want retry?</string>
     <string name="error_sesion_expired">To perform this option, it is necessary to restart the session.</string>
     <!--TOAST TEXT-->
-    <string name="empty_fields">Empty Fileds.</string>
+    <string name="empty_fields">Empty Fields.</string>
     <!--FRAGMENT LESSION-->
     <string name="button_Start">Start Practice</string>
     <!--PRACTICE 01-->
@@ -84,7 +84,11 @@
     <string name="dialog_complete_titl">Congratulations!!</string>
     <string name="dialog_AlreadyComplete">Already Done!</string>
     <string name="dialog_retries">You have already completed this lesson.</string>
-
+    <!--PRACTICE 02-->
+    <string name="fail_tries">Ups! incorrect. </string>
+    <string name="lottie_bad" translatable="false">https://assets2.lottiefiles.com/packages/lf20_7qcbuqgk.json</string>
+    <string name="kana">Write the letter/s for the next kana:</string>
+    <string name="Start">Start</string>
     <string name="default_clientId" translatable="false">781413435137-bbbvkdh757ratt3ocbpnskhfl5b4fih3.apps.googleusercontent.com</string>
 
 
@@ -174,13 +178,87 @@
         See how this kana looks like a mouth slurping soda?
     </string>
 
+
     <string name="lesson_4_1">
-        Lesson 4 page 1
+        Time for the fourth column, the "T-column." Now you have a lot to remember!\n\n
+        Hopefully mnemonics and the reasons for using them are starting to make sense now.
+        If not, that should happen soon.\n\n
+        Like the さ column, you\'ll find an exception in the た column.
+        In fact, you\'ll find two exceptions, them being ち (chi) and つ (tsu).
+        So, for this column we\'ll have "ta, chi, tsu, te, to."
     </string>
+
+    <string name="lesson_4_2">
+        た is just the T sound plus あ, making a <b>ta</b> sound. It\'s pronounced like ta in "taco."\n\n
+        Use your imagination and see this kana as a fork, taco, and lime garnish for your taco.\n\n
+        Wait… you\'re eating a taco with a fork? That\'s a bit weird, but you do you, pal.
+    </string>
+
+    <string name="lesson_4_3">
+        ち is just the CH sound plus い, making a <b>chi</b> sound. It\'s pronounced like "chee" in English.\n\n
+        This is the second "exception" hiragana. Instead of a "ti" sound, it\'s a "chi" sound. Try not to forget this.\n\n
+        You know when someone tells you to say "cheese" when taking a picture of you? This kana looks like that forced smile you have to make every time you\'re in a group photo.
+    </string>
+
+    <string name="lesson_4_4">
+        つ is just the TS sound plus う, making a <b>tsu</b> sound. It\'s pronounced like "tsu" in English.\n\n
+        This is another "exception" hiragana. Instead of saying "tu" you say "tsu."\n\n
+        Look at the swoosh of this hiragana. Doesn\'t it look like a big wave, or tsunami?
+    </string>
+
+    <string name="lesson_4_5">
+        て is just the T sound plus え, making a <b>te</b> sound. It\'s pronounced like "te" in English.\n\n
+        Can you see a good ol\' telescope? It\'s a hand-held one! In Japanese, "hand" is て (te). That should help you remember that this kana looks like an old-school hand(te)-held telescope.
+    </string>
+
+    <string name="lesson_4_6">
+        と is just the T sound plus お, making a <b>to</b> sound. It\'s pronounced like "to" in English. In British English, it sounds like "to" in "top."\n\n
+        This kana resembles a <b>slide</b>. Imagine yourself sliding down the slide in the shape of "と (to)."
+    </string>
+
 
     <string name="lesson_5_1">
-        Lesson 5 page 1
+        The next set of hiragana is from the "N-column."\n\n
+        This is just the N sound plus the vowel sounds you learned above, making it na-ni-nu-ne-no.\n\n
+        There are no weird exceptions in this column either, so enjoy it while you can.
     </string>
 
+    <string name="lesson_5_2">
+        な hiragana mnemonic\n\n
+        な is just the N sound plus あ, making a na sound. It\'s pronounced like na in "nachos."\n\n
+        The nun is praying in front of the cross asking for nachos, because she\'s craving a delicious snack.
+        The cross up in the air should be the main giveaway that this is な.
+    </string>
+
+    <string name="lesson_5_3">
+        に hiragana mnemonic\n\n
+        に is just the N sound plus い, making a ni sound. It\'s pronounced like nee in "needle."\n\n
+        Do you see the needle pulling the thread?
+    </string>
+
+    <string name="lesson_5_4">
+        ぬ hiragana mnemonic\n\n
+        ぬ is just the N sound plus う, making a nu sound. It\'s pronounced like noo in "noodle."
+        This kana looks like some noodles. There are several other kana that are similar to this one (れ, め, ね, わ),
+        but you know this one is noodles because there are no sharp angles in it.
+        It\'s 100% smooth and bendable, like noodles! It even has an extra loop at the bottom, because it is a noodle.
+    </string>
+
+    <string name="lesson_5_5">
+        ね hiragana mnemonic\n\n
+        ね is just the N sound plus え, making a ne sound. It\'s pronounced like ne in "Nelly."\n\n
+        This is Nelly the cat. There are other kana very similar to this one (ぬ, れ, め, わ),but you know this is different.
+        Why? Because it has a loop at the end for the tail, and it\'s not super bendable like ぬ (noodles) is — see those sharp corners on the left?
+        To top things off, Nelly is a necromancer. Why? I have no idea, you\'ll have to ask her. It must have something to do with the undead cat army she\'s creating.
+        Also, if you know the word neko (Japanese for "cat"), you can use that too. This is a ねこ.
+    </string>
+
+    <string name="lesson_5_6">
+        の hiragana mnemonic\n\n
+        の is just the N sound plus お, making a no sound.
+        It\'s pronounced like no in "nose" or "nori."
+        See the big pig nose there? You can also think of this as a "No Smoking" sign (the ones with the cigarette and the big red circle and slash through it).
+        Pick the one that sticks with you the best.
+    </string>
 
 </resources>

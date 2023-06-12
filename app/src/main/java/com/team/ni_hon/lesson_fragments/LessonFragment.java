@@ -4,6 +4,7 @@ import static android.content.Context.MODE_PRIVATE;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -63,6 +64,10 @@ public class LessonFragment extends Fragment {
         int imageResId = getResources().getIdentifier(imageId, "drawable", getActivity().getPackageName());
         Glide.with(this).load(imageResId).into(image);
 
+        if(getNightMode()){
+            text.setTextColor(getResources().getColor(R.color.white));
+        }
+
         ImageView imageArrow = view.findViewById(R.id.imageArrow);
 
         Button startPractice= view.findViewById(R.id.start_button);
@@ -90,6 +95,19 @@ public class LessonFragment extends Fragment {
         });
 
         return view;
+    }
+
+    public boolean getNightMode(){
+        int nightModeFlags = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+        switch (nightModeFlags) {
+            case Configuration.UI_MODE_NIGHT_YES:
+                // Modo nocturno ya activado
+                return true;
+            case Configuration.UI_MODE_NIGHT_NO:
+                // Modo nocturno no activado.
+                return false;
+        }
+        return false;
     }
 
 }
