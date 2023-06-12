@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">ni_hon</string>
     <string name="welcome2">(っ◔◡◔)っ 欢迎回来!</string>
-    <string name="join_us">(っ◔◡◔)っ 加入我们吧! \n(いらっしゃいませ)</string>
+    <string name="join_us">(っ◔◡◔)っ 加入我们吧!</string>
     <string name="welcomejp">(ようこそ)</string>
     <string name="splash">がんばって</string>
     <string name="start_learn_jp">(いらっしゃいませ)</string>
