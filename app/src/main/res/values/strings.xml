@@ -90,7 +90,7 @@
     <string name="kana">Write the letter/s for the next kana:</string>
     <string name="Start">Start</string>
     <string name="default_clientId" translatable="false">781413435137-bbbvkdh757ratt3ocbpnskhfl5b4fih3.apps.googleusercontent.com</string>
-
+    <string name="unlock">NEW TANUKI UNLOCKED !!!</string>
 
     <!-- lesson text -->
     <string name="hello_blank_fragment">.</string>

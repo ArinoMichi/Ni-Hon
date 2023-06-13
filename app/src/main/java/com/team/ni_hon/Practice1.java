@@ -230,7 +230,17 @@ public class Practice1 extends NiHonActivity {
 
         cancel.setOnClickListener(v -> {
             alertDialog.dismiss();
-            remove();
+
+            switch(userLevel){
+                case 2:
+                case 4:
+                    Intent intent=new Intent(this,unlock.class);
+                    startActivity(intent);
+                    finish();
+                    break;
+                default:
+                    remove();
+            }
         });
     }
 

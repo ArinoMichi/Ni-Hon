@@ -61,6 +61,13 @@ public class Practice2 extends AppCompatActivity {
 
                     new Handler(Looper.getMainLooper()).postDelayed(() -> {
                         animation.cancelAnimation();
+
+                        if(Level==2 || Level==4){
+                            Intent intent=new Intent(this,unlock.class);
+                            startActivity(intent);
+                            finish();
+                        }
+
                         finish();
                     }, 2000);
                 }else if (chance == 0) {
@@ -69,6 +76,13 @@ public class Practice2 extends AppCompatActivity {
 
                     new Handler(Looper.getMainLooper()).postDelayed(() -> {
                         animation.cancelAnimation();
+
+                        if(Level==2 || Level==4){
+                            Intent intent=new Intent(this,unlock.class);
+                            startActivity(intent);
+                            finish();
+                        }
+
                         finish();
                     }, 3000);
                 } else {
