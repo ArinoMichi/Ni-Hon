@@ -67,7 +67,8 @@ public class Practice2 extends AppCompatActivity {
                             startActivity(intent);
                             finish();
                         }
-
+                        Intent intent=new Intent(this, MainActivity.class);
+                        startActivity(intent);
                         finish();
                     }, 2000);
                 }else if (chance == 0) {
@@ -83,6 +84,8 @@ public class Practice2 extends AppCompatActivity {
                             finish();
                         }
 
+                        Intent intent=new Intent(this, MainActivity.class);
+                        startActivity(intent);
                         finish();
                     }, 3000);
                 } else {

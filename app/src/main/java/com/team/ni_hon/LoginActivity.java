@@ -236,6 +236,17 @@ public class LoginActivity extends NiHonActivity {
 
                                 query = userCollRef.whereEqualTo("email", emailGoogle);
                                 query.get().addOnCompleteListener(task1 -> {
+
+                                    SharedPreferences sharedPreferences = getSharedPreferences("UserSession", MODE_PRIVATE);
+                                    SharedPreferences.Editor editor = sharedPreferences.edit();
+
+                                    editor.putString("token", account.getEmail());
+                                    editor.putString("google", account.getIdToken());
+                                    editor.apply();
+
+                                    setGoogleToken(account.getIdToken());
+                                    setUserSession(account.getEmail(), null);
+
                                     if (task1.isSuccessful() && task1.getResult().isEmpty()) {
                                         userCollRef.document(GoogleUserId)
                                                 .set(GoogleUser)
@@ -244,23 +255,14 @@ public class LoginActivity extends NiHonActivity {
                                                     public void onComplete(@NonNull Task<Void> task1) {
                                                         if (task1.isSuccessful()) {
                                                             Log.d(TAG, "Se ha guardado el usuario Google con id: " + GoogleUserId);
+                                                            ToMain();
                                                         }
                                                     }
                                                 });
+                                    }else if(!task1.getResult().isEmpty()){
+                                        ToMain();
                                     }
                                 });
-
-                                SharedPreferences sharedPreferences = getSharedPreferences("UserSession", MODE_PRIVATE);
-                                SharedPreferences.Editor editor = sharedPreferences.edit();
-
-                                editor.putString("token", account.getEmail());
-                                editor.putString("google", account.getIdToken());
-                                editor.apply();
-
-                                setGoogleToken(account.getIdToken());
-                                setUserSession(account.getEmail(), null);
-
-                                ToMain();
                             } else {
                                 Log.w(TAG, "signInWithCredential:failure", task.getException());
                                 ShowMensaje(false);
