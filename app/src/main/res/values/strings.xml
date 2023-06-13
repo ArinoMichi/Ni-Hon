@@ -12,7 +12,7 @@
     <string name="ch">Chinese</string>
     <string name="language">Choose Language</string>
     <string name="configTitle">Choose Display Option: </string>
-    <string name="configNight">Darck Mode: </string>
+    <string name="configNight">Dark Mode: </string>
     <string name="configTitleLang">Choose App Language: </string>
     <string name="configLang">Language: </string>
     <!--LOGIN AND SIGN UP-->
