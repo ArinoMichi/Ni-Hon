@@ -79,11 +79,11 @@ public class SignupActivity extends NiHonActivity {
         String rpswd=confirmPassword.getText().toString().trim();
 
         if(name.isEmpty()||emails.isEmpty()||pswd.isEmpty()||rpswd.isEmpty()){
-            Toast.makeText(this,"Hay campos vacios",Toast.LENGTH_LONG).show();
+            Toast.makeText(this,R.string.empty_fields,Toast.LENGTH_LONG).show();
         }else if(!pswd.equals(rpswd)){
-            Toast.makeText(this,"Las contraseñas introducidas no coinciden",Toast.LENGTH_LONG).show();
+            Toast.makeText(this,R.string.passDif,Toast.LENGTH_LONG).show();
         }else if (pswd.length()<6){
-            Toast.makeText(this,"La contraseña debe no puede ser inferior a 6 digitos",Toast.LENGTH_LONG).show();
+            Toast.makeText(this,R.string.passLess,Toast.LENGTH_LONG).show();
         }else{
             User newUser=new User(name,emails,pswd,0,1);
 
@@ -125,16 +125,16 @@ public class SignupActivity extends NiHonActivity {
 
 
             }else
-                Toast.makeText(this,"Se produjo un error inesperado",Toast.LENGTH_LONG).show();
+                Toast.makeText(this,R.string.dialogErrorTitle,Toast.LENGTH_LONG).show();
         }
 
     }
 
     public void mostrarMensaje(boolean positivo){
         if(positivo)
-            Toast.makeText(this,"Usuario registrado correctamente",Toast.LENGTH_LONG).show();
+            Toast.makeText(this,R.string.userReg,Toast.LENGTH_LONG).show();
         else
-            Toast.makeText(this,"El correo ya tiene una cuenta asociada",Toast.LENGTH_LONG).show();
+            Toast.makeText(this,R.string.userExist,Toast.LENGTH_LONG).show();
     }
 
     private void ToLogin(String emails, String pswd) {

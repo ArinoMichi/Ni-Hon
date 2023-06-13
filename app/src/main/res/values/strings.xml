@@ -77,6 +77,10 @@
     <string name="error_sesion_expired">To perform this option, it is necessary to restart the session.</string>
     <!--TOAST TEXT-->
     <string name="empty_fields">Empty Fields.</string>
+    <string name="passDif">Different passwords.</string>
+    <string name="passLess">The password could not be less than 6 digit.</string>
+    <string name="userReg">User register successfully</string>
+    <string name="userExist">This email already has account.</string>
     <!--FRAGMENT LESSION-->
     <string name="button_Start">Start Practice</string>
     <!--PRACTICE 01-->
@@ -91,6 +95,9 @@
     <string name="Start">Start</string>
     <string name="default_clientId" translatable="false">781413435137-bbbvkdh757ratt3ocbpnskhfl5b4fih3.apps.googleusercontent.com</string>
     <string name="unlock">NEW TANUKI UNLOCKED !!!</string>
+    <string name="logged">user logged</string>
+    <string name="checkEmail">Check your email</string>
+    <string name="errorEmail">Could not send the email</string>
 
     <!-- lesson text -->
     <string name="hello_blank_fragment">.</string>

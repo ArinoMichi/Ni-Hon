@@ -78,6 +78,13 @@
     <string name="kana">写下下一个假名的字母：</string>
     <string name="Start">开始</string>
     <string name="unlock">解锁了新的 TANUKI !!!</string>
+    <string name="logged">用户上线了</string>
+    <string name="checkEmail">请检查您的电子邮件</string>
+    <string name="errorEmail">邮件发送错误</string>
+    <string name="passDif">密码不一致</string>
+    <string name="passLess">密码不能少于6位数</string>
+    <string name="userReg">用户创建成功</string>
+    <string name="userExist">此邮件已有用户</string>
 
     <string name="hello_blank_fragment">.</string>
 

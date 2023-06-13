@@ -79,6 +79,13 @@
     <string name="kana">Escribe la/s letra/s para el próximo kana:</string>
     <string name="Start">Empezar</string>
     <string name="unlock">¡¡¡ NUEVO TANUKI DESBLOQUEADO !!!</string>
+    <string name="logged">usuario logeado.</string>
+    <string name="checkEmail">Verifique su correo</string>
+    <string name="errorEmail">Error al enviar el correo</string>
+    <string name="passDif">Las contraseñas introducidas no coinciden</string>
+    <string name="passLess">La contraseña debe no puede ser inferior a 6 digitos</string>
+    <string name="userReg">Usuario registrado correctamente</string>
+    <string name="userExist">El correo ya tiene una cuenta asociada</string>
 
 
     <string name="hello_blank_fragment">.</string>

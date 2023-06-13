@@ -313,7 +313,7 @@ public class LoginActivity extends NiHonActivity {
 
     public void ShowMensaje(@NonNull Boolean positivo) {
         if (positivo) {
-            Toast.makeText(this, "usuario logeado", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.logged, Toast.LENGTH_LONG).show();
         } else {
             cancelProgressDialog();
             showErrorMenssage(R.string.dialogNotExistText, R.string.dialogNotExistTitle);
@@ -324,10 +324,10 @@ public class LoginActivity extends NiHonActivity {
         mAuth.sendPasswordResetEmail(email).addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 alertDialog.dismiss();
-                Toast.makeText(this, "Verifique su email", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.checkEmail, Toast.LENGTH_SHORT).show();
             } else {
                 alertDialog.dismiss();
-                Toast.makeText(this, "Error al enviar el correo", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "", Toast.LENGTH_SHORT).show();
             }
         });
     }
