@@ -184,12 +184,6 @@ public class LoginActivity extends NiHonActivity {
         if (emailR != null && passwdR != null) {
             email.setText(emailR);
             password.setText(passwdR);
-
-            try {
-                Thread.sleep(3000);
-                ToMain();
-            } catch (InterruptedException e) {
-            }
         }
     }
 

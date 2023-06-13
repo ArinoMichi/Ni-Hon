@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -138,6 +139,7 @@ public class SignupActivity extends NiHonActivity {
     }
 
     private void ToLogin(String emails, String pswd) {
+        setUserSession(emails,pswd);
         Intent intent=new Intent(SignupActivity.this,LoginActivity.class);
         intent.putExtra("email",emails);
         intent.putExtra("pswd",pswd);
