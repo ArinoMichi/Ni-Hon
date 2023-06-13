@@ -15,9 +15,12 @@
         android:theme="@style/Theme.Nihon"
         tools:targetApi="31">
         <activity
+            android:name=".unlock"
+            android:exported="false" />
+        <activity
             android:name=".UserInfoActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".TutorialActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
@@ -50,19 +53,19 @@
         <activity
             android:name=".SignupActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:theme="@style/Theme.Nihon"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/Theme.Nihon" />
         <activity
             android:name=".LoginActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="true"
-            android:theme="@style/Theme.Nihon"
-            android:noHistory="true" />
+            android:noHistory="true"
+            android:theme="@style/Theme.Nihon" />
         <activity
             android:name=".SplashActivity"
             android:exported="true"
-            android:theme="@style/Theme.Nihon"
-            android:noHistory="true">
+            android:noHistory="true"
+            android:theme="@style/Theme.Nihon">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

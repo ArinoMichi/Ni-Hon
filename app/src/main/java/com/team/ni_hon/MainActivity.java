@@ -304,7 +304,7 @@ public class MainActivity extends NiHonActivity {
                 remove();
                 break;
             case R.id.about:
-                Intent intentAbout = new Intent(MainActivity.this, About.class);
+                Intent intentAbout = new Intent(MainActivity.this, unlock.class);
                 startActivity(intentAbout);
                 finish();
                 break;
