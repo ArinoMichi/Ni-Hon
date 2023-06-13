@@ -329,7 +329,7 @@ public class LoginActivity extends NiHonActivity {
                 Toast.makeText(this, R.string.checkEmail, Toast.LENGTH_SHORT).show();
             } else {
                 alertDialog.dismiss();
-                Toast.makeText(this, "", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.errorEmail, Toast.LENGTH_SHORT).show();
             }
         });
     }
