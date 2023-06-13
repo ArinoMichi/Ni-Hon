@@ -76,15 +76,19 @@
     <string name="error_delete_user">The user could not be deleted! You want retry?</string>
     <string name="error_sesion_expired">To perform this option, it is necessary to restart the session.</string>
     <!--TOAST TEXT-->
-    <string name="empty_fields">Empty Fileds.</string>
+    <string name="empty_fields">Empty Fields.</string>
     <!--FRAGMENT LESSION-->
     <string name="button_Start">Start Practice</string>
     <!--PRACTICE 01-->
-    <string name="dialog_complete_mes">(っ◔◡◔)っ You have completed this lesson! With: %d errors</string>
+    <string name="dialog_complete_mes">(っ◔◡◔)っ You have completed this lesson! With: %d errors \nHave you successfully completed the lesson, but do you want to challenge yourself with this final question? (Difficult). </string>
     <string name="dialog_complete_titl">Congratulations!!</string>
     <string name="dialog_AlreadyComplete">Already Done!</string>
     <string name="dialog_retries">You have already completed this lesson.</string>
-
+    <!--PRACTICE 02-->
+    <string name="fail_tries">Ups! incorrect. </string>
+    <string name="lottie_bad" translatable="false">https://assets2.lottiefiles.com/packages/lf20_7qcbuqgk.json</string>
+    <string name="kana">Write the letter/s for the next kana:</string>
+    <string name="Start">Start</string>
     <string name="default_clientId" translatable="false">781413435137-bbbvkdh757ratt3ocbpnskhfl5b4fih3.apps.googleusercontent.com</string>
 
 
@@ -115,35 +119,145 @@
     </string>
 
     <string name="lesson_2_1">
-        Lesson 2 page 1
+        The next set of hiragana is from the "k-column."\n\n
+        This is just the K sound plus the vowel sounds you learned above, making it ka-ki-ku-ke-ko.\n\n
+        There are no weird exceptions in this column either, so enjoy it while you can.
     </string>
     <string name="lesson_2_2">
-        Lesson 2 page 1
+        か is just the K sound plus あ, making a <b>ka</b> sound. It\'s pronounced like ka in "karma."\n\n
+        See how this kana looks like a <b>mosquito</b>? What a convenient coincidence. Mosquitos happen to be called <b>か (ka)</b> in Japanese. You also say "<b>c</b>ut it out, darn mosquito!" when they try to suck your blood, so that should be easy to remember.
     </string>
     <string name="lesson_2_3">
-        Lesson 2 page 1
+        き is just the K sound plus い, making a <b>ki</b> sound.\n\n
+        In fact, it sounds just like the word "key" which is the mnemonic we end up using.\n\n
+        To remember this, notice how much it resembles a <b>key</b>.\n\n
+        Note: In some fonts, the bottom part is detached from the main part. The pronunciation is still "ki" though!
     </string>
     <string name="lesson_2_4">
-        Lesson 2 page 1
+        く is just the K sound plus う, making a <b>ku</b> sound. It\'s pronounced "coo," like both syllables of the word "cuckoo" (or just the first syllable, depending on your variety of English).\n\n
+        To remember this, think of this kana being the mouth of a <b>coo-coo / cuckoo</b> bird popping out saying "ku ku, ku ku!"
     </string>
     <string name="lesson_2_5">
-        Lesson 2 page 1
+        け is just the K sound plus え, making a <b>ke</b> sound. It\'s pronounced like ke in "kelp."\n\n
+        See how this kana resembles some wiggly <b>kelp</b>?
     </string>
     <string name="lesson_2_6">
-        Lesson 2 page 1
+        こ is just the K sound plus お, making a ko sound. It\'s pronounced like co in "cohabitating." In British English, it is more like co in "coin."\n\n
+        こ is a couple of <b>co-habitation</b> worms. They\'re so happy together, co-habitating the same area!\n\n
+        Alternatively, you could imagine a couple of short <b>cords</b> laying on the ground next to each other.
     </string>
 
     <string name="lesson_3_1">
-        Lesson 3 page 1
+        Now that you have the "K-column" under your belt it\'s time for the "S-column."\n\n
+        There is one weird exception in this column, and that\'s for "si" aka "shi."\n\n
+        It\'s pronounced just like the word "she" in English, and doesn\'t quite follow the pattern you\'ve seen up until now. You\'ll want to use "sa-shi-su-se-so" for this column.
     </string>
+    <string name="lesson_3_2">
+        さ is just the S sound plus あ, making a sa sound. It\'s pronounced like sa in "salsa."\n\n
+        Notice how this kana looks like two hands stirring a bowl of salsa. This salsa is so chunky and thick, you need two hands just to stir it!\n\n
+        Note: Like き, the bottom part of さ is detached from the main part in some fonts.
+    </string>
+    <string name="lesson_3_3">
+        し is just the SH sound plus い, making a shi sound. It\'s pronounced like shee in "sheep."\n\n
+        Take note that this is the first "exception" kana where it doesn\'t follow the patterns that show up everywhere else.\n\n
+        Instead of being "si" it\'s "shi" (though you will see it written both ways when dealing with romaji. One more reason why you ought to just learn hiragana already).\n\n
+        This kana looks like a giant shepherd\'s crook used to herd sheep. Baaaa… get in that corral, sheep!
+    </string>
+    <string name="lesson_3_4">
+        す is just the S sound plus う, making a su sound. It\'s pronounced like the word "sue," or su in "suit."\n\n
+        See the swing doing a loop-dee-loop throwing that poor kid off of it?\n\n
+        Imagine him screaming "I\'M GONNA SUE SOMEBODY FOR THIIIIIiiiissss" as he flies off into the distance.
+    </string>
+    <string name="lesson_3_5">
+        せ is just the S sound plus え, making a se sound. It\'s pronounced like se in "sell."\n\n
+        This kana looks like a mouth with a big vampire fang in it. Someone\'s trying to sell you a set of vampire teeth because they are just so sexy! Oh Dracula, always trying to make a quick buck.
+    </string>
+    <string name="lesson_3_6">
+        そ is just the S sound plus お, making a so sound. It\'s pronounced like so in "soda." In British English, it\'s more like so in "song."
+        See how this kana looks like a mouth slurping soda?
+    </string>
+
 
     <string name="lesson_4_1">
-        Lesson 4 page 1
+        Time for the fourth column, the "T-column." Now you have a lot to remember!\n\n
+        Hopefully mnemonics and the reasons for using them are starting to make sense now.
+        If not, that should happen soon.\n\n
+        Like the さ column, you\'ll find an exception in the た column.
+        In fact, you\'ll find two exceptions, them being ち (chi) and つ (tsu).
+        So, for this column we\'ll have "ta, chi, tsu, te, to."
     </string>
+
+    <string name="lesson_4_2">
+        た is just the T sound plus あ, making a <b>ta</b> sound. It\'s pronounced like ta in "taco."\n\n
+        Use your imagination and see this kana as a fork, taco, and lime garnish for your taco.\n\n
+        Wait… you\'re eating a taco with a fork? That\'s a bit weird, but you do you, pal.
+    </string>
+
+    <string name="lesson_4_3">
+        ち is just the CH sound plus い, making a <b>chi</b> sound. It\'s pronounced like "chee" in English.\n\n
+        This is the second "exception" hiragana. Instead of a "ti" sound, it\'s a "chi" sound. Try not to forget this.\n\n
+        You know when someone tells you to say "cheese" when taking a picture of you? This kana looks like that forced smile you have to make every time you\'re in a group photo.
+    </string>
+
+    <string name="lesson_4_4">
+        つ is just the TS sound plus う, making a <b>tsu</b> sound. It\'s pronounced like "tsu" in English.\n\n
+        This is another "exception" hiragana. Instead of saying "tu" you say "tsu."\n\n
+        Look at the swoosh of this hiragana. Doesn\'t it look like a big wave, or tsunami?
+    </string>
+
+    <string name="lesson_4_5">
+        て is just the T sound plus え, making a <b>te</b> sound. It\'s pronounced like "te" in English.\n\n
+        Can you see a good ol\' telescope? It\'s a hand-held one! In Japanese, "hand" is て (te). That should help you remember that this kana looks like an old-school hand(te)-held telescope.
+    </string>
+
+    <string name="lesson_4_6">
+        と is just the T sound plus お, making a <b>to</b> sound. It\'s pronounced like "to" in English. In British English, it sounds like "to" in "top."\n\n
+        This kana resembles a <b>slide</b>. Imagine yourself sliding down the slide in the shape of "と (to)."
+    </string>
+
 
     <string name="lesson_5_1">
-        Lesson 5 page 1
+        The next set of hiragana is from the "N-column."\n\n
+        This is just the N sound plus the vowel sounds you learned above, making it na-ni-nu-ne-no.\n\n
+        There are no weird exceptions in this column either, so enjoy it while you can.
     </string>
 
+    <string name="lesson_5_2">
+        な hiragana mnemonic\n\n
+        な is just the N sound plus あ, making a na sound. It\'s pronounced like na in "nachos."\n\n
+        The nun is praying in front of the cross asking for nachos, because she\'s craving a delicious snack.
+        The cross up in the air should be the main giveaway that this is な.
+    </string>
+
+    <string name="lesson_5_3">
+        に hiragana mnemonic\n\n
+        に is just the N sound plus い, making a ni sound. It\'s pronounced like nee in "needle."\n\n
+        Do you see the needle pulling the thread?
+    </string>
+
+    <string name="lesson_5_4">
+        ぬ hiragana mnemonic\n\n
+        ぬ is just the N sound plus う, making a nu sound. It\'s pronounced like noo in "noodle."
+        This kana looks like some noodles. There are several other kana that are similar to this one (れ, め, ね, わ),
+        but you know this one is noodles because there are no sharp angles in it.
+        It\'s 100% smooth and bendable, like noodles! It even has an extra loop at the bottom, because it is a noodle.
+    </string>
+
+    <string name="lesson_5_5">
+        ね hiragana mnemonic\n\n
+        ね is just the N sound plus え, making a ne sound. It\'s pronounced like ne in "Nelly."\n\n
+        This is Nelly the cat. There are other kana very similar to this one (ぬ, れ, め, わ),but you know this is different.
+        Why? Because it has a loop at the end for the tail, and it\'s not super bendable like ぬ (noodles) is — see those sharp corners on the left?
+        To top things off, Nelly is a necromancer. Why? I have no idea, you\'ll have to ask her. It must have something to do with the undead cat army she\'s creating.
+        Also, if you know the word neko (Japanese for "cat"), you can use that too. This is a ねこ.
+    </string>
+
+    <string name="lesson_5_6">
+        の hiragana mnemonic\n\n
+        の is just the N sound plus お, making a no sound.
+        It\'s pronounced like no in "nose" or "nori."
+        See the big pig nose there? You can also think of this as a "No Smoking" sign (the ones with the cigarette and the big red circle and slash through it).
+        Pick the one that sticks with you the best.
+    </string>
 
 </resources>

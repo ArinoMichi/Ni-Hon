@@ -3,7 +3,7 @@
     <string name="app_name">ni_hon</string>
     <string name="welcome">¡Qué bueno verte de vuelta!</string>
     <string name="welcome2">(っ◔◡◔)っ ¡Bienvenido!</string>
-    <string name="join_us">(っ◔◡◔)っ ¡Únete a nosotros! \n(いらっしゃいませ)</string>
+    <string name="join_us">(っ◔◡◔)っ ¡Únete a nosotros!</string>
     <string name="start_learn_jp">(いらっしゃいませ)</string>
     <string name="splash">がんばって</string>
     <string name="welcomejp">(ようこそ)</string>
@@ -67,7 +67,7 @@
     <string name="score">Máxima puntuación: \n</string>
     <string name="dialogErrorMenssage">No hemos podido obtener sus datos.</string>
     <string name="button_Start">Empezar</string>
-    <string name="dialog_complete_mes">(っ◔◡◔)っ ¡Has completado esta lección! Con: %d errores</string>
+    <string name="dialog_complete_mes">(っ◔◡◔)っ ¡Has completado esta lección! Con: %d errores \nUsted ya ha finalizado con éxito la lección, ¿Pero desea desafiarse con esta última pregunta? (Difícil). </string>
     <string name="dialog_complete_titl">Felicitaciones!!</string>
     <string name="dialog_AlreadyComplete">¡Lección finalizada!</string>
     <string name="dialog_retries">Ya has completado esta lección.</string>
@@ -75,12 +75,19 @@
     <string name="bye_title">¡Hasta pronto!</string>
     <string name="error_delete_user">¡No se ha podido borrar el usuario! ¿Quere reintentar?</string>
     <string name="error_sesion_expired">Para realizar esta opción es necesario reiniciar sesión</string>
+    <string name="fail_tries">¡Ups! Incorrecto.</string>
+    <string name="kana">Escribe la/s letra/s para el próximo kana:</string>
+    <string name="Start">Empezar</string>
 
 
     <string name="hello_blank_fragment">.</string>
 
     <string name="lesson_1_1">
-        Esta es la primera (¡y más importante!) columna en hiragana.\n\nEstablece la pronunciación de todas las demás columnas que vienen después, porque todas las demás columnas básicamente son solo la columna a-i-u-e-o con consonantes adjuntas a ellas.\n\nEl mismo sonido básico se repite una y otra vez, con una consonante más estos cinco sonidos de vocales, así que asegúrate de tener la pronunciación correcta para estos cinco desde el principio.
+        Esta es la primera (¡y más importante!) columna en hiragana.\n\n
+        Establece la pronunciación de todas las demás columnas que vienen después,
+        porque todas las demás columnas básicamente son solo la columna a-i-u-e-o con consonantes adjuntas a ellas.
+        \n\nEl mismo sonido básico se repite una y otra vez, con una consonante más estos cinco sonidos de vocales,
+        así que asegúrate de tener la pronunciación correcta para estos cinco desde el principio.
     </string>
 
     <string name="lesson_1_2">
@@ -94,7 +101,7 @@
     </string>
 
     <string name="lesson_1_4">
-        <b>う</b> se pronuncia como el sonido "oo" en "ooh... ahhh!" cuando estás viendo fuegos artificiales. En otras palabras, suena como la "u" en "UNO", el juego de cartas, o el número uno en español.\n\n
+        <b>う</b> se pronuncia como el sonido "oo" en "ooh… ahhh!" cuando estás viendo fuegos artificiales. En otras palabras, suena como la "u" en "UNO", el juego de cartas, o el número uno en español.\n\n
         Para recordar este kana, observa la forma de <b>U</b> justo en él. Está de lado, pero está ahí, indicándote qué kana es. Ten cuidado, hay otro hiragana similar, つ, pero ese no lleva un sombrero como <b>U</b> (tú). ¡Oh, ah, qué sombrero tan genial!
     </string>
 
@@ -108,40 +115,153 @@
         ¿Puedes ver la letra <b>o</b> aquí, dos veces? Este se parece a あ, excepto por su diferencia clave: hay dos símbolos de la letra "o" visibles aquí. Asegúrate de usar esto para diferenciar este kana (お) y ese kana similar (あ). Esta es un área de hiragana donde mucha gente se confunde, pero al usar este mnemónico podrás distinguirlos cada vez.
     </string>
 
+
     <string name="lesson_2_1">
-        Lección 2 página 1
+        El siguiente conjunto de hiragana es de la "columna k".\n\n
+        Es simplemente el sonido K más los sonidos vocálicos que aprendiste antes, formando ka-ki-ku-ke-ko.\n\n
+        No hay excepciones extrañas en esta columna, así que disfrútalas.
     </string>
 
     <string name="lesson_2_2">
-        Lección 2 página 1
+        か es simplemente el sonido K más あ, formando un sonido <b>ka</b>. Se pronuncia como ka en "karma".\n\n
+        Observa cómo este kana se parece a un <b>mosquito</b>. Qué coincidencia conveniente. Los mosquitos se llaman <b>か (ka)</b> en japonés. También dices "<b>¡c</b>orta eso, maldito mosquito!" cuando intentan chuparte la sangre, así que debería ser fácil de recordar.
     </string>
 
     <string name="lesson_2_3">
-        Lección 2 página 1
+        き es simplemente el sonido K más い, formando un sonido <b>ki</b>.\n\n
+        De hecho, suena exactamente como la palabra "key" que es el mnemónico que terminamos usando.\n\n
+        Para recordar esto, fíjate en cómo se parece a una <b>llave</b>.\n\n
+        Nota: En algunas fuentes, la parte inferior está separada de la parte principal. ¡La pronunciación sigue siendo "ki" aunque!
     </string>
 
     <string name="lesson_2_4">
-        Lección 2 página 1
+        く es simplemente el sonido K más う, formando un sonido <b>ku</b>. Se pronuncia "coo", como en las sílabas de la palabra "cuckoo" (o solo la primera sílaba, dependiendo de la variedad de inglés).\n\n
+        Para recordar esto, imagina que este kana es la boca de un pájaro <b>coo-coo / cucú</b> que sale diciendo "ku ku, ku ku".
     </string>
 
     <string name="lesson_2_5">
-        Lección 2 página 1
+        け es simplemente el sonido K más え, formando un sonido <b>ke</b>. Se pronuncia como ke en "kelp".\n\n
+        Observa cómo este kana se parece a un alga marina ondulada <b>kelp</b>.
     </string>
 
     <string name="lesson_2_6">
-        Lección 2 página 1
+        こ es simplemente el sonido K más お, formando un sonido ko. Se pronuncia como co en "cohabitar". En inglés británico, es más como co en "coin".\n\n
+        こ son un par de gusanos de <b>co-habitación</b>. ¡Son tan felices juntos, co-habitando la misma área!\n\n
+        Alternativamente, podrías imaginar un par de <b>cuerdas</b> cortas que se encuentran en el suelo uno al lado del otro.
     </string>
+
 
     <string name="lesson_3_1">
-        Lección 3 página 1
+        Ahora que tienes la "columna K" dominada, es hora de la "columna S".\n\n
+        Hay una excepción extraña en esta columna, y es para "si" también conocido como "shi".\n\n
+        Se pronuncia exactamente como la palabra "she" en inglés, y no sigue el patrón que has visto hasta ahora. Para esta columna deberás usar "sa-shi-su-se-so".
     </string>
+
+    <string name="lesson_3_2">
+        さ es simplemente el sonido S más あ, formando un sonido sa. Se pronuncia como sa en "salsa".\n\n
+        Observa cómo este kana se parece a dos manos removiendo un tazón de salsa. ¡Esta salsa es tan espesa y llena de trozos que necesitas dos manos solo para mezclarla!\n\n
+        Nota: Al igual que き, la parte inferior de さ está separada de la parte principal en algunas fuentes.
+    </string>
+
+    <string name="lesson_3_3">
+        し es simplemente el sonido SH más い, formando un sonido shi. Se pronuncia como shee en "sheep".\n\n
+        Ten en cuenta que este es el primer kana "excepción" que no sigue los patrones que aparecen en todas partes.\n\n
+        En lugar de ser "si", es "shi" (aunque lo verás escrito de ambas formas cuando se trata de romanización. Otra razón más para aprender hiragana de una vez).\n\n
+        Este kana se parece a un gancho de pastor gigante usado para guiar a las ovejas. ¡Baaaa… entra en ese corral, oveja!
+    </string>
+
+    <string name="lesson_3_4">
+         す es simplemente el sonido S más う, formando un sonido su. Se pronuncia como la palabra "sue", o su en "suit".\n\n
+        ¿Ves el columpio haciendo un lazo lanzando a ese pobre niño? \n\n
+        Imagínalo gritando "Voy a demandar a alguien por estooooo" mientras vuela hacia lo lejos.
+    </string>
+
+    <string name="lesson_3_5">
+        せ es simplemente el sonido S más え, formando un sonido se. Se pronuncia como se en "sell".\n\n
+        Este kana se parece a una boca con un colmillo de vampiro grande. ¡Alguien está tratando de venderte un conjunto de dientes de vampiro porque son tan sexys! Oh, Drácula, siempre tratando de ganar dinero rápido.
+    </string>
+
+    <string name="lesson_3_6">
+        そ es simplemente el sonido S más お, formando un sonido so. Se pronuncia como so en "soda". En inglés británico, es más como so en "song".\n
+        ¿Ves cómo este kana se parece a una boca sorbiendo soda?
+    </string>
+
 
     <string name="lesson_4_1">
-        Lección 4 página 1
+        Es hora de la cuarta columna, la "columna T". ¡Ahora tienes mucho que recordar!\n\n
+        Esperemos que las mnemotecnias y las razones para usarlas comiencen a tener sentido ahora.
+        Si no es así, debería ocurrir pronto.\n\n
+        Al igual que en la columna さ, encontrarás una excepción en la columna た.
+        De hecho, encontrarás dos excepciones, que son ち (chi) y つ (tsu).
+        Por lo tanto, en esta columna tendremos "ta, chi, tsu, te, to".
     </string>
 
+    <string name="lesson_4_2">
+        た es simplemente el sonido "T" más あ, formando el sonido <b>ta</b>. Se pronuncia como "ta" en "taco".\n\n
+        Usa tu imaginación y ve este kana como un tenedor, un taco y aderezo de limón para tu taco.\n\n
+        Espera… ¿estás comiendo un taco con un tenedor? Eso es un poco extraño, pero tú haz lo tuyo, amigo.
+    </string>
+
+    <string name="lesson_4_3">
+        ち es simplemente el sonido "CH" más い, formando el sonido <b>chi</b>. Se pronuncia como "chee" en inglés.\n\n
+        Este es el segundo hiragana "excepción". En lugar de un sonido "ti", es un sonido "chi". Trata de no olvidarlo.\n\n
+        ¿Sabes cuando alguien te dice que digas "cheese" al tomar una foto de ti? Este kana se parece a esa sonrisa forzada que tienes que hacer cada vez que estás en una foto grupal.
+    </string>
+
+    <string name="lesson_4_4">
+        つ es simplemente el sonido "TS" más う, formando el sonido <b>tsu</b>. Se pronuncia como "tsu" en inglés.\n\n
+        Este es otro hiragana "excepción". En lugar de decir "tu", dices "tsu".\n\n
+        Observa el remolino de este hiragana. ¿No parece una gran ola o tsunami?
+    </string>
+
+    <string name="lesson_4_5">
+        て es simplemente el sonido "T" más え, formando el sonido <b>te</b>. Se pronuncia como "te" en inglés.\n\n
+        ¿Puedes ver un buen y viejo telescopio? ¡Es uno portátil! En japonés, "mano" es て (te). Eso debería ayudarte a recordar que este kana se parece a un telescopio portátil de la antigua escuela.
+    </string>
+
+    <string name="lesson_4_6">
+        と es simplemente el sonido "T" más お, formando el sonido <b>to</b>. Se pronuncia como "to" en inglés. En inglés británico, suena como "to" en "top".\n\n
+        Este kana se asemeja a un <b>tobogán</b>. Imagínate deslizándote por el tobogán en la forma de "と (to)".
+    </string>
+
+
     <string name="lesson_5_1">
-        Lección 5 página 1
+        El siguiente conjunto de hiragana pertenece a la "columna N".\n\n
+        Simplemente es el sonido "N" más los sonidos de las vocales que aprendiste antes, formando na-ni-nu-ne-no.\n\n
+        No hay excepciones extrañas en esta columna, así que disfrútala mientras puedas.
+    </string>
+
+    <string name="lesson_5_2">
+        な es simplemente el sonido "N" más あ, formando el sonido "na". Se pronuncia como "na" en "nachos".\n\n
+        La monja está rezando frente a la cruz pidiendo nachos porque tiene antojo de un delicioso bocadillo.
+        La cruz en el aire debería ser la señal principal de que esto es "な".
+    </string>
+
+    <string name="lesson_5_3">
+        に es simplemente el sonido "N" más い, formando el sonido "ni". Se pronuncia como "nee" en "needle" (aguja).\n\n
+        ¿Ves la aguja jalando el hilo?
+    </string>
+
+    <string name="lesson_5_4">
+        ぬ es simplemente el sonido "N" más う, formando el sonido "nu". Se pronuncia como "noo" en "noodle" (fideo).
+        Este kana se parece a unos fideos. Hay varios otros kana similares a este (れ、め、ね、わ),
+        pero sabes que este es "noodles" porque no tiene ángulos agudos.
+        ¡Es 100% suave y flexible, como los fideos! Incluso tiene un lazo adicional en la parte inferior, porque es un fideo.
+    </string>
+
+    <string name="lesson_5_5">
+        ね es simplemente el sonido "N" más え, formando el sonido "ne". Se pronuncia como "ne" en "Nelly".\n\n
+        Este es Nelly, la gata. Hay otros kana muy similares a este (ぬ、れ、め、わ), pero sabes que este es diferente.
+        ¿Por qué? Porque tiene un lazo al final para la cola, y no es tan flexible como ぬ (fideos) — ¿ves esas esquinas afiladas a la izquierda?
+        Además, Nelly es una nigromante. ¿Por qué? No tengo idea, tendrás que preguntarle. Debe tener algo que ver con el ejército de gatos no muertos que está creando.
+        Además, si conoces la palabra "neko" (gato en japonés), también puedes usarla. Esto es un ねこ.
+    </string>
+
+    <string name="lesson_5_6">
+        の es simplemente el sonido "N" más お, formando el sonido "no".
+        Se pronuncia como "no" en "nose" (nariz) o "nori" (alga nori).\n\n
+        ¿Ves la gran nariz de cerdo ahí? También puedes pensar en esto como una señal de "No fumar" (las que tienen un cigarrillo y un círculo rojo grande con una línea diagonal atravesándolo).
+        Elige la opción que mejor te quede en la memoria.
     </string>
 
 

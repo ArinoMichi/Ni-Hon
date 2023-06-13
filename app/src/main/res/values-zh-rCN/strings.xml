@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">ni_hon</string>
     <string name="welcome2">(っ◔◡◔)っ 欢迎回来!</string>
-    <string name="join_us">(っ◔◡◔)っ 加入我们吧! \n(いらっしゃいませ)</string>
+    <string name="join_us">(っ◔◡◔)っ 加入我们吧!</string>
     <string name="welcomejp">(ようこそ)</string>
     <string name="splash">がんばって</string>
     <string name="start_learn_jp">(いらっしゃいませ)</string>
@@ -66,7 +66,7 @@
     <string name="score">最高分数: \n</string>
     <string name="dialogErrorMenssage">我们无法获取您的数据。</string>
     <string name="button_Start">开始练习</string>
-    <string name="dialog_complete_mes">(っ◔◡◔)っ 你已完成此课程！有：%d 个错误</string>
+    <string name="dialog_complete_mes">(っ◔◡◔)っ 你已完成此课程！有：%d 个错误\n您已成功完成了本课程，但是否希望挑战自己回答这个最后的问题?（困难）</string>
     <string name="dialog_complete_titl">恭喜您!!</string>
     <string name="dialog_AlreadyComplete">已完成!</string>
     <string name="dialog_retries">您已经完成了此课程。</string>
@@ -74,7 +74,9 @@
     <string name="bye_title">再见！</string>
     <string name="error_delete_user">无法删除用户！要重试吗?</string>
     <string name="error_sesion_expired">要执行此选项，需要重新登录。</string>
-
+    <string name="fail_tries">哎呀！错误。</string>
+    <string name="kana">写下下一个假名的字母：</string>
+    <string name="Start">开始</string>
 
     <string name="hello_blank_fragment">.</string>
 
@@ -107,40 +109,158 @@
         你能看到这里的字母 <b>o</b> 吗，两次出现？这个假名看起来与 あ 相似，除了一个关键的区别：其中有两个字母 "o" 的符号可见。确保使用这个区分这个假名 (お) 和那个类似的假名 (あ)。这是平假名中许多人容易出错的地方，但通过使用这个记忆法，你每次都能弄清楚它们。
     </string>
 
+
     <string name="lesson_2_1">
-        第2课 第1页
+        下一组平假名是“K 列”。\n\n
+        它只是在你之前学过的元音声音后面加上 K 的声音，变成 ka-ki-ku-ke-ko。\n\n
+        这一列也没有奇怪的例外，所以尽情享受吧。
     </string>
 
     <string name="lesson_2_2">
-        第2课 第1页
+        か只是 K 的声音加上 あ，发出 <b>ka</b> 的声音。发音类似于英语中的 "karma" 中的 ka。\n\n
+        你看这个假名像只 <b>蚊子</b>？多么方便的巧合。在日语中，蚊子叫做 <b>か（ka）</b>。当它们试图吸血时，你也会说“<b>剪掉它，该死的蚊子！</b>”，所以应该很容易记住。
     </string>
 
     <string name="lesson_2_3">
-        第2课 第1页
+        き只是 K 的声音加上 い，发出 <b>ki</b> 的声音。\n\n
+        实际上，它听起来就像英语单词 "key"，这也是我们最终使用的记忆方法。\n\n
+        要记住这个，注意它有多像一把 <b>钥匙</b>。\n\n
+        注意：在某些字体中，下面的部分与主要部分分离。不过发音仍然是 "ki"！
     </string>
 
     <string name="lesson_2_4">
-        第2课 第1页
+        く只是 K 的声音加上 う，发出 <b>ku</b> 的声音。发音为 "coo"，类似于单词 "cuckoo" 中的两个音节（或者取决于你所用的英语方言，只发第一个音节）。\n\n
+        要记住这个，想象这个假名是一只 <b>布谷鸟</b> 弹出来说着 "ku ku，ku ku"！
     </string>
 
     <string name="lesson_2_5">
-        第2课 第1页
+        け只是 K 的声音加上 え，发出 <b>ke</b> 的声音。发音类似于英语中 "kelp" 中的 ke。\n\n
+        你看这个假名像一些颤动的 <b>海带</b> 吗？
     </string>
 
     <string name="lesson_2_6">
-        第2课 第1页
+        こ只是 K 的声音加上 お，发出 ko 的声音。发音类似于英语中 "cohabitating" 中的 co。在英式英语中，更类似于 "coin" 中的 co。\n\n
+        こ是一对 <b>共栖</b> 蠕虫。它们在一起生活，共同栖息在同一个区域！\n\n
+        或者，你可以想象一对短 <b>绳子</b> 平放在地上相邻的位置。
     </string>
+
 
     <string name="lesson_3_1">
-        第3课 第1页
+        现在你已经掌握了 "K 列"，是时候学习 "S 列" 了。\n\n
+        这一列有一个奇怪的例外，就是 "si" 也被称为 "shi"。\n\n
+        它的发音和英语中的 "she" 完全相同，并且不遵循你之前学到的规律。在这一列中，你需要使用 "sa-shi-su-se-so"。
     </string>
+
+    <string name="lesson_3_2">
+        さ只是 S 的声音加上 あ，发出 sa 的声音。发音类似于英语中的 "salsa" 中的 sa。\n\n
+        你看这个假名像是两只手在搅动一碗莎莎酱。这莎莎酱太稠了，里面有很多块，所以你需要两只手来搅拌！\n\n
+        注意：和 き 一样，某些字体中的底部与主要部分分离。
+    </string>
+
+    <string name="lesson_3_3">
+        し只是 SH 的声音加上 い，发出 shi 的声音。发音类似于英语中 "sheep" 中的 shee。\n\n
+        请注意，这是第一个不遵循到处都出现的规律的 "例外" 假名。\n\n
+        它不是 "si"，而是 "shi"（尽管在罗马字拼写中你会看到两种写法）。这是学习平假名的另一个原因。\n\n
+        这个假名看起来像一个用来引导羊群的巨大的牧羊钩。咩…进入那个圈圈，羊！
+    </string>
+
+    <string name="lesson_3_4">
+        す只是 S 的声音加上 う，发出 su 的声音。发音类似于单词 "sue" 中的 su，或者类似于 "suit" 中的 su。\n\n
+        你看到秋千在摆动，把那个可怜的孩子甩出去了吗？\n\n
+        想象他飞起来的时候大喊着 "我要起诉某人！"。
+    </string>
+
+    <string name="lesson_3_5">
+        せ只是 S 的声音加上 え，发出 se 的声音。发音类似于英语中的 "sell" 中的 se。\n\n
+        这个假名看起来像一个带有大尖牙的嘴巴。有人正试图向你推销一套吸引人的吸血鬼牙齿！哦，德古拉，总是想方设法赚快钱。
+    </string>
+
+    <string name="lesson_3_6">
+        そ只是 S 的声音加上 お，发出 so 的声音。发音类似于英语中的 "soda" 中的 so。在英式英语中，更类似于 "song" 中的 so。\n
+        你看这个假名像一个嘴巴在喝苏打水吗？
+    </string>
+
 
     <string name="lesson_4_1">
-        第4课 第1页
+        到了第四列，即“T列”的时间。现在你有很多要记住的东西！\n\n
+        希望助记法和使用它们的原因现在开始变得清晰起来了。
+        如果还没有，那很快就会明白。\n\n
+        像さ列一样，在た列中也会有一个例外。
+        实际上，你会发现两个例外，它们是ち（chi）和つ（tsu）。
+        因此，对于这一列，我们将有“ta, chi, tsu, te, to”。
     </string>
 
+    <string name="lesson_4_2">
+        た只是T音加上あ，发出<b>ta</b>的音。发音类似于英语中的“taco”中的ta。\n\n
+        想象一下，你正在用一把叉子夹着墨西哥卷饼，并在上面放上青柠作为装饰。\n\n
+        等一下…你正在用叉子吃卷饼吗？这有点奇怪，但你做你自己吧，伙计。
+    </string>
+
+    <string name="lesson_4_3">
+        ち只是CH音加上い，发出<b>chi</b>的音。发音类似于英语中的“chee”。\n\n
+        这是第二个“例外”平假名。它不发出“ti”的音，而是发出“chi”的音。记得不要忘记这一点。\n\n
+        你知道当有人给你拍照时，告诉你说“cheese”吗？这个平假名看起来就像你在团体照片中每次被迫露出的那个做作笑容。
+    </string>
+
+    <string name="lesson_4_4">
+        つ只是TS音加上う，发出<b>tsu</b>的音。发音类似于英语中的“tsu”。\n\n
+        这是另一个“例外”平假名。你不说“tu”，而是说“tsu”。\n\n
+        看看这个平假名的涡流。它不像一个巨浪或海啸吗？
+    </string>
+
+    <string name="lesson_4_5">
+        て只是T音加上え，发出<b>te</b>的音。发音类似于英语中的“te”。\n\n
+        你能看到一个老式的望远镜吗？这是一种手持式的望远镜！在日语中，“手”是て（te）。这应该帮助你记住这个平假名看起来像一台老式手持（te）望远镜。
+    </string>
+
+    <string name="lesson_4_6">
+        と只是T音加上お，发出<b>to</b>的音。发音类似于英语中的“to”。在英国英语中，它的发音类似于“top”中的to。\n\n
+        这个平假名类似于一个<b>滑梯</b>。想象一下自己像“と（to）”这样在滑梯上滑下来。
+    </string>
+
+
     <string name="lesson_5_1">
-        第5课 第1页
+        接下来是"N列"的平假名。\n\n
+        这只是N音加上你之前学过的元音音素，形成na-ni-nu-ne-no。\n\n
+        这一列中也没有奇怪的例外，所以尽情享受吧。
+    </string>
+
+    <string name="lesson_5_2">
+        な平假名助记法\n\n
+        な只是N音加上あ，发出na的音。发音类似于英语中的“nachos”中的na。\n\n
+        这位修女正在十字架前祈祷，祈求一份墨西哥小吃，因为她渴望一份美味的零食。
+        空中的十字架应该是最大的提示，表明这是な。
+    </string>
+
+    <string name="lesson_5_3">
+        に平假名助记法\n\n
+        に只是N音加上い，发出ni的音。发音类似于英语中的“needle”中的nee。\n\n
+        你看到了针在拽线吗？
+    </string>
+
+    <string name="lesson_5_4">
+        ぬ平假名助记法\n\n
+        ぬ只是N音加上う，发出nu的音。发音类似于英语中的“noodle”中的noo。
+        这个平假名看起来像面条。还有其他几个平假名和它很相似（れ、め、ね、わ），
+        但你知道这个是面条，因为它没有尖角。
+        它是100%光滑和可弯曲的，就像面条一样！它甚至在底部多了一个环，因为它就是一根面条。
+    </string>
+
+    <string name="lesson_5_5">
+        ね平假名助记法\n\n
+        ね只是N音加上え，发出ne的音。发音类似于英语中的“Nelly”中的ne。\n\n
+        这是一只名叫Nelly的猫。还有其他几个平假名和它非常相似（ぬ、れ、め、わ），但你知道这个不同。
+        为什么？因为它在尾部有一个环，而且不像ぬ（面条）那样超级可弯曲 —— 注意左边的尖角？
+        最重要的是，Nelly是个亡灵术士。为什么呢？我不知道，你得问她。这一定和她正在创造的亡灵猫军有关。
+        另外，如果你知道“neko”这个词（日语中的“猫”），你也可以用这个。这是一个ねこ。
+    </string>
+
+    <string name="lesson_5_6">
+        の平假名助记法\n\n
+        の只是N音加上お，发出no的音。
+        发音类似于英语中的“nose”或“nori”中的no。
+        看到那个大猪鼻子了吗？你还可以将其视为“禁止吸烟”标志（带有香烟、大红圈和斜杠的标志）。
+        选择对你印象最深刻的那个。
     </string>
 
 
